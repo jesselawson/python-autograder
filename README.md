@@ -1,7 +1,7 @@
 
 # Overview
 
-Rapidmark
+Python Autograder
 
 1. For each assignment, create a "assignment_test_suite.py" file. These will be 
    the unit tests that will run off of the student's test file. The way they work 
@@ -13,17 +13,31 @@ Rapidmark
 For example, if you have an assignment named "shippingcosts":
 
 assignments/ 
-	autograder.py 
+	autograder.py
+	test_template.py 
 	shippingcosts/ 
 		assignment_test_suite.py
 		sub1.py
 		sub2.py
 		etc
 
+You would run this like so:
+
+`python autograder.py shippingcosts`
+
+Find the results in the `assignments/shippingcosts/results` folder.
+
 
 
 		
 DEVLOG
+
+- **29-Jan-2020 Jesse Lawson** 
+
+Decoupled the test suite file for assignments. Now the assignment test suite file 
+will just be the test functions, and there will be a `test_template.py` file that 
+has a special marker (`#<INJECTION_MARKER>`) to indicate where the contents from 
+the `assignment_test_suite.py` file are injected. 
 
 - **26-Jan-2020 Jesse Lawson** 
 

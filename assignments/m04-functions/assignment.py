@@ -14,7 +14,10 @@ DIRECTIONS
 
 Each of the six Problems you are expected to finish have specifications ("specs")
 inside a code block, followed by a placeholder block of code where I want you 
-to write the function that satisfies the specs. 
+to write the function that satisfies the specs. This is exactly how the mid-term 
+and final examinations will take place--big files like this with a problem 
+written in comments and then a section immediately after where you are to 
+write your answer--in the form of code, of course.
 
 Follow the directions, paying close attention to what is being asked, the 
 logical conditions, and the expected outcomes. Each Problem requires you to 

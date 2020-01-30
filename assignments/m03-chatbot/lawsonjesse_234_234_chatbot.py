@@ -18,53 +18,63 @@ To complete this assignment, do the following:
 1. Correct any variable name inconsistencies, lack of declaration, 
    or typos first.
 
-2. Find the function `process_input`, where we are checking the user's 
-   question (we stored the question in a variable named `question`), and use 
-   the if, elif, and else keywords to process `question` as follows:
+2. We stored the user's question in a variable named `question`, but something
+   is wrong with the way it's declared. Go fix it. 
    
-   2.a.
+3. Find the call to `input` where we store the value of the user's input into 
+   the variable `question`. Just after that, we will process the value of 
+   the user's input and store the results in another variable, `response`. 
+   Use the if, elif, and else keywords to process `question` as follows:
+   
+   3.a.
    If the user asks, "What is your name?"
-   Then return,  "My name is CHAT BOT."
+   Then set `response` to be: "My name is CHAT BOT."
    
-   2.b.
+   3.b.
    If the user asks, "What is the answer to life?"
-   Then return,  "Proper hydration!"
+   Then set `response` to be: "Proper hydration!"
 
-   2.c.
+   3.c.
    If the user asks, "What is 56*13?"
-   Then return,  "That's easy: 728!"
+   Then set `response` to be: "That's easy: 728!"
 
-   2.d.
+   3.d.
    If the user asks, "Are you sentinent?"
-   Then return,  "What do you think?"
+   Then set `response` to be: "What do you think?"
 
-   2.e.
+   3.e.
    If the user asks, "Who made you?"
-   Then return,  the variable `maker` 
+   Then set `response` to be: the variable `maker` 
      along with " made me!" in a single sentence. 
      (Hint: use an f-string!)
 
-   2.f.
+   3.f.
    If the user asks, "What did you cost?"
-   Then return,  "Total funding was $" along with 
+   Then set `response` to be: "Total funding was $" along with 
      the sum of `total_grant_funds` and `total_donations`
      in a single sentence. 
      (Hint: use an f-string!)  
      (Hint: "Total funding was $100." is an example)
 
-   2.g.
+   3.g.
    If the user asks anything else, 
-   Then return,  "Maybe try asking a different way."
+   Then set `response` to be: "Maybe try asking a different way."
 
-3. Add in at least TWO more questions and answers that
+4. Add in at least TWO more questions and answers that
    use a variable (that you will have to define) and 
    an f-string to print the answer. Be creative; it can 
    be anything! 
 
-4. Make sure this works without errors! If there are errors, you will 
+5. Make sure this works without errors! If there are errors, you will 
    need to fix them.
 
-5. Submit this file to the appropriate assignment in Canvas.
+6. Submit this file to the appropriate assignment in Canvas.
+
+Helpful tips:
+* This assignment requires VERY CLOSE READING of the specifications above. 
+  Ensure that your grammar, punctuation, and spelling are EXACTLY as they are 
+  specified in the instructions!
+* You will be marked down if you do not follow the instructions PRECISELY.
 
 """
 
@@ -73,24 +83,15 @@ maker = "The Mad Scientist Company"
 total_grant_funds = 50000
 total_donations = 3500
 
-# Create a function called `process_input` that takes one string variable 
-# argument called `question` and 
-def process_input(question):
-    if question == "What is your name?":
-        return "My name is CHAT BOT."
-  # ??
-
-
-print("I am alive!")
-
 # (Hint: what do you think is wrong with the variable assignment below?)
-kwestion = input("What is your question? ")
+question = input("What is your question? ")
 
-# Here, create a variable named `response` and use `process_input` as its 
-# value. The argument you will pass is the `question` variable.
-# response = ??
+if question == "What is your name?":
+    response =  "My name is CHAT BOT."
+# elif question == ??
+    response = "Proper hydration!"
+# ??
+
 
 # Finally, we'll print the response variable
-# print(response)
-
-print("Goodbye!")
+print(response)

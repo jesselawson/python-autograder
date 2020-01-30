@@ -1,0 +1,4 @@
+  File "m02-shippingcosts//results/millerted_234234_23434_shippingcosts_test.py", line 46
+    num_packages_ready = 
+                        ^
+SyntaxError: invalid syntax

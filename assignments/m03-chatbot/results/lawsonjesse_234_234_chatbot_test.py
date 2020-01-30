@@ -26,29 +26,29 @@ To complete this assignment, do the following:
    
    2.a.
    If the user asks, "What is your name?"
-   Then set `response` variable to "My name is CHAT BOT."
+   Then return,  "My name is CHAT BOT."
    
    2.b.
    If the user asks, "What is the answer to life?"
-   Then set `response` variable to "Proper hydration!"
+   Then return,  "Proper hydration!"
 
    2.c.
    If the user asks, "What is 56*13?"
-   Then set `response` variable to "That's easy: 728!"
+   Then return,  "That's easy: 728!"
 
    2.d.
    If the user asks, "Are you sentinent?"
-   Then set `response` variable to "What do you think?"
+   Then return,  "What do you think?"
 
    2.e.
    If the user asks, "Who made you?"
-   Then set `response` variable to the variable `maker` 
+   Then return,  the variable `maker` 
      along with " made me!" in a single sentence. 
      (Hint: use an f-string!)
 
    2.f.
    If the user asks, "What did you cost?"
-   Then set `response` variable to "Total funding was $" along with 
+   Then return,  "Total funding was $" along with 
      the sum of `total_grant_funds` and `total_donations`
      in a single sentence. 
      (Hint: use an f-string!)  
@@ -56,7 +56,7 @@ To complete this assignment, do the following:
 
    2.g.
    If the user asks anything else, 
-   Then set `response` variable to "Maybe try asking a different way."
+   Then return,  "Maybe try asking a different way."
 
 3. Add in at least TWO more questions and answers that
    use a variable (that you will have to define) and 
@@ -75,23 +75,25 @@ maker = "The Mad Scientist Company"
 total_grant_funds = 50000
 total_donations = 3500
 
+# Create a function called `process_input` that takes one string variable 
+# argument called `question` and 
+def process_input(question):
+    if question == "What is your name?":
+        return "My name is CHAT BOT."
+  # ??
+
+
 print("I am alive!")
 
 # (Hint: what do you think is wrong with the variable assignment below?)
 kwestion = input("What is your question? ")
 
-# Create a function called `process_input` that takes one string variable 
-# argument called `question` and 
-def process_input(question):
-  if question == "What is your name?":
-    response = "My name is CHAT BOT."
-  # ??
-
-
+# Here, create a variable named `response` and use `process_input` as its 
+# value. The argument you will pass is the `question` variable.
+# response = ??
 
 # Finally, we'll print the response variable
-
-print(response)
+# print(response)
 
 print("Goodbye!")
 
@@ -144,13 +146,92 @@ def jel_assert(target, expr, should_msg):
 # BEGIN TEST SUITE INJECTION ===================================================
 
 
-# Testing injection 
+# Test suite for M03 Chat Bot
 
-def test_this_is_a_test():
-  jel_assert("the injector", 
-    test_qwertyuioplkjhgfdsa_number != None,
-    "injects the code correctly"
-  )
+# Attention to syntax;
+# Attention to specifications;
+# Troubleshooting
+
+
+
+def test_2a():
+    target = "process_input()"
+    try:
+        jel_assert(
+        target,
+        process_input("What is your name?") == "My name is CHAT BOT.",
+        "return 'My name is CHAT BOT' when asked what its name is"
+    )
+    except NameError as e:
+        return jel_NameError(target, e)
+    except TypeError as e:
+        return jel_TypeError(target, e)
+
+def test_2b():
+    target = "process_input()"
+    try:
+        jel_assert(
+        target,
+        process_input("What is the answer to life?") == "Proper hydration!",
+        "return 'Proper hydration!' when asked what the answer to life is"
+    )
+    except NameError as e:
+        return jel_NameError(target, e)
+    except TypeError as e:
+        return jel_TypeError(target, e)
+
+def test_2c():
+    target = "process_input()"
+    try:
+        jel_assert(
+        target,
+        process_input("What is 56*13?") == "That's easy: 728!",
+        "return 'That\'s easy: 728!' when asked what 56*13 is"
+    )
+    except NameError as e:
+        return jel_NameError(target, e)
+    except TypeError as e:
+        return jel_TypeError(target, e)
+
+def test_2d():
+    target = "process_input()"
+    try:
+        jel_assert(
+        target,
+        process_input("Are you sentient?") == "What do you think?",
+        "return 'What do you think?' when asked what the answer to life is"
+    )
+    except NameError as e:
+        return jel_NameError(target, e)
+    except TypeError as e:
+        return jel_TypeError(target, e)
+
+def test_2e():
+    target = "process_input()"
+    try:
+        jel_assert(
+        target,
+        process_input("Are you sentient?") == "What do you think?",
+        "return 'What do you think?' when asked what the answer to life is"
+    )
+    except NameError as e:
+        return jel_NameError(target, e)
+    except TypeError as e:
+        return jel_TypeError(target, e)
+        
+def test_2f():
+    target = "process_input()"
+    try:
+        jel_assert(
+        target,
+        process_input("What did you cost?") == f"Total funding was ${total_grant_funds + total_donations}",
+        "return total funding when asked how much it cost"
+    )
+    except NameError as e:
+        return jel_NameError(target, e)
+    except TypeError as e:
+        return jel_TypeError(target, e)
+        
 
 # END TEST SUITE INJECTION =====================================================
 
@@ -181,9 +262,14 @@ Assignment: m03-chatbot
 Student: lawsonjesse
 Compiled: 29-Jan-2020
 
-Traceback (most recent call last):
-  File "m03-chatbot/results/lawsonjesse_234_234_chatbot_test.py", line 94, in <module>
-    print(response)
-NameError: name 'response' is not defined
+I am alive!
+What is your question? Goodbye!
+None
+None
+None
+None
+None
+None
+
 
 """

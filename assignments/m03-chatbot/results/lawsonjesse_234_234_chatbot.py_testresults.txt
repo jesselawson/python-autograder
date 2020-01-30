@@ -1,4 +1,9 @@
-Traceback (most recent call last):
-  File "m03-chatbot/results/lawsonjesse_234_234_chatbot_test.py", line 94, in <module>
-    print(response)
-NameError: name 'response' is not defined
+I am alive!
+What is your question? Goodbye!
+None
+None
+None
+None
+None
+None
+

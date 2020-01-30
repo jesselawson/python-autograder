@@ -24,29 +24,29 @@ To complete this assignment, do the following:
    
    2.a.
    If the user asks, "What is your name?"
-   Then set `response` variable to "My name is CHAT BOT."
+   Then return,  "My name is CHAT BOT."
    
    2.b.
    If the user asks, "What is the answer to life?"
-   Then set `response` variable to "Proper hydration!"
+   Then return,  "Proper hydration!"
 
    2.c.
    If the user asks, "What is 56*13?"
-   Then set `response` variable to "That's easy: 728!"
+   Then return,  "That's easy: 728!"
 
    2.d.
    If the user asks, "Are you sentinent?"
-   Then set `response` variable to "What do you think?"
+   Then return,  "What do you think?"
 
    2.e.
    If the user asks, "Who made you?"
-   Then set `response` variable to the variable `maker` 
+   Then return,  the variable `maker` 
      along with " made me!" in a single sentence. 
      (Hint: use an f-string!)
 
    2.f.
    If the user asks, "What did you cost?"
-   Then set `response` variable to "Total funding was $" along with 
+   Then return,  "Total funding was $" along with 
      the sum of `total_grant_funds` and `total_donations`
      in a single sentence. 
      (Hint: use an f-string!)  
@@ -54,7 +54,7 @@ To complete this assignment, do the following:
 
    2.g.
    If the user asks anything else, 
-   Then set `response` variable to "Maybe try asking a different way."
+   Then return,  "Maybe try asking a different way."
 
 3. Add in at least TWO more questions and answers that
    use a variable (that you will have to define) and 
@@ -73,22 +73,24 @@ maker = "The Mad Scientist Company"
 total_grant_funds = 50000
 total_donations = 3500
 
+# Create a function called `process_input` that takes one string variable 
+# argument called `question` and 
+def process_input(question):
+    if question == "What is your name?":
+        return "My name is CHAT BOT."
+  # ??
+
+
 print("I am alive!")
 
 # (Hint: what do you think is wrong with the variable assignment below?)
 kwestion = input("What is your question? ")
 
-# Create a function called `process_input` that takes one string variable 
-# argument called `question` and 
-def process_input(question):
-  if question == "What is your name?":
-    response = "My name is CHAT BOT."
-  # ??
-
-
+# Here, create a variable named `response` and use `process_input` as its 
+# value. The argument you will pass is the `question` variable.
+# response = ??
 
 # Finally, we'll print the response variable
-
-print(response)
+# print(response)
 
 print("Goodbye!")

@@ -1,4 +1,19 @@
-# A custom autograder for this assignment
+"""
+Chatbot Autograder
+
+A custom autograder for the m03 Chat Bot assignment.
+
+It works the same way as the other autograder, putting results in a results 
+folder.
+
+USAGE
+
+cd into the folder, then:
+    python chatbot-autograder.py
+
+
+
+"""
 
 # Read in all the student files
 # For each file, execute it in subprocess for each test case. 

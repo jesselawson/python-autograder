@@ -141,7 +141,7 @@ def is_spam(subject):
 
 
 """
-(26-Jan-2020 Professor Lawson) Below you will find all the test 
+(29-Jan-2020 Professor Lawson) Below you will find all the test 
 functions I have used to evaluate your submission. You are free to 
 download this file and tinker around with it. In fact, 
 I encourage it!
@@ -181,6 +181,10 @@ def jel_assert(target, expr, should_msg):
     else:
         return m + f"passed: {target} should {should_msg}"
     
+# BEGIN TEST SUITE INJECTION ===================================================
+
+
+# Test suite for M04 Functions
 
 # Problem 1
 def test_string_compare():
@@ -250,6 +254,10 @@ def test_is_spam_should_return_false_if_not_spam2():
 def test_is_spam_should_return_false_if_not_spam2():
     return jel_assert(  "is_spam()", is_spam("Special Offer! We can do this!") == False, "not classify 'Special Offer!' as spam")
 
+
+
+# END TEST SUITE INJECTION =====================================================
+
 # Custom test runner
 test_results = []
 dir_result = dir(sys.modules[__name__])
@@ -273,9 +281,9 @@ print(output)
 """
 TEST RUNNER RESULTS
 ======================================
-Assignment: functions
+Assignment: m04-functions
 Student: lawsonjesse
-Compiled: 26-Jan-2020
+Compiled: 29-Jan-2020
 
 Test #1 FAILED: string_compare() failed before test due to a TypeError: string_compare() missing 1 required positional argument: 'arg2'
 Test #2 passed: string_append() should append second argument to first argument

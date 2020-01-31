@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "m02-shippingcosts//results/millerted_234234_23434_shippingcosts_test_test.py", line 88, in <module>
+    r = item()
+  File "m02-shippingcosts//results/millerted_234234_23434_shippingcosts_test_test.py", line 72, in test_total_packages
+    assert(total_packages == num_packages_ready + additional_packages)
+NameError: name 'total_packages' is not defined

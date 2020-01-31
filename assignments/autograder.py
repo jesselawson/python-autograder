@@ -52,6 +52,7 @@ def main():
   
   assignment_directory = sys.argv[1]
   test_suite_filename = assignment_directory + "/assignment_test_suite.py"
+  test_template_filename = 'test_template.py'
   test_suite_contents = None
   
   print("Checking assignment directory for existence... ", end='')
@@ -121,6 +122,12 @@ def main():
 
     the_date = datetime.now()
     timestamp = the_date.strftime("%d-%b-%Y")
+
+    # Read the contents of the test_template file, and replace the injection 
+    # marker with the test_suite_contents
+    tests_with_template = None
+    with open(test_template_filename) as f:
+      tests_with_template = f.read().replace('#<TEST_SUITE_INJECTION_MARKER>', test_suite_contents)
     
     # Generate the test file for the student
     test_file = open(student_test_filename, "w")
@@ -135,7 +142,7 @@ def main():
         f"I encourage it!\n\n\"\"\"\n\n"
       )
     )
-    test_file.write(test_suite_contents)
+    test_file.write(tests_with_template)
     test_file.write(f"\n\n\n\n")
     test_file.close()
   
@@ -152,8 +159,33 @@ def main():
     # Collects all functions that start with "test_" from the submission file 
     # and runs those tests.
     print(f"     * Executing test runner...", end='')
-    subprocess.call(f"python {student_test_filename}  > {student_results_filename}", shell=True)
-    print("[ OK ]")
+    
+    #subprocess.call(f"python {student_test_filename}  > {student_results_filename}", shell=True)
+
+    # Run the python file in a subprocess to capture the output just in case 
+    # the student didn't follow directions and we can't even run the test runner
+    res = subprocess.Popen(
+        f"python {student_test_filename}  > {student_results_filename}", 
+        stdout=subprocess.PIPE, 
+        stderr=subprocess.PIPE,
+        stdin=subprocess.PIPE, 
+        shell=True)
+    # Next, flush any input from the script using a input() call. We don't want 
+    # to hold up the testrunner because of some input() function.
+    res.stdin.write(b'\n')
+    res.stdin.flush()
+
+    # Wait for the process end and print error in case of failure 
+    if res.wait() != 0:
+      output, error = res.communicate()
+      # If we couldn't even run the test suite, shove the subprocess call error
+      # into the student results file instead
+      r = open(student_results_filename, "wb")
+      r.write(error)
+      r.close()
+      print("[ FAIL ]: Couldn't even run tests!")
+    else:
+      print("[ OK ]")
 
     # Append results to end of test file
     r = open(student_results_filename, "r")

@@ -1,0 +1,28 @@
+Pizza Parlor Tool
+===================================================================
+Enter Size (S, M, or L; Default: M)> Enter Sauce (R or W; Default: R)> Enter the letter of your choice: 
+[A] Specialty Pizza
+[B] Custom Two-Topping Pizza
+-------------------------------------------------------------------
+Selection (default A): Cost to make: $5.0
+Sale price: $1.5
+Total profit: $-3.5
+Test #1 FAILED: get_topping_cost() failed to return 2.1 when given 'Y'!
+Test #2 FAILED: get_topping_cost() failed to return 0.55 when given 'P'!
+Test #3 FAILED: get_topping_cost() failed to return 0.25 when given 'O'!
+Test #4 FAILED: get_topping_cost() failed to return 0.95 when given 'N'!
+Test #5 FAILED: get_topping_cost() failed to return 0.75 when given 'K'!
+Test #6 FAILED: get_topping_cost() failed to return 0.85 when given 'I'!
+Test #7 FAILED: get_topping_cost() failed to return 1.15 when given 'H'!
+Test #8 FAILED: get_topping_cost() failed to return 0.45 when given 'C'!
+Test #9 FAILED: get_specialty_cost() failed before test due to a NameError: name 'get_specialty_cost' is not defined
+Test #10 FAILED: get_specialty_cost() failed before test due to a NameError: name 'get_specialty_cost' is not defined
+Test #11 FAILED: get_specialty_cost() failed before test due to a NameError: name 'get_specialty_cost' is not defined
+Test #12 FAILED: get_specialty_cost() failed before test due to a NameError: name 'get_specialty_cost' is not defined
+Test #13 FAILED: get_specialty_cost() failed before test due to a NameError: name 'get_specialty_cost' is not defined
+Test #14 FAILED: get_size_cost() failed to return 3.00 when given 'S'!
+Test #15 FAILED: get_size_cost() failed to return 4.00 when given 'M'!
+Test #16 passed: get_size_cost() should return 5.00 when given 'L'
+Test #17 FAILED: get_sauce_cost() failed to return 2.15 when given 'W'!
+Test #18 FAILED: get_sauce_cost() failed to return 1.35 when given 'R'!
+

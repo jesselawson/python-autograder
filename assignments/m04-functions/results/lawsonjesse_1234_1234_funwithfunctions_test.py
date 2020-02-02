@@ -141,7 +141,7 @@ def is_spam(subject):
 
 
 """
-(29-Jan-2020 Professor Lawson) Below you will find all the test 
+(01-Feb-2020 Professor Lawson) Below you will find all the test 
 functions I have used to evaluate your submission. You are free to 
 download this file and tinker around with it. In fact, 
 I encourage it!
@@ -163,8 +163,6 @@ def jel_TypeError(target, e):
     test_qwertyuioplkjhgfdsa_number += 1
     m = f"Test #{test_qwertyuioplkjhgfdsa_number} "
     return m + f"FAILED: {target} failed before test due to a TypeError: {e}"
-
-
 
 def jel_assert(target, expr, should_msg):
     global test_qwertyuioplkjhgfdsa_number
@@ -283,7 +281,7 @@ TEST RUNNER RESULTS
 ======================================
 Assignment: m04-functions
 Student: lawsonjesse
-Compiled: 29-Jan-2020
+Compiled: 01-Feb-2020
 
 Test #1 FAILED: string_compare() failed before test due to a TypeError: string_compare() missing 1 required positional argument: 'arg2'
 Test #2 passed: string_append() should append second argument to first argument

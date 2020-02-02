@@ -172,6 +172,15 @@ def main():
         shell=True)
     # Next, flush any input from the script using a input() call. We don't want 
     # to hold up the testrunner because of some input() function.
+
+    # (1-Feb-2020 Jesse) I repeat this three times because three input() calls
+    # is the maximum I have in my assignments. There should be a way to 
+    # programmatically count the number of calls to input() there are, and then 
+    # call the write/flush pair for each instance.
+    res.stdin.write(b'\n')
+    res.stdin.flush()
+    res.stdin.write(b'\n')
+    res.stdin.flush()
     res.stdin.write(b'\n')
     res.stdin.flush()
 

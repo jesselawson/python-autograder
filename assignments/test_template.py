@@ -14,8 +14,6 @@ def jel_TypeError(target, e):
     m = f"Test #{test_qwertyuioplkjhgfdsa_number} "
     return m + f"FAILED: {target} failed before test due to a TypeError: {e}"
 
-
-
 def jel_assert(target, expr, should_msg):
     global test_qwertyuioplkjhgfdsa_number
     test_qwertyuioplkjhgfdsa_number += 1

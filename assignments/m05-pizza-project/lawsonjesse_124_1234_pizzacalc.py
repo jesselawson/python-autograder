@@ -184,7 +184,72 @@ https://stackoverflow.com/a/20457115
 """
 
 # Create your functions starting here
+
+# Think about how hard it would be to update this script. 
+# I wonder if there is an easier way to store all these 
+# prices... maybe in a way that they're all together, making
+# it easier to update in the future? 
 def get_size_cost(size):
+    if size == 'L':
+        return 5.00
+    elif size == 'M':
+        return 4.00
+    else:
+        return 3.00
+
+def get_sauce_cost(sauce):
+    if sauce == 'R':
+        return 1.35
+    else:
+        return 2.15
+
+def get_topping_cost(t):
+    if t == 'C':
+        return 0.45
+    elif t == 'I':
+        return 0.85
+    elif t == 'P':
+        return 0.55
+    elif t == 'O':
+        return 0.25
+    elif t == 'H':
+        return 1.15
+    elif t == 'K':
+        return 0.75
+    elif t == 'Y':
+        return 2.10
+    else t == 'N':
+        return 0.95
+
+# Refactor this to use arrays and array of arrays:
+# if s == whatever, 1) get specialty pizza, 2) loop through toppings, adding cost.
+def get_specialty_cost(s):
+    if s == 'A':
+        return (
+            get_topping_cost("C") + 
+            get_topping_cost("Y") + 
+            get_topping_cost("N")
+        )
+    elif s == 'B':
+        return (
+            get_topping_cost("H") + 
+            get_topping_cost("O") + 
+            get_topping_cost("C") +
+            get_topping_cost("K")
+        )
+    elif s == 'C':
+        return (
+            get_topping_cost("K") + 
+            get_topping_cost("Y")
+        )
+    elif s == 'D':
+        return (
+
+        )
+    elif s == 'E':
+        return (
+            
+        )
 
 def process_choice_specialty_pizza(choice):
     return 0.00 # Remove this and follow the directions from INSTRUCTIONS #5

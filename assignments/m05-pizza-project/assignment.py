@@ -103,19 +103,17 @@ INSTRUCTIONS
 
 4. Create a function named `get_specialty_cost`.
     It should take one argument: 
-        the name of the specialty pizza
-        OR
         the ID of the specialty pizza
     It should return the cost of all toppings for The Super California
-        when the argument is A'.
+        when the argument is 'A'.
     It should return the cost of all toppings for The Salty Manhattan
         when the argument is 'B'.
     It should return the cost of all toppings for The Unkissable
         when the argument is 'C'.
     It should return the cost of all toppings for Meaty McMeatface
-        when the argument is 'Meaty McMeatface'.
+        when the argument is 'D'.
     It should return the cost of Mushrooms and Spinach
-        when the argument is 'The Vegetarian'.
+        when the argument is 'E'.
     Note: You should be using the functions you created in 1, 2, and 3.
 
 5. Update function `process_choice_specialty_pizza`.

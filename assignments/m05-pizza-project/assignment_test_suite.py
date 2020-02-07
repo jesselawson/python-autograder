@@ -120,12 +120,12 @@ def test_get_specialty_cost_california():
     try:
         return jel_assert(
                 problem4_target, 
-                get_specialty_cost("The Super California") == (
+                get_specialty_cost("A") == (
                     get_topping_cost("C") + 
                     get_topping_cost("Y") + 
                     get_topping_cost("N")
                 ), 
-                "return 3.50 when given 'The Super California'"
+                "return 3.50 when given 'A' (The Super California)"
             )
     except NameError as e:
         return jel_NameError(problem4_target, e)
@@ -136,13 +136,13 @@ def test_get_specialty_cost_manhattan():
     try:
         return jel_assert(
                 problem4_target, 
-                get_specialty_cost("The Salty Manhattan") == (
+                get_specialty_cost("B") == (
                     get_topping_cost("H") + 
                     get_topping_cost("O") + 
                     get_topping_cost("C") +
                     get_topping_cost("K")
                 ), 
-                "return 2.60 when given 'The Salty Manhattan'"
+                "return 2.60 when given 'B' (The Salty Manhattan)"
             )
     except NameError as e:
         return jel_NameError(problem4_target, e)
@@ -153,11 +153,11 @@ def test_get_specialty_cost_unkissable():
     try:
         return jel_assert(
                 problem4_target, 
-                get_specialty_cost("The Unkissable") == (
+                get_specialty_cost("C") == (
                     get_topping_cost("K") + 
                     get_topping_cost("Y")
                 ), 
-                "return 2.85 when given 'The Unkissable'"
+                "return 2.85 when given 'C' (The Unkissable)"
             )
     except NameError as e:
         return jel_NameError(problem4_target, e)
@@ -168,13 +168,13 @@ def test_get_specialty_cost_mcmeatface():
     try:
         return jel_assert(
                 problem4_target, 
-                get_specialty_cost("Meaty McMeatface") == (
+                get_specialty_cost("D") == (
                     get_topping_cost("C") + 
                     get_topping_cost("I") +
                     get_topping_cost("P") +
                     get_topping_cost("O")
                 ), 
-                "return 2.10 when given 'Meaty McMeatface'"
+                "return 2.10 when given 'D' (Meaty McMeatface)"
             )
     except NameError as e:
         return jel_NameError(problem4_target, e)
@@ -185,13 +185,77 @@ def test_get_specialty_cost_vegetarian():
     try:
         return jel_assert(
                 problem4_target, 
-                get_specialty_cost("The Vegetarian") == (
+                get_specialty_cost("E") == (
                     get_topping_cost("O") + 
                     get_topping_cost("N")
                 ), 
-                "return 1.20 when given 'The Vegetarian'"
+                "return 1.20 when given 'E' (The Vegetarian)"
             )
     except NameError as e:
         return jel_NameError(problem4_target, e)
     except TypeError as e:
         return jel_TypeError(problem4_target, e)
+
+problem5_target = "process_choice_specialty_pizza()"
+
+# Problem 5
+def test_process_choice_specialty_pizza_A():
+    try:
+        return jel_assert(
+                problem5_target, 
+                process_choice_specialty_pizza('A') == get_specialty_cost('A'), 
+                "be equal to get_specialty_cost('A')"
+            )
+    except NameError as e:
+        return jel_NameError(problem4_target, e)
+    except TypeError as e:
+        return jel_TypeError(problem4_target, e)
+
+def test_process_choice_specialty_pizza_B():
+    try:
+        return jel_assert(
+                problem5_target, 
+                process_choice_specialty_pizza('B') == get_specialty_cost('B'), 
+                "be equal to get_specialty_cost('B')"
+            )
+    except NameError as e:
+        return jel_NameError(problem4_target, e)
+    except TypeError as e:
+        return jel_TypeError(problem4_target, e)
+
+def test_process_choice_specialty_pizza_C():
+    try:
+        return jel_assert(
+                problem5_target, 
+                process_choice_specialty_pizza('C') == get_specialty_cost('C'), 
+                "be equal to get_specialty_cost('C')"
+            )
+    except NameError as e:
+        return jel_NameError(problem4_target, e)
+    except TypeError as e:
+        return jel_TypeError(problem4_target, e)
+
+def test_process_choice_specialty_pizza_D():
+    try:
+        return jel_assert(
+                problem5_target, 
+                process_choice_specialty_pizza('D') == get_specialty_cost('D'), 
+                "be equal to get_specialty_cost('D')"
+            )
+    except NameError as e:
+        return jel_NameError(problem4_target, e)
+    except TypeError as e:
+        return jel_TypeError(problem4_target, e)
+
+def test_process_choice_specialty_pizza_E():
+    try:
+        return jel_assert(
+                problem5_target, 
+                process_choice_specialty_pizza('E') == get_specialty_cost('E'), 
+                "be equal to get_specialty_cost('E')"
+            )
+    except NameError as e:
+        return jel_NameError(problem4_target, e)
+    except TypeError as e:
+        return jel_TypeError(problem4_target, e)
+

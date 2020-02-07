@@ -60,13 +60,13 @@ sauce type, and kind of topping:
 |  Y  | Yogurt     | 2.10 |
 |  N  | Spinach    | 0.95 |
 
-| Specialty Pizza      | Toppings                              | Specialty
-+----------------------+---------------------------------------+ Pizzas
-| The Super California | Cheese, Yogurt, Spinach               |
-| The Salty Manhattan  | Ham, Mushrooms, Cheese, Pickles       |
-| The Unkissable       | Pickles, Yogurt                       |
-| Meaty McMeatface     | Cheese, Pepperoni, Peppers, Mushrooms |
-| The Vegetarian       | Mushrooms, Spinach                    |
+| ID  | Specialty Pizza      | Toppings                              | Specialty
++-----+----------------------+---------------------------------------+ Pizzas
+|  A  | The Super California | Cheese, Yogurt, Spinach               |
+|  B  | The Salty Manhattan  | Ham, Mushrooms, Cheese, Pickles       |
+|  C  | The Unkissable       | Pickles, Yogurt                       |
+|  D  | Meaty McMeatface     | Cheese, Pepperoni, Peppers, Mushrooms |
+|  E  | The Vegetarian       | Mushrooms, Spinach                    |
 
 
 ASSUMPTIONS
@@ -82,61 +82,93 @@ INSTRUCTIONS
 ================================================================================
 
 1. Create a function named `get_size_cost`.
-   It should take one argument: the size ID.
-   It should return the cost of a large pizza when the argument is 'L'.
-   It should return the cost of a medium pizza when the argument is 'M'.
-   It should return the cost of a small pizza when the argument is 'S'.
+    It should take one argument: the size ID.
+    It should return the cost of a large pizza when the argument is 'L'.
+    It should return the cost of a medium pizza when the argument is 'M'.
+    It should return the cost of a small pizza when the argument is 'S'.
 
 2. Create a function named `get_sauce_cost`.
-   It should take one argument: the sauce type ID.
-   It should return the cost of red sauce when the argument is 'R'.
-   It should return the cost of white sauce when the argument is 'W'.
+    It should take one argument: the sauce type ID.
+    It should return the cost of red sauce when the argument is 'R'.
+    It should return the cost of white sauce when the argument is 'W'.
 
 3. Create a function named `get_topping_cost`. 
-   It should take take one argument: the topping ID. 
-   It should return the cost of Cheese when the argument is 'C'.
-   It should return the cost of Pepperoni when the argument is 'I'.
-   It should return the cost of Peppers when the argument is 'P'.
-   It should return the cost of Mushrooms when the argument is 'O'.
-   It should return the cost of Ham when the argument is 'H'.
-   It should return the cost of Pickles when the argument is 'K'.
-   It should return the cost of Yogurt when the argument is 'Y'.
-   It should return the cost of Spinach when the argument is 'N'.
+    It should take take one argument: the topping ID. 
+    It should return the cost of Cheese when the argument is 'C'.
+    It should return the cost of Pepperoni when the argument is 'I'.
+    It should return the cost of Peppers when the argument is 'P'.
+    It should return the cost of Mushrooms when the argument is 'O'.
+    It should return the cost of Ham when the argument is 'H'.
+    It should return the cost of Pickles when the argument is 'K'.
+    It should return the cost of Yogurt when the argument is 'Y'.
+    It should return the cost of Spinach when the argument is 'N'.
 
 4. Create a function named `get_specialty_cost`.
-   It should take one argument: the name of the specialty pizza.
-   It should return the cost of Cheese, Yogurt, and Spinach
-      when the argument is 'The Super California'.
-   It should return the cost of Ham, Mushrooms, Cheese, and Pickles
-      when the argument is 'The Salty Manhattan'.
-   It should return the cost of Pickles and Yogurt
-      when the argument is 'The Unkissable'.
-   It should return the cost of Cheese, Pepperoni, Peppers, and Mushrooms
-      when the argument is 'Meaty McMeatface'.
-   It should return the cost of Mushrooms and Spinach
-      when the argument is 'The Vegetarian'.
-   Note: You should be using the functions you created in 1, 2, and 3.
+    It should take one argument: 
+        the name of the specialty pizza
+        OR
+        the ID of the specialty pizza
+    It should return the cost of all toppings for The Super California
+        when the argument is A'.
+    It should return the cost of all toppings for The Salty Manhattan
+        when the argument is 'B'.
+    It should return the cost of all toppings for The Unkissable
+        when the argument is 'C'.
+    It should return the cost of all toppings for Meaty McMeatface
+        when the argument is 'Meaty McMeatface'.
+    It should return the cost of Mushrooms and Spinach
+        when the argument is 'The Vegetarian'.
+    Note: You should be using the functions you created in 1, 2, and 3.
 
 5. Update function `process_choice_specialty_pizza`.
-     It should use `get_specialty_cost` to return the value of a
-        specialty pizza based on the user's choice.
-     (Hint: I have provided the first one for you; use if-elif-else to 
-      process choices. Use the else keyword to return the default value, 
-      which you can find in the input() function's argument)
+    It should take one argument: the specialty pizza ID as `choice`.
+    It should return the specialty cost of the pizza corresponding to `choice`
+        when `choice` is 'A', 'B', 'C', 'D', or 'E'
+        using the get_specialty_cost function.
+        Otherwise, 
+        It should return the specialty cost of the pizza corresponding to 'A'
+        using the get_specialty_cost function.
+    
+    (Hint: You should be using get_specialty_cost to get the cost of a 
+    specialty pizza; you should not be hard-coding numbers into this function.)
 
-6. Update the comment section at the bottom of this code file that starts with 
+6. Update function `main`. 
+    Find the comment section starting with the comment `PROCESS USER SELECTION`.
+    Underneath that, create an if-elif-else block according to the 
+    comments in that section.
+
+7. Update function `main`.
+    Find the comment section starting with the comment `ADD SIZE AND SAUCE TYPE COSTS`.
+    Underneath that:
+        increment total_costs by the sauce cost given `sauce`;
+        increment total_costs by the size cost given `size`.
+
+8. Update the function `main`.
+    Find the comment section starting with the comment `CALCULATE FINAL COST`.
+    Underneath that:
+        create a variable named `final_cost`. 
+        It should be equal to total_costs + 30%.
+    (Hint: Follow the instructions in the comment section in the main() function!)
+    
+9. Update the comment section at the bottom of this code file that starts with 
    "HOW TO USE THIS SCRIPT". 
-   Write detailed instructions for Michelle, the person who will be using this 
-   script, detailing how to run it and when to make what choices. 
    
-   Assume she only knows how to execute the file; she doesn't know Python.
+   Write detailed instructions for Michelle, the person who will be using this 
+   script, detailing how to run it and when to make what choices. Be as 
+   thorough or succinct as you feel necessary. Be sure to mention that she 
+   needs to remember to select two different toppings when building a custom 
+   two-topping pizza since there is nothing that checks whether topping1 
+   is the same as topping2--but communicate this to her in a non-programmer way. 
+   
+   Assume she only knows how to execute the file; she doesn't know the Python
+   programming language.
    
    Include enough detailed instructions for a non-programmer to be confident 
    in how to use this script.
 
-7. There should be no errors when you run this script. 
+10. There should be no errors when you run this script. 
 
-8. Upload this completed file to the assignment in Canvas.
+11. Upload this completed file to the assignment in Canvas.
 
 TIPS FOR SUCCESS
 ========================================================
@@ -154,17 +186,13 @@ https://stackoverflow.com/a/20457115
 """
 
 # Create your functions starting here
-def get_size_cost(size):
-    return 5.00 # Delete this before you begin writing this function
-
-def get_sauce_cost(sauce):
-    return 0.00 # Delete this before you begin writing this function
-
-def get_topping_cost(topping):
-    return 0.00 # Delete this before you begin writing this function
-
+# def ...
+#   etc. 
 # def ...
 #   etc.
+
+def process_choice_specialty_pizza(choice):
+    return 0.00 # Remove this and follow the directions from INSTRUCTIONS #5
 
 # print_toppings
 # DESCRIPTION
@@ -191,15 +219,15 @@ def print_toppings(except_this_one=''):
     if except_this_one == 'H':
         print("[H] Peppers")
 
-# process_choice_custom_2topping_pizza
+# get_choice_custom_2topping_pizza
 # DESCRIPTION
 #   Queries the user to get the first and second topping for a custom 
 #   two-topping pizza, then returns the sum cost of both toppings.
 # USAGE     
-#   total = process_choice_custom_2topping_pizza()
+#   total = get_choice_custom_2topping_pizza()
 #   ... 
 #   print(f"Total cost: ${total}")
-def process_choice_custom_2topping_pizza():
+def get_choice_custom_2topping_pizza():
     print("CUSTOM 2-TOPPING PIZZA")
     print("===================================================================")
     
@@ -224,15 +252,15 @@ def process_choice_custom_2topping_pizza():
 
     return round(total_cost, 2)
 
-# process_choice_specialty_pizza
+# get_choice_specialty_pizza
 # DESCRIPTION
 #   Queries the user to get the name of the specialty pizza they want, 
 #   then returns the cost of that pizza using `get_specialty_cost()`
 # USAGE     
-#   total = process_choice_specialty_pizza()
+#   total = get_choice_specialty_pizza()
 #   ... 
 #   print(f"Total cost: ${total}")
-def process_choice_specialty_pizza():
+def get_choice_specialty_pizza():
     print("SPECIALTY PIZZA")
     print("===================================================================")
     print("Select one of the specialty pizzas:")
@@ -242,11 +270,9 @@ def process_choice_specialty_pizza():
     print("-------------------------------------------------------------------")  
   
     choice = input("Selection (default A): ")
-  
-    if choice == 'A':
-        return get_specialty_cost("The Super California")
-    # elif ...
 
+    return process_choice_specialty_pizza(choice)
+    
 # All the main program logic will exist inside the main() function, which is 
 # called at the very end of this file with "sys.exit(main())".
 # Need a refresher? https://realpython.com/python-main-function/
@@ -270,22 +296,35 @@ def main():
     # Start with zero
     total_cost = 0
     
-    # Process user selection. 
-    if choice == 'A':
-        # If the user selected "[A] Specialty Pizza", increase total_cost
-        # by the return value of process_choice_specialty_pizza()
-        total_cost += process_choice_specialty_pizza()
-    elif choice == 'B':
-        # If the user selected "[B] Custom Two-Topping Pizza", increase 
-        # total_cost by the return value of process_choice_custom_2topping_pizza()
-        total_cost += process_choice_custom_2topping_pizza()
+    """ PROCESS USER SELECTION
+    |    
+    |   If the user selected "[A] Specialty Pizza" (e.g., if choice is 'A'), 
+    |   increase total_cost by the return value of get_choice_specialty_pizza()
+    |   
+    |    But if the user selected "[B] Custom Two-Topping Pizza", 
+    |   increase total_cost by the return value of get_choice_custom_2topping_pizza()
+    |   
+    |   Otherwise, assume the choice was 'A'.
+    |
+    |   (Hint: Write your if-elif-else block right below this comment block, 
+        BEFORE the part below where we add the size and sauce costs)
+    |
+    |"""
 
-    # Add the size and sauce costs
-    total_cost += get_size_cost(size)
-    total_cost += get_sauce_cost(sauce)
+    # if ...
+    # elif ...
+    # else ...
 
-    # Finally, add 30% markup
-    final_cost = total_cost * 0.30
+    # ADD SIZE AND SAUCE TYPE COSTS
+    # total_cost += ??
+    # total_cost += ??
+
+    # CALCULATE FINAL COST
+    # Finally, create a variable `final_cost` 
+    # and set it to be total_cost with 30% markup.
+    # (Hint: To add a 10% markup to a hypothetical variable `wine_cost`, 
+    #  you would do this: final_cost = wine_cost + (wine_cost * 0.30))
+    final_cost = 0.00 # CHANGE THIS
 
     # Output the totals. I'm using round() to ensure that no number is displayed
     # with more than two decimal places. Do you think it's necessary for me 
@@ -313,7 +352,7 @@ HOW TO USE THIS SCRIPT
 
 
 """
-(01-Feb-2020 Professor Lawson) Below you will find all the test 
+(06-Feb-2020 Professor Lawson) Below you will find all the test 
 functions I have used to evaluate your submission. You are free to 
 download this file and tinker around with it. In fact, 
 I encourage it!
@@ -475,12 +514,12 @@ def test_get_specialty_cost_california():
     try:
         return jel_assert(
                 problem4_target, 
-                get_specialty_cost("The Super California") == (
+                get_specialty_cost("A") == (
                     get_topping_cost("C") + 
                     get_topping_cost("Y") + 
                     get_topping_cost("N")
                 ), 
-                "return 3.50 when given 'The Super California'"
+                "return 3.50 when given 'A' (The Super California)"
             )
     except NameError as e:
         return jel_NameError(problem4_target, e)
@@ -491,13 +530,13 @@ def test_get_specialty_cost_manhattan():
     try:
         return jel_assert(
                 problem4_target, 
-                get_specialty_cost("The Salty Manhattan") == (
+                get_specialty_cost("B") == (
                     get_topping_cost("H") + 
                     get_topping_cost("O") + 
                     get_topping_cost("C") +
                     get_topping_cost("K")
                 ), 
-                "return 2.60 when given 'The Salty Manhattan'"
+                "return 2.60 when given 'B' (The Salty Manhattan)"
             )
     except NameError as e:
         return jel_NameError(problem4_target, e)
@@ -508,11 +547,11 @@ def test_get_specialty_cost_unkissable():
     try:
         return jel_assert(
                 problem4_target, 
-                get_specialty_cost("The Unkissable") == (
+                get_specialty_cost("C") == (
                     get_topping_cost("K") + 
                     get_topping_cost("Y")
                 ), 
-                "return 2.85 when given 'The Unkissable'"
+                "return 2.85 when given 'C' (The Unkissable)"
             )
     except NameError as e:
         return jel_NameError(problem4_target, e)
@@ -523,13 +562,13 @@ def test_get_specialty_cost_mcmeatface():
     try:
         return jel_assert(
                 problem4_target, 
-                get_specialty_cost("Meaty McMeatface") == (
+                get_specialty_cost("D") == (
                     get_topping_cost("C") + 
                     get_topping_cost("I") +
                     get_topping_cost("P") +
                     get_topping_cost("O")
                 ), 
-                "return 2.10 when given 'Meaty McMeatface'"
+                "return 2.10 when given 'D' (Meaty McMeatface)"
             )
     except NameError as e:
         return jel_NameError(problem4_target, e)
@@ -540,16 +579,81 @@ def test_get_specialty_cost_vegetarian():
     try:
         return jel_assert(
                 problem4_target, 
-                get_specialty_cost("The Vegetarian") == (
+                get_specialty_cost("E") == (
                     get_topping_cost("O") + 
                     get_topping_cost("N")
                 ), 
-                "return 1.20 when given 'The Vegetarian'"
+                "return 1.20 when given 'E' (The Vegetarian)"
             )
     except NameError as e:
         return jel_NameError(problem4_target, e)
     except TypeError as e:
         return jel_TypeError(problem4_target, e)
+
+problem5_target = "process_choice_specialty_pizza()"
+
+# Problem 5
+def test_process_choice_specialty_pizza_A():
+    try:
+        return jel_assert(
+                problem5_target, 
+                process_choice_specialty_pizza('A') == get_specialty_cost('A'), 
+                "be equal to get_specialty_cost('A')"
+            )
+    except NameError as e:
+        return jel_NameError(problem4_target, e)
+    except TypeError as e:
+        return jel_TypeError(problem4_target, e)
+
+def test_process_choice_specialty_pizza_B():
+    try:
+        return jel_assert(
+                problem5_target, 
+                process_choice_specialty_pizza('B') == get_specialty_cost('B'), 
+                "be equal to get_specialty_cost('B')"
+            )
+    except NameError as e:
+        return jel_NameError(problem4_target, e)
+    except TypeError as e:
+        return jel_TypeError(problem4_target, e)
+
+def test_process_choice_specialty_pizza_C():
+    try:
+        return jel_assert(
+                problem5_target, 
+                process_choice_specialty_pizza('C') == get_specialty_cost('C'), 
+                "be equal to get_specialty_cost('C')"
+            )
+    except NameError as e:
+        return jel_NameError(problem4_target, e)
+    except TypeError as e:
+        return jel_TypeError(problem4_target, e)
+
+def test_process_choice_specialty_pizza_D():
+    try:
+        return jel_assert(
+                problem5_target, 
+                process_choice_specialty_pizza('D') == get_specialty_cost('D'), 
+                "be equal to get_specialty_cost('D')"
+            )
+    except NameError as e:
+        return jel_NameError(problem4_target, e)
+    except TypeError as e:
+        return jel_TypeError(problem4_target, e)
+
+def test_process_choice_specialty_pizza_E():
+    try:
+        return jel_assert(
+                problem5_target, 
+                process_choice_specialty_pizza('E') == get_specialty_cost('E'), 
+                "be equal to get_specialty_cost('E')"
+            )
+    except NameError as e:
+        return jel_NameError(problem4_target, e)
+    except TypeError as e:
+        return jel_TypeError(problem4_target, e)
+
+
 
 # END TEST SUITE INJECTION =====================================================
 
@@ -578,7 +682,7 @@ TEST RUNNER RESULTS
 ======================================
 Assignment: m05-pizza-project
 Student: lawsonjesse
-Compiled: 01-Feb-2020
+Compiled: 06-Feb-2020
 
 Pizza Parlor Tool
 ===================================================================
@@ -586,27 +690,32 @@ Enter Size (S, M, or L; Default: M)> Enter Sauce (R or W; Default: R)> Enter the
 [A] Specialty Pizza
 [B] Custom Two-Topping Pizza
 -------------------------------------------------------------------
-Selection (default A): Cost to make: $5.0
-Sale price: $1.5
-Total profit: $-3.5
-Test #1 FAILED: get_topping_cost() failed to return 2.1 when given 'Y'!
-Test #2 FAILED: get_topping_cost() failed to return 0.55 when given 'P'!
-Test #3 FAILED: get_topping_cost() failed to return 0.25 when given 'O'!
-Test #4 FAILED: get_topping_cost() failed to return 0.95 when given 'N'!
-Test #5 FAILED: get_topping_cost() failed to return 0.75 when given 'K'!
-Test #6 FAILED: get_topping_cost() failed to return 0.85 when given 'I'!
-Test #7 FAILED: get_topping_cost() failed to return 1.15 when given 'H'!
-Test #8 FAILED: get_topping_cost() failed to return 0.45 when given 'C'!
-Test #9 FAILED: get_specialty_cost() failed before test due to a NameError: name 'get_specialty_cost' is not defined
-Test #10 FAILED: get_specialty_cost() failed before test due to a NameError: name 'get_specialty_cost' is not defined
-Test #11 FAILED: get_specialty_cost() failed before test due to a NameError: name 'get_specialty_cost' is not defined
-Test #12 FAILED: get_specialty_cost() failed before test due to a NameError: name 'get_specialty_cost' is not defined
-Test #13 FAILED: get_specialty_cost() failed before test due to a NameError: name 'get_specialty_cost' is not defined
-Test #14 FAILED: get_size_cost() failed to return 3.00 when given 'S'!
-Test #15 FAILED: get_size_cost() failed to return 4.00 when given 'M'!
-Test #16 passed: get_size_cost() should return 5.00 when given 'L'
-Test #17 FAILED: get_sauce_cost() failed to return 2.15 when given 'W'!
-Test #18 FAILED: get_sauce_cost() failed to return 1.35 when given 'R'!
+Selection (default A): Cost to make: $0
+Sale price: $0.0
+Total profit: $0.0
+Test #1 FAILED: get_specialty_cost() failed before test due to a NameError: name 'get_specialty_cost' is not defined
+Test #2 FAILED: get_specialty_cost() failed before test due to a NameError: name 'get_specialty_cost' is not defined
+Test #3 FAILED: get_specialty_cost() failed before test due to a NameError: name 'get_specialty_cost' is not defined
+Test #4 FAILED: get_specialty_cost() failed before test due to a NameError: name 'get_specialty_cost' is not defined
+Test #5 FAILED: get_specialty_cost() failed before test due to a NameError: name 'get_specialty_cost' is not defined
+Test #6 FAILED: get_topping_cost() failed before test due to a NameError: name 'get_topping_cost' is not defined
+Test #7 FAILED: get_topping_cost() failed before test due to a NameError: name 'get_topping_cost' is not defined
+Test #8 FAILED: get_topping_cost() failed before test due to a NameError: name 'get_topping_cost' is not defined
+Test #9 FAILED: get_topping_cost() failed before test due to a NameError: name 'get_topping_cost' is not defined
+Test #10 FAILED: get_topping_cost() failed before test due to a NameError: name 'get_topping_cost' is not defined
+Test #11 FAILED: get_topping_cost() failed before test due to a NameError: name 'get_topping_cost' is not defined
+Test #12 FAILED: get_topping_cost() failed before test due to a NameError: name 'get_topping_cost' is not defined
+Test #13 FAILED: get_topping_cost() failed before test due to a NameError: name 'get_topping_cost' is not defined
+Test #14 FAILED: get_specialty_cost() failed before test due to a NameError: name 'get_specialty_cost' is not defined
+Test #15 FAILED: get_specialty_cost() failed before test due to a NameError: name 'get_specialty_cost' is not defined
+Test #16 FAILED: get_specialty_cost() failed before test due to a NameError: name 'get_specialty_cost' is not defined
+Test #17 FAILED: get_specialty_cost() failed before test due to a NameError: name 'get_specialty_cost' is not defined
+Test #18 FAILED: get_specialty_cost() failed before test due to a NameError: name 'get_specialty_cost' is not defined
+Test #19 FAILED: get_size_cost() failed before test due to a NameError: name 'get_size_cost' is not defined
+Test #20 FAILED: get_size_cost() failed before test due to a NameError: name 'get_size_cost' is not defined
+Test #21 FAILED: get_size_cost() failed before test due to a NameError: name 'get_size_cost' is not defined
+Test #22 FAILED: get_sauce_cost() failed before test due to a NameError: name 'get_sauce_cost' is not defined
+Test #23 FAILED: get_sauce_cost() failed before test due to a NameError: name 'get_sauce_cost' is not defined
 
 
 """

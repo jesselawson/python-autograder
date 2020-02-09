@@ -186,13 +186,83 @@ https://stackoverflow.com/a/20457115
 """
 
 # Create your functions starting here
-# def ...
-#   etc. 
-# def ...
-#   etc.
+
+# Think about how hard it would be to update this script. 
+# I wonder if there is an easier way to store all these 
+# prices... maybe in a way that they're all together, making
+# it easier to update in the future? 
+def get_size_cost(size):
+    if size == 'L':
+        return 5.00
+    elif size == 'M':
+        return 4.00
+    else:
+        return 3.00
+
+def get_sauce_cost(sauce):
+    if sauce == 'R':
+        return 1.35
+    else:
+        return 2.15
+
+def get_topping_cost(t):
+    if t == 'C':
+        return 0.45
+    elif t == 'I':
+        return 0.85
+    elif t == 'P':
+        return 0.55
+    elif t == 'O':
+        return 0.25
+    elif t == 'H':
+        return 1.15
+    elif t == 'K':
+        return 0.75
+    elif t == 'Y':
+        return 2.10
+    elif t == 'N':
+        return 0.95
+
+# Refactor this to use arrays and array of arrays:
+# if s == whatever, 1) get specialty pizza, 2) loop through toppings, adding cost.
+def get_specialty_cost(s):
+    if s == 'A':
+        return (
+            get_topping_cost("C") + 
+            get_topping_cost("Y") + 
+            get_topping_cost("N")
+        )
+    elif s == 'B':
+        return (
+            get_topping_cost("H") + 
+            get_topping_cost("O") + 
+            get_topping_cost("C") +
+            get_topping_cost("K")
+        )
+    elif s == 'C':
+        return (
+            get_topping_cost("K") + 
+            get_topping_cost("Y")
+        )
+    elif s == 'D':
+        return (
+            get_topping_cost("C") + 
+            get_topping_cost("I") +
+            get_topping_cost("P") +
+            get_topping_cost("O")
+        )
+    elif s == 'E':
+        return (
+            get_topping_cost("O") + 
+            get_topping_cost("N")
+        )
 
 def process_choice_specialty_pizza(choice):
-    return 0.00 # Remove this and follow the directions from INSTRUCTIONS #5
+    if choice in ['A', 'B', 'C', 'D', 'E']:
+        return get_specialty_cost(choice)
+    else:
+        return get_specialty_cost('A')
+
 
 # print_toppings
 # DESCRIPTION
@@ -352,7 +422,7 @@ HOW TO USE THIS SCRIPT
 
 
 """
-(06-Feb-2020 Professor Lawson) Below you will find all the test 
+(07-Feb-2020 Professor Lawson) Below you will find all the test 
 functions I have used to evaluate your submission. You are free to 
 download this file and tinker around with it. In fact, 
 I encourage it!
@@ -682,7 +752,7 @@ TEST RUNNER RESULTS
 ======================================
 Assignment: m05-pizza-project
 Student: lawsonjesse
-Compiled: 06-Feb-2020
+Compiled: 07-Feb-2020
 
 Pizza Parlor Tool
 ===================================================================
@@ -693,29 +763,29 @@ Enter Size (S, M, or L; Default: M)> Enter Sauce (R or W; Default: R)> Enter the
 Selection (default A): Cost to make: $0
 Sale price: $0.0
 Total profit: $0.0
-Test #1 FAILED: get_specialty_cost() failed before test due to a NameError: name 'get_specialty_cost' is not defined
-Test #2 FAILED: get_specialty_cost() failed before test due to a NameError: name 'get_specialty_cost' is not defined
-Test #3 FAILED: get_specialty_cost() failed before test due to a NameError: name 'get_specialty_cost' is not defined
-Test #4 FAILED: get_specialty_cost() failed before test due to a NameError: name 'get_specialty_cost' is not defined
-Test #5 FAILED: get_specialty_cost() failed before test due to a NameError: name 'get_specialty_cost' is not defined
-Test #6 FAILED: get_topping_cost() failed before test due to a NameError: name 'get_topping_cost' is not defined
-Test #7 FAILED: get_topping_cost() failed before test due to a NameError: name 'get_topping_cost' is not defined
-Test #8 FAILED: get_topping_cost() failed before test due to a NameError: name 'get_topping_cost' is not defined
-Test #9 FAILED: get_topping_cost() failed before test due to a NameError: name 'get_topping_cost' is not defined
-Test #10 FAILED: get_topping_cost() failed before test due to a NameError: name 'get_topping_cost' is not defined
-Test #11 FAILED: get_topping_cost() failed before test due to a NameError: name 'get_topping_cost' is not defined
-Test #12 FAILED: get_topping_cost() failed before test due to a NameError: name 'get_topping_cost' is not defined
-Test #13 FAILED: get_topping_cost() failed before test due to a NameError: name 'get_topping_cost' is not defined
-Test #14 FAILED: get_specialty_cost() failed before test due to a NameError: name 'get_specialty_cost' is not defined
-Test #15 FAILED: get_specialty_cost() failed before test due to a NameError: name 'get_specialty_cost' is not defined
-Test #16 FAILED: get_specialty_cost() failed before test due to a NameError: name 'get_specialty_cost' is not defined
-Test #17 FAILED: get_specialty_cost() failed before test due to a NameError: name 'get_specialty_cost' is not defined
-Test #18 FAILED: get_specialty_cost() failed before test due to a NameError: name 'get_specialty_cost' is not defined
-Test #19 FAILED: get_size_cost() failed before test due to a NameError: name 'get_size_cost' is not defined
-Test #20 FAILED: get_size_cost() failed before test due to a NameError: name 'get_size_cost' is not defined
-Test #21 FAILED: get_size_cost() failed before test due to a NameError: name 'get_size_cost' is not defined
-Test #22 FAILED: get_sauce_cost() failed before test due to a NameError: name 'get_sauce_cost' is not defined
-Test #23 FAILED: get_sauce_cost() failed before test due to a NameError: name 'get_sauce_cost' is not defined
+Test #1 passed: process_choice_specialty_pizza() should be equal to get_specialty_cost('E')
+Test #2 passed: process_choice_specialty_pizza() should be equal to get_specialty_cost('D')
+Test #3 passed: process_choice_specialty_pizza() should be equal to get_specialty_cost('C')
+Test #4 passed: process_choice_specialty_pizza() should be equal to get_specialty_cost('B')
+Test #5 passed: process_choice_specialty_pizza() should be equal to get_specialty_cost('A')
+Test #6 passed: get_topping_cost() should return 2.1 when given 'Y'
+Test #7 passed: get_topping_cost() should return 0.55 when given 'P'
+Test #8 passed: get_topping_cost() should return 0.25 when given 'O'
+Test #9 passed: get_topping_cost() should return 0.95 when given 'N'
+Test #10 passed: get_topping_cost() should return 0.75 when given 'K'
+Test #11 passed: get_topping_cost() should return 0.85 when given 'I'
+Test #12 passed: get_topping_cost() should return 1.15 when given 'H'
+Test #13 passed: get_topping_cost() should return 0.45 when given 'C'
+Test #14 passed: get_specialty_cost() should return 1.20 when given 'E' (The Vegetarian)
+Test #15 passed: get_specialty_cost() should return 2.85 when given 'C' (The Unkissable)
+Test #16 passed: get_specialty_cost() should return 2.10 when given 'D' (Meaty McMeatface)
+Test #17 passed: get_specialty_cost() should return 2.60 when given 'B' (The Salty Manhattan)
+Test #18 passed: get_specialty_cost() should return 3.50 when given 'A' (The Super California)
+Test #19 passed: get_size_cost() should return 3.00 when given 'S'
+Test #20 passed: get_size_cost() should return 4.00 when given 'M'
+Test #21 passed: get_size_cost() should return 5.00 when given 'L'
+Test #22 passed: get_sauce_cost() should return 2.15 when given 'W'
+Test #23 passed: get_sauce_cost() should return 1.35 when given 'R'
 
 
 """

@@ -114,7 +114,7 @@ INSTRUCTIONS
         when the argument is 'D'.
     It should return the cost of Mushrooms and Spinach
         when the argument is 'E'.
-    Note: You should be using the functions you created in 1, 2, and 3.
+    (Hint: You should be using the functions you created in 1, 2, and 3.)
 
 5. Update function `process_choice_specialty_pizza`.
     It should take one argument: the specialty pizza ID as `choice`.

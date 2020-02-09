@@ -218,7 +218,7 @@ def get_topping_cost(t):
         return 0.75
     elif t == 'Y':
         return 2.10
-    else t == 'N':
+    elif t == 'N':
         return 0.95
 
 # Refactor this to use arrays and array of arrays:
@@ -244,15 +244,23 @@ def get_specialty_cost(s):
         )
     elif s == 'D':
         return (
-
+            get_topping_cost("C") + 
+            get_topping_cost("I") +
+            get_topping_cost("P") +
+            get_topping_cost("O")
         )
     elif s == 'E':
         return (
-            
+            get_topping_cost("O") + 
+            get_topping_cost("N")
         )
 
 def process_choice_specialty_pizza(choice):
-    return 0.00 # Remove this and follow the directions from INSTRUCTIONS #5
+    if choice in ['A', 'B', 'C', 'D', 'E']:
+        return get_specialty_cost(choice)
+    else:
+        return get_specialty_cost('A')
+
 
 # print_toppings
 # DESCRIPTION

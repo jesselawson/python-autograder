@@ -1,29 +1,21 @@
 """
 
-M05 "Pizza Parlor Project"
+M06 Assignment "Better Pizza Tool
 
 INTRODUCTION
 ================================================================================
 
-Welcome to the first project of this course! 
+After learning about lists and iterators, we can now go back to the Pizza 
+Parlor Project code we wrote last week and begin *refactoring* it. Refactoring 
+is the process of changing code, often times in ways that make it run faster, 
+more efficiently, and with greater clarity. 
 
-The only difference between a project and a regular assignment is that the 
-project wont have any starter code. In other words, you will be writing these 
-from scratch! Since you will be starting from scratch, this is the only
-assignment you will be doing for this module. You don't have to focus on 
-anything else!
+The first step to refactoring is identifying areas where code could be
+refactored. The first and foremost area is in all these hard-coded relationships 
+between some variable (size, sauce, topping, etc) and its associated cost. 
 
-So read the directions CAREFULLY, and follow ALL INSTRUCTIONS precisely. 
-
-If you have any questions, please first reach out to the class via the 
-Course Related Discussions forum in Canvas. I monitor those just as closely as 
-I do my email and Canvas inbox. 
-
-Drink water. Be comfortable with being frustrated. Trust that you can do this.
-
-I believe in you.
-
-- Professor Lawson
+After learning about lists this module, refactor your pizza parlor project 
+code 
 
 OVERVIEW
 ================================================================================
@@ -79,64 +71,7 @@ ASSUMPTIONS
 INSTRUCTIONS
 ================================================================================
 
-1. Create a function named `get_size_cost`.
-   It should take one argument: the size ID.
-   It should return the cost of a large pizza when the argument is 'L'.
-   It should return the cost of a medium pizza when the argument is 'M'.
-   It should return the cost of a small pizza when the argument is 'S'.
-
-2. Create a function named `get_sauce_cost`.
-   It should take one argument: the sauce type ID.
-   It should return the cost of red sauce when the argument is 'R'.
-   It should return the cost of white sauce when the argument is 'W'.
-
-3. Create a function named `get_topping_cost`. 
-   It should take take one argument: the topping ID. 
-   It should return the cost of Cheese when the argument is 'C'.
-   It should return the cost of Pepperoni when the argument is 'I'.
-   It should return the cost of Peppers when the argument is 'P'.
-   It should return the cost of Mushrooms when the argument is 'O'.
-   It should return the cost of Ham when the argument is 'H'.
-   It should return the cost of Pickles when the argument is 'K'.
-   It should return the cost of Yogurt when the argument is 'Y'.
-   It should return the cost of Spinach when the argument is 'N'.
-
-4. Create a function named `get_specialty_cost`.
-   It should take one argument: 
-      the name of the specialty pizza
-      OR
-      the ID of the specialty pizza
-   It should return the cost of Cheese, Yogurt, and Spinach
-      when the argument is 'The Super California' or 'A'.
-   It should return the cost of Ham, Mushrooms, Cheese, and Pickles
-      when the argument is 'The Salty Manhattan' or 'B'.
-   It should return the cost of Pickles and Yogurt
-      when the argument is 'The Unkissable'.
-   It should return the cost of Cheese, Pepperoni, Peppers, and Mushrooms
-      when the argument is 'Meaty McMeatface'.
-   It should return the cost of Mushrooms and Spinach
-      when the argument is 'The Vegetarian'.
-   Note: You should be using the functions you created in 1, 2, and 3.
-
-5. Update function `process_choice_specialty_pizza`.
-     It should use `get_specialty_cost` to return the value of a
-        specialty pizza based on the user's choice.
-     (Hint: I have provided the first one for you; use if-elif-else to 
-      process choices. Use the else keyword to return the default value, 
-      which you can find in the input() function's argument)
-
-6. Update the comment section at the bottom of this code file that starts with 
-   "HOW TO USE THIS SCRIPT". 
-   
-   Write detailed instructions for Michelle, the person who will be using this 
-   script, detailing how to run it and when to make what choices. Be as 
-   thorough or succinct as you feel necessary. 
-   
-   Assume she only knows how to execute the file; she doesn't know the Python
-   programming language.
-   
-   Include enough detailed instructions for a non-programmer to be confident 
-   in how to use this script.
+TODO
 
 7. There should be no errors when you run this script. 
 

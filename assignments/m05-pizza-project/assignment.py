@@ -7,21 +7,27 @@ INTRODUCTION
 
 Welcome to the first project of this course! 
 
-The only difference between a project and a regular assignment is that the 
-project wont have any starter code. In other words, you will be writing these 
-from scratch! Since you will be starting from scratch, this is the only
-assignment you will be doing for this module. You don't have to focus on 
-anything else!
+The only difference between a project and a regular assignment, in addition to 
+being the only assignment you'll work on this week, is that projects have a 
+lot more to do.
 
 So read the directions CAREFULLY, and follow ALL INSTRUCTIONS precisely. 
 
+Your grade will be dependent on how well you follow the instructions, how well 
+you follow the specifications when writing code, and whether your code executes 
+without errors. 
+
 If you have any questions, please first reach out to the class via the 
 Course Related Discussions forum in Canvas. I monitor those just as closely as 
-I do my email and Canvas inbox. 
+I do my email and Canvas inbox. We want our frustrations to be aired in the 
+open, in the safe space that is our Course Related Discussions forum, so that 
+all of us can learn and grow together. There is no such thing as a dumb question 
+when you're in a programming class!
 
-Drink water. Be comfortable with being frustrated. Trust that you can do this.
+So Drink water. Be comfortable with being frustrated. Trust that you can do 
+this. I believe in you.
 
-I believe in you.
+Save this file as "pizzacalc.py" when you're ready to upload it.
 
 - Professor Lawson
 
@@ -33,8 +39,10 @@ different "specialty" pizzas--ones with lots of fancy toppings--and, more
 importantly, how much she should charge for these pizzas if she wants to 
 maintain a 30% profit margin. 
 
-She has given us the following information about the material costs by size, 
-sauce type, and kind of topping:
+She has given us three tables of information about the material costs by size, 
+sauce type and kind of topping, and a fourth table with the recipes for each 
+specialty pizza. I've added an ID column so that each element in each table has 
+a unique ID. 
 
 | ID  | Size   | Cost |           Pizza Sizes
 +-----|--------+------+
@@ -164,7 +172,9 @@ INSTRUCTIONS
 
 10. There should be no errors when you run this script. 
 
-11. Upload this completed file to the assignment in Canvas.
+11. Save your file as "pizzacalc.py". 
+
+12. Upload this completed file to the assignment in Canvas.
 
 TIPS FOR SUCCESS
 ========================================================
@@ -292,20 +302,20 @@ def main():
     # Start with zero
     total_cost = 0
     
-""" PROCESS USER SELECTION
-|    
-|   If the user selected "[A] Specialty Pizza" (e.g., if choice is 'A'), 
-|   increase total_cost by the return value of get_choice_specialty_pizza()
-|   
-|    But if the user selected "[B] Custom Two-Topping Pizza", 
-|   increase total_cost by the return value of get_choice_custom_2topping_pizza()
-|   
-|   Otherwise, assume the choice was 'A'.
-|
-|   (Hint: Write your if-elif-else block right below this comment block, 
-     BEFORE the part below where we add the size and sauce costs)
-|
-|"""
+    """ PROCESS USER SELECTION
+    |    
+    |   If the user selected "[A] Specialty Pizza" (e.g., if choice is 'A'), 
+    |   increase total_cost by the return value of get_choice_specialty_pizza()
+    |   
+    |    But if the user selected "[B] Custom Two-Topping Pizza", 
+    |   increase total_cost by the return value of get_choice_custom_2topping_pizza()
+    |   
+    |   Otherwise, assume the choice was 'A'.
+    |
+    |   (Hint: Write your if-elif-else block right below this comment block, 
+        BEFORE the part below where we add the size and sauce costs)
+    |
+    |"""
 
     # if ...
     # elif ...
@@ -319,7 +329,8 @@ def main():
     # Finally, create a variable `final_cost` 
     # and set it to be total_cost with 30% markup.
     # (Hint: To add a 10% markup to a hypothetical variable `wine_cost`, 
-    #  you would do this: final_cost = wine_cost + (wine_cost * 0.30))
+    #  you would do this: final_cost = wine_cost + (wine_cost * 0.10)
+    #  So now use your own variables and use a 30% markup.)
     # final_cost = ??
 
     # Output the totals. I'm using round() to ensure that no number is displayed

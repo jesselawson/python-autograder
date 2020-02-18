@@ -1,3 +1,8 @@
+#Ignore any student submissions
+assignments/m03-chatbot/already_posted/*
+assignments/m03-chatbot/submissions/*
+assignments/m03-chatbot/results/*
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

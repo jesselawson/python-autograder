@@ -132,8 +132,11 @@ for filename in os.listdir('.'):
     student_name = filename[:student_name_index]
     test_results_filename = "./results/"+filename[:-3] + "_results.txt"
     
-    print(f"     * Creating test file for {student_name}'s submission... ", end='')
+    print(f"* Creating test file for {student_name}'s submission... ", end='')
   
+    # Reset global test number counter
+    test_qwertyuioplkjhgfdsa_number = 0
+
     test_results = []
 
     test_results.append(
@@ -195,5 +198,6 @@ for filename in os.listdir('.'):
 
     # Output results to test results file
     with open(test_results_filename, "w") as f:
+        f.write("Here are the results of some automated unit tests:\n\n")
         for r in test_results:
-            f.write(r+'\n')
+            f.write('* '+r+'\n\n')

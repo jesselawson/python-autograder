@@ -369,10 +369,10 @@ def main():
     |   If the user selected "[A] Specialty Pizza" (e.g., if choice is 'A'), 
     |   increase total_cost by the return value of get_choice_specialty_pizza()
     |   
-    |    But if the user selected "[B] Custom Two-Topping Pizza", 
+    |   Else if the user selected "[B] Custom Two-Topping Pizza", 
     |   increase total_cost by the return value of get_choice_custom_2topping_pizza()
     |   
-    |   Otherwise, assume the choice was 'A'.
+    |   Else, assume the choice was 'A'.
     |
     |   (Hint: Write your if-elif-else block right below this comment block, 
         BEFORE the part below where we add the size and sauce costs)

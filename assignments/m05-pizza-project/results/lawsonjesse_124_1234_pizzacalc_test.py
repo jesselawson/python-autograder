@@ -371,10 +371,10 @@ def main():
     |   If the user selected "[A] Specialty Pizza" (e.g., if choice is 'A'), 
     |   increase total_cost by the return value of get_choice_specialty_pizza()
     |   
-    |    But if the user selected "[B] Custom Two-Topping Pizza", 
+    |   Else if the user selected "[B] Custom Two-Topping Pizza", 
     |   increase total_cost by the return value of get_choice_custom_2topping_pizza()
     |   
-    |   Otherwise, assume the choice was 'A'.
+    |   Else, assume the choice was 'A'.
     |
     |   (Hint: Write your if-elif-else block right below this comment block, 
         BEFORE the part below where we add the size and sauce costs)
@@ -422,7 +422,7 @@ HOW TO USE THIS SCRIPT
 
 
 """
-(07-Feb-2020 Professor Lawson) Below you will find all the test 
+(19-Feb-2020 Professor Lawson) Below you will find all the test 
 functions I have used to evaluate your submission. You are free to 
 download this file and tinker around with it. In fact, 
 I encourage it!
@@ -752,7 +752,7 @@ TEST RUNNER RESULTS
 ======================================
 Assignment: m05-pizza-project
 Student: lawsonjesse
-Compiled: 07-Feb-2020
+Compiled: 19-Feb-2020
 
 Pizza Parlor Tool
 ===================================================================

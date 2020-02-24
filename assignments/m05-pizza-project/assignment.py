@@ -18,7 +18,7 @@ you follow the specifications when writing code, and whether your code executes
 without errors. 
 
 If you have any questions, please first reach out to the class via the 
-Course Related Discussions forum in Canvas. I monitor those just as closely as 
+Course Related Questions forum in Canvas. I monitor those just as closely as 
 I do my email and Canvas inbox. We want our frustrations to be aired in the 
 open, in the safe space that is our Course Related Discussions forum, so that 
 all of us can learn and grow together. There is no such thing as a dumb question 
@@ -208,21 +208,21 @@ def process_choice_specialty_pizza(choice):
 #   2. print_topping('A")               Prints all the toppings except for 
 #                                       the one where ID == A
 def print_toppings(except_this_one=''):
-    if except_this_one =='A':
+    if except_this_one != 'A':
         print("[A] Cheese")
-    if except_this_one == 'B':
+    if except_this_one != 'B':
         print("[B] Pickles")
-    if except_this_one == 'C':
+    if except_this_one != 'C':
         print("[C] Pepperoni")
-    if except_this_one == 'D':
+    if except_this_one != 'D':
         print("[D] Mushrooms")
-    if except_this_one == 'E':
+    if except_this_one != 'E':
         print("[E] Ham")
-    if except_this_one == 'F':
+    if except_this_one != 'F':
         print("[F] Yogurt")
-    if except_this_one == 'G':
+    if except_this_one != 'G':
         print("[G] Spinach")
-    if except_this_one == 'H':
+    if except_this_one != 'H':
         print("[H] Peppers")
 
 # get_choice_custom_2topping_pizza
@@ -246,7 +246,7 @@ def get_choice_custom_2topping_pizza():
         topping1 = "A"
 
     print("Select the second topping:")
-    print_toppings()
+    print_toppings(topping1) 
     print("-------------------------------------------------------------------")  
     topping2 = input("Topping 2 (default B): ")
 

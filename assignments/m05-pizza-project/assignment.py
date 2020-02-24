@@ -25,11 +25,17 @@ all of us can learn and grow together. There is no such thing as a dumb question
 when you're in a programming class!
 
 So Drink water. Be comfortable with being frustrated. Trust that you can do 
-this. I believe in you.
+this. 
+
+I believe in you.
 
 Save this file as "pizzacalc.py" when you're ready to upload it.
 
 - Professor Lawson
+
+P.S. It might be a good idea to pull out the instructions into a separate 
+document, that way you can put the instructions on one side of your screen
+and the code you are writing on the other. 
 
 OVERVIEW
 ================================================================================
@@ -246,7 +252,11 @@ def get_choice_custom_2topping_pizza():
         topping1 = "A"
 
     print("Select the second topping:")
+<<<<<<< HEAD
     print_toppings(topping1) 
+=======
+    print_toppings(topping1)
+>>>>>>> 5fbaf9b00ccb520abb961c532c88fceaa3d37539
     print("-------------------------------------------------------------------")  
     topping2 = input("Topping 2 (default B): ")
 
@@ -296,6 +306,10 @@ def main():
     print("-------------------------------------------------------------------")
     choice = input("Selection (default A): ")
 
+    # Set 'A' as default
+    if choice != ('A' or 'B'):
+      choice = 'A'
+
     # Calculate total cost of pizza given size, sauce, and topping selections 
     # based on whether they selected A or B at the menu
     
@@ -307,10 +321,10 @@ def main():
     |   If the user selected "[A] Specialty Pizza" (e.g., if choice is 'A'), 
     |   increase total_cost by the return value of get_choice_specialty_pizza()
     |   
-    |    But if the user selected "[B] Custom Two-Topping Pizza", 
+    |   Else if the user selected "[B] Custom Two-Topping Pizza", 
     |   increase total_cost by the return value of get_choice_custom_2topping_pizza()
     |   
-    |   Otherwise, assume the choice was 'A'.
+    |   Else, assume the choice was 'A'.
     |
     |   (Hint: Write your if-elif-else block right below this comment block, 
         BEFORE the part below where we add the size and sauce costs)

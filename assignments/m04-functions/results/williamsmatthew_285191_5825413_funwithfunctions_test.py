@@ -9,12 +9,19 @@ OVERVIEW
 This file contains six programming problems that involve writing functions 
 from scratch. 
 
+Remember that you have to copy and paste this assignment into a file on your
+local machine, save that file as "funwithfunctions.py", then upload that file 
+to the Canvas assignment. 
+
 DIRECTIONS
 ================================================================================
 
 Each of the six Problems you are expected to finish have specifications ("specs")
 inside a code block, followed by a placeholder block of code where I want you 
-to write the function that satisfies the specs. 
+to write the function that satisfies the specs. This is exactly how the mid-term 
+and final examinations will take place--big files like this with a problem 
+written in comments and then a section immediately after where you are to 
+write your answer--in the form of code, of course.
 
 Follow the directions, paying close attention to what is being asked, the 
 logical conditions, and the expected outcomes. Each Problem requires you to 
@@ -45,9 +52,18 @@ It should return True if both strings are equal.
 It should return False if both strings are not equal.
 """
 
-def string_compare(arg1, arg2):
-    return arg1 == arg2
+"""
+str_1 = input("Enter first String: ") 
+str_2 = input("Enter second String: ")
 
+def string_compare(str_1, str_2):
+	if str_1 == str_2:
+		print ("True")
+	else:
+		print ("False") 
+
+string_compare(str_1, str_2)
+"""
 
 """ 
 Problem 2
@@ -57,8 +73,12 @@ It should return a new string equal to the contents of the first argument
 and the contents of the second argument. 
 """
 
-def string_append(arg1, arg2):
-    return arg1 + arg2
+"""
+def string_append(str_1, str_2):
+	print(str_1 + " " + str_2)
+
+string_append(str_1 = input("Enter first String: "), str_2 = input("Enter second String: "))
+"""
 
 """
 Problem 3
@@ -67,8 +87,15 @@ It should take one string argument.
 It should return the first five letters of the string argument. 
 """
 
+"""
+some_string = "Python"
+
 def first_five_letters(some_string):
-    return some_string[:5]
+	five_chars = some_string[0 : 4]
+	print(five_chars)
+
+first_five_letters(some_string)
+"""
 
 """
 Problem 4
@@ -83,11 +110,19 @@ It should return the product of "total_packages" and 19.75
 when "total_weight" is 50 or more. 
 """
 
+"""
+total_packages = int(input("Enter total packages: "))
+total_weight = int(input("Enter total weight: "))
 def calculate_shipping_costs(total_packages, total_weight):
-    if total_weight < 50: 
-        return total_packages * 12.50
-    else:
-        return total_packages * 19.75
+	if total_weight < 50:
+		print(total_packages + 12.50)
+	if total_weight >= 50:
+		print(total_packages + 19.75)	
+	
+
+calculate_shipping_costs(total_packages, total_weight)	
+
+"""
 
 """
 Problem 5
@@ -100,17 +135,23 @@ It should return "Seafoam" when "name" is "Sami".
 It should return "Black" in any other case.
 """
 
+"""
+name = input("What is your name? ")
+
 def favorite_color(name):
-    if name == ("Jack" or "Michelle"):
-        return "Blue"
+    if name == "Jack" or name == "Michelle":
+        print("Blue")
     elif name == "Robert":
-        return "Green"
+        print("Green")
     elif name == "Jesse":
-        return "Purple"
+        print("Purple")
     elif name == "Sami":
-        return "Seafoam"
-    else: 
-        return "Black"
+        print("Seafoam")
+    else:
+        print("Black")
+
+favorite_color(name)
+"""
 
 """
 Problem 6
@@ -124,12 +165,27 @@ It should return True if any of the following are true:
 
 """
 
-def is_spam(subject):
-    if ("Greeting , " or "Re: Fwd: Coupons" or "Special Offer !") in subject:
-        return True
-    else:
-        return False
+"""
+subject = input("Email Subject: ")
 
+def is_spam(subject):
+    if subject == "Greeting , ":
+        print("True")
+    elif subject == "Re: Fwd: Coupons":
+        print("True")
+    elif subject == "Special Offer !":
+        print("True")    
+    else:
+        print("False")
+    
+is_spam(subject)
+"""
+
+
+
+
+    
+    
 
 
 
@@ -358,38 +414,38 @@ print(output)
 TEST RUNNER RESULTS
 ======================================
 Assignment: m04-functions
-Student: lawsonjesse
+Student: williamsmatthew
 Compiled: 25-Feb-2020
 
 Here are the results of some automated unit tests:
 
-* Test #1 FAILED: string_compare() failed before test due to a TypeError: string_compare() missing 1 required positional argument: 'arg2'
+* Test #1 FAILED: string_compare() failed before test due to a NameError: name 'string_compare' is not defined
 
-* Test #2 passed: string_append() should append second argument to first argument
+* Test #2 FAILED: string_append() failed before test due to a NameError: name 'string_append' is not defined
 
-* Test #3 FAILED: is_spam() failed to classify 'Special Offer !' as spam!
+* Test #3 FAILED: is_spam() failed before test due to a NameError: name 'is_spam' is not defined
 
-* Test #4 FAILED: is_spam() failed to classify 'Re: Fwd: Coupons' as spam!
+* Test #4 FAILED: is_spam() failed before test due to a NameError: name 'is_spam' is not defined
 
-* Test #5 passed: is_spam() should classify 'Greeting ,' as spam
+* Test #5 FAILED: is_spam() failed before test due to a NameError: name 'is_spam' is not defined
 
-* Test #6 passed: is_spam() should not classify 'Special Offer!' as spam
+* Test #6 FAILED: is_spam() failed before test due to a NameError: name 'is_spam' is not defined
 
-* Test #7 passed: is_spam() should not classify 'Greetings,' as spam
+* Test #7 FAILED: is_spam() failed before test due to a NameError: name 'is_spam' is not defined
 
-* Test #8 passed: first_five_letters() should return the first five letters of the string
+* Test #8 FAILED: first_five_letters() failed before test due to a NameError: name 'first_five_letters' is not defined
 
-* Test #9 passed: favorite_color() should return 'Seafoam' when input is 'Sami'
+* Test #9 FAILED: favorte_color() failed before test due to a NameError: name 'favorite_color' is not defined
 
-* Test #10 passed: favorite_color() should return 'Green' when input is 'Robert'
+* Test #10 FAILED: favorte_color() failed before test due to a NameError: name 'favorite_color' is not defined
 
-* Test #11 passed: favorite_color() should return 'Purple' when input is 'Jesse'
+* Test #11 FAILED: favorte_color() failed before test due to a NameError: name 'favorite_color' is not defined
 
-* Test #12 passed: favorite_color() should return 'Blue' when input is 'Jack'
+* Test #12 FAILED: favorte_color() failed before test due to a NameError: name 'favorite_color' is not defined
 
-* Test #13 passed: calculate_shipping_costs() should return 5 * 19.75
+* Test #13 FAILED: calculate_shipping_costs() failed before test due to a NameError: name 'calculate_shipping_costs' is not defined
 
-* Test #14 passed: calculate_shipping_costs() should return 5 * 12.50
+* Test #14 FAILED: calculate_shipping_costs() failed before test due to a NameError: name 'calculate_shipping_costs' is not defined
 
 
 

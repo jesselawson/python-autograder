@@ -9,12 +9,19 @@ OVERVIEW
 This file contains six programming problems that involve writing functions 
 from scratch. 
 
+Remember that you have to copy and paste this assignment into a file on your
+local machine, save that file as "funwithfunctions.py", then upload that file 
+to the Canvas assignment. 
+
 DIRECTIONS
 ================================================================================
 
 Each of the six Problems you are expected to finish have specifications ("specs")
 inside a code block, followed by a placeholder block of code where I want you 
-to write the function that satisfies the specs. 
+to write the function that satisfies the specs. This is exactly how the mid-term 
+and final examinations will take place--big files like this with a problem 
+written in comments and then a section immediately after where you are to 
+write your answer--in the form of code, of course.
 
 Follow the directions, paying close attention to what is being asked, the 
 logical conditions, and the expected outcomes. Each Problem requires you to 
@@ -44,9 +51,15 @@ It should take two string arguments.
 It should return True if both strings are equal.
 It should return False if both strings are not equal.
 """
+def string_compare():
+  #string1 = input('Please enter a string: ')
+  #string2 = input('Please enter another string: ')
+  if string1 == string2:
+      print('True')
+  else :
+      print('False')
+string_compare()
 
-def string_compare(arg1, arg2):
-    return arg1 == arg2
 
 
 """ 
@@ -57,8 +70,13 @@ It should return a new string equal to the contents of the first argument
 and the contents of the second argument. 
 """
 
-def string_append(arg1, arg2):
-    return arg1 + arg2
+# def def.. 
+def string_append():
+  #string1 = input('Please enter a string: ')
+  #string2 = input('Please enter another string: ')
+  newString = string1 +" "+ string2
+  print(newString)
+string_append()
 
 """
 Problem 3
@@ -67,8 +85,12 @@ It should take one string argument.
 It should return the first five letters of the string argument. 
 """
 
-def first_five_letters(some_string):
-    return some_string[:5]
+def first_five_letters():
+  #string = input('Please enter a string: ')
+  newString = string[ 0 : 5 ]
+  print(newString)
+first_five_letters()
+# def ...
 
 """
 Problem 4
@@ -82,12 +104,19 @@ when "total_weight" is less than 50.
 It should return the product of "total_packages" and 19.75
 when "total_weight" is 50 or more. 
 """
-
-def calculate_shipping_costs(total_packages, total_weight):
-    if total_weight < 50: 
-        return total_packages * 12.50
-    else:
-        return total_packages * 19.75
+def calculate_shipping_costs():
+  #total_packages = int(input('Please enter the total number of packages: '))
+  #total_weight = int(input('Please enter the total weight of the packages: '))
+  total1 = total_weight * 12.5
+  total2 = total_weight * 19.75
+  if total_weight <50:
+    print('The total shipping cost is:')
+    print(total1)
+  else:
+      print('The total shipping cost is')
+      print(total2)
+calculate_shipping_costs()
+# d
 
 """
 Problem 5
@@ -98,19 +127,22 @@ It should return "Green" when "name" is "Robert".
 It should return "Purple" when "name" is "Jesse".
 It should return "Seafoam" when "name" is "Sami".
 It should return "Black" in any other case.
-"""
+""" 
+def favorite_color():
+  #name = input('What is your name? ')
+  if (name == "Jack") or (name =="Michelle"):
+      print('Blue')
+  elif name =="Robert":
+      print('Green')
+  elif name == "Jesse":
+      print('Purple')
+  elif name == "Sami":
+      print('Seafoam')
+  else:
+       print('Black')
+favorite_color()
 
-def favorite_color(name):
-    if name == ("Jack" or "Michelle"):
-        return "Blue"
-    elif name == "Robert":
-        return "Green"
-    elif name == "Jesse":
-        return "Purple"
-    elif name == "Sami":
-        return "Seafoam"
-    else: 
-        return "Black"
+# def ...
 
 """
 Problem 6
@@ -123,13 +155,19 @@ It should return True if any of the following are true:
 (pay attention to special characters and spaces in this one!)
 
 """
+def is_spam():
+  #subject = input('Please enter one string arguement: ')
+  if ("Greeting , " in subject) or ("Re: Fwd: Coupons" in subject) or ("Special Offer !" in subject):
+      print(" True")
+  else:
+    print("False")
+is_spam()
+# def ...
 
-def is_spam(subject):
-    if ("Greeting , " or "Re: Fwd: Coupons" or "Special Offer !") in subject:
-        return True
-    else:
-        return False
 
+
+    
+    
 
 
 
@@ -358,39 +396,14 @@ print(output)
 TEST RUNNER RESULTS
 ======================================
 Assignment: m04-functions
-Student: lawsonjesse
+Student: vanegasjrlewis
 Compiled: 25-Feb-2020
 
-Here are the results of some automated unit tests:
-
-* Test #1 FAILED: string_compare() failed before test due to a TypeError: string_compare() missing 1 required positional argument: 'arg2'
-
-* Test #2 passed: string_append() should append second argument to first argument
-
-* Test #3 FAILED: is_spam() failed to classify 'Special Offer !' as spam!
-
-* Test #4 FAILED: is_spam() failed to classify 'Re: Fwd: Coupons' as spam!
-
-* Test #5 passed: is_spam() should classify 'Greeting ,' as spam
-
-* Test #6 passed: is_spam() should not classify 'Special Offer!' as spam
-
-* Test #7 passed: is_spam() should not classify 'Greetings,' as spam
-
-* Test #8 passed: first_five_letters() should return the first five letters of the string
-
-* Test #9 passed: favorite_color() should return 'Seafoam' when input is 'Sami'
-
-* Test #10 passed: favorite_color() should return 'Green' when input is 'Robert'
-
-* Test #11 passed: favorite_color() should return 'Purple' when input is 'Jesse'
-
-* Test #12 passed: favorite_color() should return 'Blue' when input is 'Jack'
-
-* Test #13 passed: calculate_shipping_costs() should return 5 * 19.75
-
-* Test #14 passed: calculate_shipping_costs() should return 5 * 12.50
-
-
+Traceback (most recent call last):
+  File "m04-functions/results/vanegasjrlewis_65118_5833486_funwithfunctions_test.py", line 61, in <module>
+    string_compare()
+  File "m04-functions/results/vanegasjrlewis_65118_5833486_funwithfunctions_test.py", line 57, in string_compare
+    if string1 == string2:
+NameError: name 'string1' is not defined
 
 """

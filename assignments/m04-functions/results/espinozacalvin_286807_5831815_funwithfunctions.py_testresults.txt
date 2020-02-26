@@ -1,18 +1,19 @@
 Here are the results of some automated unit tests:
 
-* Test #1 FAILED: string_compare() failed before test due to a TypeError: string_compare() missing 1 required positional argument: 'arg2'
+Please Enter your name:Hello , and hello world!
+* Test #1 FAILED: string_compare() failed before test due to a TypeError: string_compare() missing 1 required positional argument: 'string2'
 
 * Test #2 passed: string_append() should append second argument to first argument
 
-* Test #3 FAILED: is_spam() failed to classify 'Special Offer !' as spam!
+* Test #3 passed: is_spam() should classify 'Special Offer !' as spam
 
 * Test #4 FAILED: is_spam() failed to classify 'Re: Fwd: Coupons' as spam!
 
 * Test #5 passed: is_spam() should classify 'Greeting ,' as spam
 
-* Test #6 passed: is_spam() should not classify 'Special Offer!' as spam
+* Test #6 FAILED: is_spam() failed to not classify 'Special Offer!' as spam!
 
-* Test #7 passed: is_spam() should not classify 'Greetings,' as spam
+* Test #7 FAILED: is_spam() failed to not classify 'Greetings,' as spam!
 
 * Test #8 passed: first_five_letters() should return the first five letters of the string
 
@@ -24,8 +25,8 @@ Here are the results of some automated unit tests:
 
 * Test #12 passed: favorite_color() should return 'Blue' when input is 'Jack'
 
-* Test #13 passed: calculate_shipping_costs() should return 5 * 19.75
+* Test #13 FAILED: calculate_shipping_costs() failed to return 5 * 19.75!
 
-* Test #14 passed: calculate_shipping_costs() should return 5 * 12.50
+* Test #14 FAILED: calculate_shipping_costs() failed to return 5 * 12.50!
 
 

@@ -40,10 +40,11 @@ and the code you are writing on the other.
 OVERVIEW
 ================================================================================
 Michelle, the owner of Fountain Valley Pizza, has asked us to write her a 
-special calculator that can tell her how much it would cost for her to make 
-different "specialty" pizzas--ones with lots of fancy toppings--and, more 
+special calculator. She needs a tool that tells her how much it would cost to 
+make different "specialty" pizzas--ones with lots of fancy toppings--and, more 
 importantly, how much she should charge for these pizzas if she wants to 
-maintain a 30% profit margin. 
+maintain a 30% profit margin. On top of that, she would like to be able to 
+calculate custom customer requests as well. 
 
 She has given us three tables of information about the material costs by size, 
 sauce type and kind of topping, and a fourth table with the recipes for each 
@@ -214,22 +215,22 @@ def process_choice_specialty_pizza(choice):
 #   2. print_topping('A")               Prints all the toppings except for 
 #                                       the one where ID == A
 def print_toppings(except_this_one=''):
-    if except_this_one != 'A':
-        print("[A] Cheese")
-    if except_this_one != 'B':
-        print("[B] Pickles")
     if except_this_one != 'C':
-        print("[C] Pepperoni")
-    if except_this_one != 'D':
-        print("[D] Mushrooms")
-    if except_this_one != 'E':
-        print("[E] Ham")
-    if except_this_one != 'F':
-        print("[F] Yogurt")
-    if except_this_one != 'G':
-        print("[G] Spinach")
+        print("[C] Cheese")
+    if except_this_one != 'K':
+        print("[K] Pickles")
+    if except_this_one != 'I':
+        print("[I] Pepperoni")
+    if except_this_one != 'O':
+        print("[O] Mushrooms")
     if except_this_one != 'H':
-        print("[H] Peppers")
+        print("[H] Ham")
+    if except_this_one != 'Y':
+        print("[Y] Yogurt")
+    if except_this_one != 'N':
+        print("[N] Spinach")
+    if except_this_one != 'P':
+        print("[P] Peppers")
 
 # get_choice_custom_2topping_pizza
 # DESCRIPTION
@@ -246,22 +247,18 @@ def get_choice_custom_2topping_pizza():
     print("Select the first topping:")
     print_toppings()
     print("-------------------------------------------------------------------")  
-    topping1 = input("Topping 1 (default A): ")
+    topping1 = input("Topping 1 (default C): ")
   
     if topping1 == "":
-        topping1 = "A"
+        topping1 = "C"
 
     print("Select the second topping:")
-<<<<<<< HEAD
-    print_toppings(topping1) 
-=======
     print_toppings(topping1)
->>>>>>> 5fbaf9b00ccb520abb961c532c88fceaa3d37539
     print("-------------------------------------------------------------------")  
-    topping2 = input("Topping 2 (default B): ")
+    topping2 = input("Topping 2 (default I): ")
 
     if topping2 == "":
-        topping2 = "B"
+        topping2 = "I"
 
     # The total cost is the sum of the cost of topping1 and topping2
     total_cost = get_topping_cost(topping1) + get_topping_cost(topping2)
@@ -307,7 +304,7 @@ def main():
     choice = input("Selection (default A): ")
 
     # Set 'A' as default
-    if choice != ('A' or 'B'):
+    if choice != 'B':
       choice = 'A'
 
     # Calculate total cost of pizza given size, sauce, and topping selections 

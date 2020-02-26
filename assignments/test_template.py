@@ -47,7 +47,8 @@ for some_function in dir_result:
 output = ""
 test_results
 for r in test_results:
+    output += "* "
     output += str(r) 
-    output += "\n"
+    output += "\n\n"
 print(output)
         

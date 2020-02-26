@@ -3,26 +3,17 @@ import sys
 """
 Module 04 Assignment: "Fun with Functions"
 
+Alysia Stark 
+CIS 157 - Intro to Python Programming 
+CCC Spring 2020
+Professor Jesse Lawson
+
+
 OVERVIEW
 ================================================================================
 
 This file contains six programming problems that involve writing functions 
 from scratch. 
-
-DIRECTIONS
-================================================================================
-
-Each of the six Problems you are expected to finish have specifications ("specs")
-inside a code block, followed by a placeholder block of code where I want you 
-to write the function that satisfies the specs. 
-
-Follow the directions, paying close attention to what is being asked, the 
-logical conditions, and the expected outcomes. Each Problem requires you to 
-write a separate function specific to that problem. 
-
-I have provided an example called "Problem 0".
-
-When you are finished, upload the complete file on the Canvas assignment page.
 
 """
 
@@ -36,7 +27,7 @@ It should print "Hello {name}, and hello world!"
 def hello_world(name):
     print(f"Hello {name}, and hello world!")
 
-
+hello_world("Oliver")
 """
 Problem 1
 Write a function called "string_compare".
@@ -45,8 +36,13 @@ It should return True if both strings are equal.
 It should return False if both strings are not equal.
 """
 
-def string_compare(arg1, arg2):
-    return arg1 == arg2
+def string_compare(str1, str2):
+    if str1 == str2:
+      return True
+    else:
+      return False
+
+print(string_compare("dog", "cat"))
 
 
 """ 
@@ -57,8 +53,19 @@ It should return a new string equal to the contents of the first argument
 and the contents of the second argument. 
 """
 
+# Solution #1
 def string_append(arg1, arg2):
-    return arg1 + arg2
+    new_string = (arg1 + arg2)
+    return new_string
+
+print(string_append("Jennifer ", "let the dogs out."))
+
+# Solution #2
+def string_append2(arg3, arg4):
+    new_string2 = " ".join((arg3, arg4))
+    return new_string2
+
+print(string_append2("Andy", "has left for the day."))
 
 """
 Problem 3
@@ -67,8 +74,10 @@ It should take one string argument.
 It should return the first five letters of the string argument. 
 """
 
-def first_five_letters(some_string):
-    return some_string[:5]
+def first_five_letters(word1):
+    return word1[:5]
+
+print(first_five_letters("Unbelievable"))
 
 """
 Problem 4
@@ -84,10 +93,12 @@ when "total_weight" is 50 or more.
 """
 
 def calculate_shipping_costs(total_packages, total_weight):
-    if total_weight < 50: 
-        return total_packages * 12.50
-    else:
-        return total_packages * 19.75
+    if total_weight < 50:
+       return (total_packages * 12.50)
+    elif total_packages >= 50:
+       return (total_packages * 19.75)
+
+print(calculate_shipping_costs(51, 300))
 
 """
 Problem 5
@@ -101,16 +112,19 @@ It should return "Black" in any other case.
 """
 
 def favorite_color(name):
-    if name == ("Jack" or "Michelle"):
-        return "Blue"
+    if name == "Jack" or name == "Michelle":
+       return "Blue"
     elif name == "Robert":
-        return "Green"
+       return "Green"
     elif name == "Jesse":
-        return "Purple"
+       return "Purple"
     elif name == "Sami":
-        return "Seafoam"
-    else: 
-        return "Black"
+       return "Seafoam"
+    else:
+       return "Black"
+
+
+print(f"Michelle's favorite color is {favorite_color('Michelle')}")
 
 """
 Problem 6
@@ -125,15 +139,25 @@ It should return True if any of the following are true:
 """
 
 def is_spam(subject):
-    if ("Greeting , " or "Re: Fwd: Coupons" or "Special Offer !") in subject:
-        return True
+    greeting = "Greeting" 
+    coupons = "Re: Fwd: Coupons"
+    sp_offer = "Special Offer !"
+    if greeting in subject:
+       return True
+    elif coupons in subject:
+       return True
+    elif sp_offer in subject:
+       return True
     else:
-        return False
+       return False
 
-
-
-
-
+#Testing...
+print(is_spam("Special Offer ! Don't wait"))
+print(is_spam("Re: Fwd: Coupons Inside"))
+print(is_spam("Greetings Dear citizens:"))
+print(is_spam("Special offer!"))
+print(is_spam("Coupons inside"))
+print(is_spam("Anything else"))
 
 
 
@@ -358,24 +382,37 @@ print(output)
 TEST RUNNER RESULTS
 ======================================
 Assignment: m04-functions
-Student: lawsonjesse
+Student: starkalysia
 Compiled: 25-Feb-2020
 
 Here are the results of some automated unit tests:
 
-* Test #1 FAILED: string_compare() failed before test due to a TypeError: string_compare() missing 1 required positional argument: 'arg2'
+Hello Oliver, and hello world!
+False
+Jennifer let the dogs out.
+Andy has left for the day.
+Unbel
+1007.25
+Michelle's favorite color is Blue
+True
+True
+True
+False
+False
+False
+* Test #1 FAILED: string_compare() failed before test due to a TypeError: string_compare() missing 1 required positional argument: 'str2'
 
 * Test #2 passed: string_append() should append second argument to first argument
 
-* Test #3 FAILED: is_spam() failed to classify 'Special Offer !' as spam!
+* Test #3 passed: is_spam() should classify 'Special Offer !' as spam
 
-* Test #4 FAILED: is_spam() failed to classify 'Re: Fwd: Coupons' as spam!
+* Test #4 passed: is_spam() should classify 'Re: Fwd: Coupons' as spam
 
 * Test #5 passed: is_spam() should classify 'Greeting ,' as spam
 
 * Test #6 passed: is_spam() should not classify 'Special Offer!' as spam
 
-* Test #7 passed: is_spam() should not classify 'Greetings,' as spam
+* Test #7 FAILED: is_spam() failed to not classify 'Greetings,' as spam!
 
 * Test #8 passed: first_five_letters() should return the first five letters of the string
 
@@ -387,7 +424,7 @@ Here are the results of some automated unit tests:
 
 * Test #12 passed: favorite_color() should return 'Blue' when input is 'Jack'
 
-* Test #13 passed: calculate_shipping_costs() should return 5 * 19.75
+* Test #13 FAILED: calculate_shipping_costs() failed to return 5 * 19.75!
 
 * Test #14 passed: calculate_shipping_costs() should return 5 * 12.50
 

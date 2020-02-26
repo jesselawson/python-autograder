@@ -162,10 +162,17 @@ def main():
     
     #subprocess.call(f"python {student_test_filename}  > {student_results_filename}", shell=True)
 
+    # If student results file exists, remove all contents:
+    open(student_results_filename, "w").close()
+
+    # Add first line to file
+    with open(student_results_filename, "w") as f:
+        f.write("Here are the results of some automated unit tests:\n\n")
+
     # Run the python file in a subprocess to capture the output just in case 
     # the student didn't follow directions and we can't even run the test runner
     res = subprocess.Popen(
-        f"python {student_test_filename}  > {student_results_filename}", 
+        f"python {student_test_filename}  >> {student_results_filename}", 
         stdout=subprocess.PIPE, 
         stderr=subprocess.PIPE,
         stdin=subprocess.PIPE, 
@@ -200,7 +207,7 @@ def main():
     r = open(student_results_filename, "r")
     test_results = r.read()
     r.close()
-    
+
     print(f"     * Adding test results to student test file... ", end='')
     f = open(student_test_filename, "a")
     f.write(f"\n\"\"\"\n")

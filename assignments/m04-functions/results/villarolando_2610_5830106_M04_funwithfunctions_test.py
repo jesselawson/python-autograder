@@ -1,5 +1,21 @@
 import pytest
 import sys
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
+print("* * * * * * * * * * * * * * * * * * * * *") # Hint: this line is correct
+print()
+print ("Module 04 Assignment: Fun with Functions")
+print("Written by <Rolando Villa>") # Put your name in the print statement!
+print()
+print("* * * * * * * * * * * * * * * * * * * * *")
+print()
+"""
+Created on Fri Feb 21 18:37:31 2020
+
+@author: rolando villa
+"""
+
 """
 Module 04 Assignment: "Fun with Functions"
 
@@ -9,12 +25,19 @@ OVERVIEW
 This file contains six programming problems that involve writing functions 
 from scratch. 
 
+Remember that you have to copy and paste this assignment into a file on your
+local machine, save that file as "funwithfunctions.py", then upload that file 
+to the Canvas assignment. 
+
 DIRECTIONS
 ================================================================================
 
 Each of the six Problems you are expected to finish have specifications ("specs")
 inside a code block, followed by a placeholder block of code where I want you 
-to write the function that satisfies the specs. 
+to write the function that satisfies the specs. This is exactly how the mid-term 
+and final examinations will take place--big files like this with a problem 
+written in comments and then a section immediately after where you are to 
+write your answer--in the form of code, of course.
 
 Follow the directions, paying close attention to what is being asked, the 
 logical conditions, and the expected outcomes. Each Problem requires you to 
@@ -32,11 +55,15 @@ Write a function called "hello_world".
 It should take one string argument, "name".
 It should print "Hello {name}, and hello world!"
 """
-
+print ("Problem 0: Hello World")
 def hello_world(name):
-    print(f"Hello {name}, and hello world!")
+ #This function outputs a greeting to a nemed person
+    print(f"Hello {name}, and hello world!") 
 
 
+hello_world ("Rolando")  
+
+print() #this provides an extra line space between the problem solutions.
 """
 Problem 1
 Write a function called "string_compare".
@@ -45,21 +72,52 @@ It should return True if both strings are equal.
 It should return False if both strings are not equal.
 """
 
-def string_compare(arg1, arg2):
-    return arg1 == arg2
+string1 = "computer"
+string2 = "computers"
+
+print("Problem 1: String Compare")
+def string_compare():
+ #This function compares two string variables to see if they are equal.
+   test = True
+   if string1 == string2:
+      print (f" Comparison is {test}")
+   else:
+      print (" Comparison is NOT True")
+
+string_compare()
 
 
+print() #this provides an extra line space between the problem solutions.
 """ 
 Problem 2
 Write a function called "string_append".
 It should take two string arguments.
 It should return a new string equal to the contents of the first argument
-and the contents of the second argument. 
+and the contents of the second argument.
 """
 
-def string_append(arg1, arg2):
-    return arg1 + arg2
+day1 = "Today is Tuesday"
+day2 = "Tomorrow is Wednesday"
 
+print("Problem 2: String Append") 
+
+
+def string_append():
+#This function takes two strngs and modifies them to match the first with the second string
+    print (day1)
+    print (day2)  
+    print()   
+
+    print (day1)
+    print (day2.replace("Tomorrow is Wednesday" , "Today is Tuesday"))
+    print (day2)
+
+
+string_append()
+
+
+
+print() #this provides an extra line space between the problem solutions.
 """
 Problem 3
 Write a function called "first_five_letters".
@@ -67,28 +125,42 @@ It should take one string argument.
 It should return the first five letters of the string argument. 
 """
 
-def first_five_letters(some_string):
-    return some_string[:5]
+print("Problem 3:First Five Letters") 
+def first_five_letters():
+#This function looks at a given string and outputs specific parts of the given string
+    text1 = "ENCYCLOPAEDIA"
+    
+    print ( text1 [ :5])
+    
+    
+first_five_letters()    
 
+print() #this provides an extra line space between the problem solutions.
 """
 Problem 4
 Write a function called "calculate_shipping_costs".
-
 It should take two integer arguments, "total_packages" and "total_weight".
-
 It should return the product of "total_packages" and 12.50
 when "total_weight" is less than 50. 
-
 It should return the product of "total_packages" and 19.75
 when "total_weight" is 50 or more. 
 """
 
-def calculate_shipping_costs(total_packages, total_weight):
-    if total_weight < 50: 
-        return total_packages * 12.50
-    else:
-        return total_packages * 19.75
+print("Problem 4: Calculating Shipping Costs") 
+def calculate_shipping_costs ():
 
+    total_packages = 10
+    total_weight = 100
+    
+    if total_weight <50:
+         print (f" The total cost is ${total_packages * 12.50}")
+    else:
+         print (f" The total cost is ${total_packages * 19.75}")
+    
+    
+calculate_shipping_costs ()
+    
+print() #this provides an extra line space between the problem solutions.
 """
 Problem 5
 Write a function called "favorite_color".
@@ -100,8 +172,11 @@ It should return "Seafoam" when "name" is "Sami".
 It should return "Black" in any other case.
 """
 
+print("Problem 5: Favorite Colors") 
 def favorite_color(name):
-    if name == ("Jack" or "Michelle"):
+    if name == "Jack":
+        return "Blue"
+    if name == "Michelle":
         return "Blue"
     elif name == "Robert":
         return "Green"
@@ -109,9 +184,18 @@ def favorite_color(name):
         return "Purple"
     elif name == "Sami":
         return "Seafoam"
-    else: 
-        return "Black"
+    else:
+        return "Black" 
+    
+print (f"Jack favorite color is {favorite_color('Jack')}.") 
+print (f"Michelle's favorite color is {favorite_color('Michelle')}.")
+print (f"Robert's favorite color is {favorite_color('Robert')}.")
+print (f"Jesse's favorite color is {favorite_color('Jesse')}.")
+print (f"Sami's favorite color is {favorite_color('Sami')}.")
+print (f"John's favorite color is {favorite_color('John')}")
 
+
+print() #this provides an extra line space between the problem solutions.
 """
 Problem 6
 Write a function called "is_spam".
@@ -121,16 +205,19 @@ It should return True if any of the following are true:
     * "subject" contains the string "Re: Fwd: Coupons"
     * "subject" contains the string "Special Offer !"
 (pay attention to special characters and spaces in this one!)
-
 """
 
-def is_spam(subject):
-    if ("Greeting , " or "Re: Fwd: Coupons" or "Special Offer !") in subject:
-        return True
-    else:
-        return False
-
-
+print("Problem 6: Spam ") 
+def is_spam():
+# This function scans the subject line and/or header of an email and determines if it is spam by filtering out the keywords.
+    subject = ["Greeting , " , "Re:", "Fwd:", "Coupons", "Special Offer !"]
+   
+    for keyword in subject:
+        print (" mail contains spam")   
+    
+      
+is_spam()
+    
 
 
 
@@ -358,26 +445,67 @@ print(output)
 TEST RUNNER RESULTS
 ======================================
 Assignment: m04-functions
-Student: lawsonjesse
+Student: villarolando
 Compiled: 25-Feb-2020
 
 Here are the results of some automated unit tests:
 
-* Test #1 FAILED: string_compare() failed before test due to a TypeError: string_compare() missing 1 required positional argument: 'arg2'
+* * * * * * * * * * * * * * * * * * * * *
 
-* Test #2 passed: string_append() should append second argument to first argument
+Module 04 Assignment: Fun with Functions
+Written by <Rolando Villa>
 
-* Test #3 FAILED: is_spam() failed to classify 'Special Offer !' as spam!
+* * * * * * * * * * * * * * * * * * * * *
 
-* Test #4 FAILED: is_spam() failed to classify 'Re: Fwd: Coupons' as spam!
+Problem 0: Hello World
+Hello Rolando, and hello world!
 
-* Test #5 passed: is_spam() should classify 'Greeting ,' as spam
+Problem 1: String Compare
+ Comparison is NOT True
 
-* Test #6 passed: is_spam() should not classify 'Special Offer!' as spam
+Problem 2: String Append
+Today is Tuesday
+Tomorrow is Wednesday
 
-* Test #7 passed: is_spam() should not classify 'Greetings,' as spam
+Today is Tuesday
+Today is Tuesday
+Tomorrow is Wednesday
 
-* Test #8 passed: first_five_letters() should return the first five letters of the string
+Problem 3:First Five Letters
+ENCYC
+
+Problem 4: Calculating Shipping Costs
+ The total cost is $197.5
+
+Problem 5: Favorite Colors
+Jack favorite color is Blue.
+Michelle's favorite color is Blue.
+Robert's favorite color is Green.
+Jesse's favorite color is Purple.
+Sami's favorite color is Seafoam.
+John's favorite color is Black
+
+Problem 6: Spam 
+ mail contains spam
+ mail contains spam
+ mail contains spam
+ mail contains spam
+ mail contains spam
+* Test #1 FAILED: string_compare() failed before test due to a TypeError: string_compare() takes 0 positional arguments but 1 was given
+
+* Test #2 FAILED: string_append() failed before test due to a TypeError: string_append() takes 0 positional arguments but 2 were given
+
+* Test #3 FAILED: is_spam() failed before test due to a TypeError: is_spam() takes 0 positional arguments but 1 was given
+
+* Test #4 FAILED: is_spam() failed before test due to a TypeError: is_spam() takes 0 positional arguments but 1 was given
+
+* Test #5 FAILED: is_spam() failed before test due to a TypeError: is_spam() takes 0 positional arguments but 1 was given
+
+* Test #6 FAILED: is_spam() failed before test due to a TypeError: is_spam() takes 0 positional arguments but 1 was given
+
+* Test #7 FAILED: is_spam() failed before test due to a TypeError: is_spam() takes 0 positional arguments but 1 was given
+
+* Test #8 FAILED: first_five_letters() failed before test due to a TypeError: first_five_letters() takes 0 positional arguments but 1 was given
 
 * Test #9 passed: favorite_color() should return 'Seafoam' when input is 'Sami'
 
@@ -387,9 +515,9 @@ Here are the results of some automated unit tests:
 
 * Test #12 passed: favorite_color() should return 'Blue' when input is 'Jack'
 
-* Test #13 passed: calculate_shipping_costs() should return 5 * 19.75
+* Test #13 FAILED: calculate_shipping_costs() failed before test due to a TypeError: calculate_shipping_costs() takes 0 positional arguments but 2 were given
 
-* Test #14 passed: calculate_shipping_costs() should return 5 * 12.50
+* Test #14 FAILED: calculate_shipping_costs() failed before test due to a TypeError: calculate_shipping_costs() takes 0 positional arguments but 2 were given
 
 
 

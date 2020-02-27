@@ -191,8 +191,6 @@ TIPS FOR SUCCESS
 * You are coming up with the variable and argument names. I have provided 
   the names of the required functions only. 
 
-* Store the values of each table in their own variables. For example, 
-
 * How to round an integer to the nearest two decimal places:
 https://stackoverflow.com/a/20457115
 

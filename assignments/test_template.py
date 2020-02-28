@@ -14,8 +14,6 @@ def jel_TypeError(target, e):
     m = f"Test #{test_qwertyuioplkjhgfdsa_number} "
     return m + f"FAILED: {target} failed before test due to a TypeError: {e}"
 
-
-
 def jel_assert(target, expr, should_msg):
     global test_qwertyuioplkjhgfdsa_number
     test_qwertyuioplkjhgfdsa_number += 1
@@ -49,7 +47,8 @@ for some_function in dir_result:
 output = ""
 test_results
 for r in test_results:
+    output += "* "
     output += str(r) 
-    output += "\n"
+    output += "\n\n"
 print(output)
         

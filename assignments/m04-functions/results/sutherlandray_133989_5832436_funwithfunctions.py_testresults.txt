@@ -1,0 +1,4 @@
+  File "m04-functions/results/sutherlandray_133989_5832436_funwithfunctions_test.py", line 56
+    if string1 == string2
+                        ^
+SyntaxError: invalid syntax

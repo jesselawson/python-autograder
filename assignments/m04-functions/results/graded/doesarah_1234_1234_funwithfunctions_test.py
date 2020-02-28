@@ -46,7 +46,7 @@ It should return False if both strings are not equal.
 """
 
 def string_compare(arg1, arg2):
-    return arg1 == arg2
+    return arg1
 
 
 """ 
@@ -68,7 +68,7 @@ It should return the first five letters of the string argument.
 """
 
 def first_five_letters(some_string):
-    return some_string[:5]
+    return some_string[:2]
 
 """
 Problem 4
@@ -87,7 +87,7 @@ def calculate_shipping_costs(total_packages, total_weight):
     if total_weight < 50: 
         return total_packages * 12.50
     else:
-        return total_packages * 19.75
+        return total_packages + 19.75
 
 """
 Problem 5
@@ -104,7 +104,7 @@ def favorite_color(name):
     if name == ("Jack" or "Michelle"):
         return "Blue"
     elif name == "Robert":
-        return "Green"
+        return "Red"
     elif name == "Jesse":
         return "Purple"
     elif name == "Sami":
@@ -129,10 +129,6 @@ def is_spam(subject):
         return True
     else:
         return False
-
-
-
-
 
 
 
@@ -358,7 +354,7 @@ print(output)
 TEST RUNNER RESULTS
 ======================================
 Assignment: m04-functions
-Student: lawsonjesse
+Student: doesarah
 Compiled: 25-Feb-2020
 
 Here are the results of some automated unit tests:
@@ -377,17 +373,17 @@ Here are the results of some automated unit tests:
 
 * Test #7 passed: is_spam() should not classify 'Greetings,' as spam
 
-* Test #8 passed: first_five_letters() should return the first five letters of the string
+* Test #8 FAILED: first_five_letters() failed to return the first five letters of the string!
 
 * Test #9 passed: favorite_color() should return 'Seafoam' when input is 'Sami'
 
-* Test #10 passed: favorite_color() should return 'Green' when input is 'Robert'
+* Test #10 FAILED: favorite_color() failed to return 'Green' when input is 'Robert'!
 
 * Test #11 passed: favorite_color() should return 'Purple' when input is 'Jesse'
 
 * Test #12 passed: favorite_color() should return 'Blue' when input is 'Jack'
 
-* Test #13 passed: calculate_shipping_costs() should return 5 * 19.75
+* Test #13 FAILED: calculate_shipping_costs() failed to return 5 * 19.75!
 
 * Test #14 passed: calculate_shipping_costs() should return 5 * 12.50
 

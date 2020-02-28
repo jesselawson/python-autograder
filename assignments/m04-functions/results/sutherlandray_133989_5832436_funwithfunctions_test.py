@@ -9,12 +9,19 @@ OVERVIEW
 This file contains six programming problems that involve writing functions 
 from scratch. 
 
+Remember that you have to copy and paste this assignment into a file on your
+local machine, save that file as "funwithfunctions.py", then upload that file 
+to the Canvas assignment. 
+
 DIRECTIONS
 ================================================================================
 
 Each of the six Problems you are expected to finish have specifications ("specs")
 inside a code block, followed by a placeholder block of code where I want you 
-to write the function that satisfies the specs. 
+to write the function that satisfies the specs. This is exactly how the mid-term 
+and final examinations will take place--big files like this with a problem 
+written in comments and then a section immediately after where you are to 
+write your answer--in the form of code, of course.
 
 Follow the directions, paying close attention to what is being asked, the 
 logical conditions, and the expected outcomes. Each Problem requires you to 
@@ -45,9 +52,11 @@ It should return True if both strings are equal.
 It should return False if both strings are not equal.
 """
 
-def string_compare(arg1, arg2):
-    return arg1
-
+def string_compare(string1, string2):
+    if string1 == string2
+    return true 
+    else 
+    return false 
 
 """ 
 Problem 2
@@ -57,8 +66,9 @@ It should return a new string equal to the contents of the first argument
 and the contents of the second argument. 
 """
 
-def string_append(arg1, arg2):
-    return arg1 + arg2
+def string_append(part1, part2): 
+    append = part1 + part2
+    return append
 
 """
 Problem 3
@@ -67,8 +77,8 @@ It should take one string argument.
 It should return the first five letters of the string argument. 
 """
 
-def first_five_letters(some_string):
-    return some_string[:2]
+def first_five_letters(string):
+    return string[:5]
 
 """
 Problem 4
@@ -83,11 +93,11 @@ It should return the product of "total_packages" and 19.75
 when "total_weight" is 50 or more. 
 """
 
-def calculate_shipping_costs(total_packages, total_weight):
-    if total_weight < 50: 
-        return total_packages * 12.50
-    else:
-        return total_packages + 19.75
+def calulate_shipping_costs(total_packages, total_weight):
+    if total_weight < 50 
+    return total_packages * 12.50
+    else total weight > 50 
+    return total_packages * 19.50
 
 """
 Problem 5
@@ -100,17 +110,7 @@ It should return "Seafoam" when "name" is "Sami".
 It should return "Black" in any other case.
 """
 
-def favorite_color(name):
-    if name == ("Jack" or "Michelle"):
-        return "Blue"
-    elif name == "Robert":
-        return "Red"
-    elif name == "Jesse":
-        return "Purple"
-    elif name == "Sami":
-        return "Seafoam"
-    else: 
-        return "Black"
+# def ...
 
 """
 Problem 6
@@ -124,11 +124,15 @@ It should return True if any of the following are true:
 
 """
 
-def is_spam(subject):
-    if ("Greeting , " or "Re: Fwd: Coupons" or "Special Offer !") in subject:
-        return True
-    else:
-        return False
+# def ...
+
+
+
+    
+    
+
+
+
 
 
 
@@ -137,7 +141,7 @@ def is_spam(subject):
 
 
 """
-(29-Jan-2020 Professor Lawson) Below you will find all the test 
+(25-Feb-2020 Professor Lawson) Below you will find all the test 
 functions I have used to evaluate your submission. You are free to 
 download this file and tinker around with it. In fact, 
 I encourage it!
@@ -159,8 +163,6 @@ def jel_TypeError(target, e):
     test_qwertyuioplkjhgfdsa_number += 1
     m = f"Test #{test_qwertyuioplkjhgfdsa_number} "
     return m + f"FAILED: {target} failed before test due to a TypeError: {e}"
-
-
 
 def jel_assert(target, expr, should_msg):
     global test_qwertyuioplkjhgfdsa_number
@@ -208,48 +210,125 @@ def test_string_append():
     
 # Problem 3
 def test_first_five_letters():
-    return jel_assert("first_five_letters()", first_five_letters( "Abcdefghijklmnopqrstuvqxyz") == "Abcde", "return the first five letters of the string")
+    target = "first_five_letters()"
+    try:
+        return jel_assert(target, first_five_letters( "Abcdefghijklmnopqrstuvqxyz") == "Abcde", "return the first five letters of the string")
+    except NameError as e:
+        return jel_NameError(target, e)
+    except TypeError as e:
+        return jel_TypeError(target, e)
     
 # Problem 4
 def test_calculate_shipping_costs_when_weight_is_less_than_50():
-    return jel_assert("calculate_shipping_costs()", calculate_shipping_costs( 5, 49 ) == 62.50, "return 5 * 12.50")
+    target = "calculate_shipping_costs()"
+    try:
+        return jel_assert(target, calculate_shipping_costs( 5, 49 ) == 62.50, "return 5 * 12.50")
+    except NameError as e:
+        return jel_NameError(target, e)
+    except TypeError as e:
+        return jel_TypeError(target, e)
     
 def test_calculate_shipping_costs_when_weight_is_more_than_50():
-    return jel_assert("calculate_shipping_costs()", calculate_shipping_costs( 5, 51 ) == 98.75, "return 5 * 19.75")
+    target = "calculate_shipping_costs()"
+    try:
+        return jel_assert("calculate_shipping_costs()", calculate_shipping_costs( 5, 51 ) == 98.75, "return 5 * 19.75")
+    except NameError as e:
+        return jel_NameError(target, e)
+    except TypeError as e:
+        return jel_TypeError(target, e)
     
 # Problem 5 
 def test_favorite_color_when_jack_or_michelle():
-    return jel_assert("favorite_color()", favorite_color( "Jack" ) == "Blue", "return 'Blue' when input is 'Jack'")
+    target = "favorte_color()"
+    try:
+        return jel_assert("favorite_color()", favorite_color( "Jack" ) == "Blue", "return 'Blue' when input is 'Jack'")
+    except NameError as e:
+        return jel_NameError(target, e)
+    except TypeError as e:
+        return jel_TypeError(target, e)
     
 def test_favorite_color_when_robbie():
-    return jel_assert("favorite_color()", favorite_color( "Robert" ) == "Green", "return 'Green' when input is 'Robert'")
+    target = "favorte_color()"
+    try:
+        return jel_assert("favorite_color()", favorite_color( "Robert" ) == "Green", "return 'Green' when input is 'Robert'")
+    except NameError as e:
+        return jel_NameError(target, e)
+    except TypeError as e:
+        return jel_TypeError(target, e)
     
 def test_favorite_color_when_jesse():
-    return jel_assert( "favorite_color()", favorite_color( "Jesse" ) == "Purple", "return 'Purple' when input is 'Jesse'")
+    target = "favorte_color()"
+    try:
+        return jel_assert( "favorite_color()", favorite_color( "Jesse" ) == "Purple", "return 'Purple' when input is 'Jesse'")
+    except NameError as e:
+        return jel_NameError(target, e)
+    except TypeError as e:
+        return jel_TypeError(target, e)
     
 def test_favorite_color_when_sami():
-    return jel_assert( "favorite_color()", favorite_color( "Sami" ) == "Seafoam", "return 'Seafoam' when input is 'Sami'")
+    target = "favorte_color()"
+    try:
+        return jel_assert( "favorite_color()", favorite_color( "Sami" ) == "Seafoam", "return 'Seafoam' when input is 'Sami'")
+    except NameError as e:
+        return jel_NameError(target, e)
+    except TypeError as e:
+        return jel_TypeError(target, e)
 
 
 # Problem 6
 def test_is_spam_should_return_true_if_subject_contains_greeting():
-    return jel_assert( "is_spam()", is_spam( "Ah good morning and Greeting , kind sir" ) == True, "classify 'Greeting ,' as spam")
+    target = "is_spam()"
+    try:
+        return jel_assert( "is_spam()", is_spam( "Ah good morning and Greeting , kind sir" ) == True, "classify 'Greeting ,' as spam")
+    except NameError as e:
+        return jel_NameError(target, e)
+    except TypeError as e:
+        return jel_TypeError(target, e)
     
 def test_is_spam_should_return_true_if_subject_contains_refwdcoupons():
-    return jel_assert(  "is_spam()", is_spam( "Special Offer! Re: Fwd: Coupons for you!" ) == True, "classify 'Re: Fwd: Coupons' as spam")
+    target = "is_spam()"
+    try:
+        return jel_assert(  "is_spam()", is_spam( "Special Offer! Re: Fwd: Coupons for you!" ) == True, "classify 'Re: Fwd: Coupons' as spam")
+    except NameError as e:
+        return jel_NameError(target, e)
+    except TypeError as e:
+        return jel_TypeError(target, e)
 
 def test_is_spam_should_return_true_if_subject_contains_specialoffer():
-    return jel_assert(  "is_spam()", is_spam( "Look For This Special Offer !" ) == True, "classify 'Special Offer !' as spam")
+    target = "is_spam()"
+    try:
+        return jel_assert(  "is_spam()", is_spam( "Look For This Special Offer !" ) == True, "classify 'Special Offer !' as spam")
+    except NameError as e:
+        return jel_NameError(target, e)
+    except TypeError as e:
+        return jel_TypeError(target, e)
     
 def test_is_spam_should_return_false_if_not_spam():
-    return jel_assert(  "is_spam()", is_spam("Season's Greetings, Friend.") == False, "not classify 'Greetings,' as spam")
+    target = "is_spam()"
+    try:
+        return jel_assert(  "is_spam()", is_spam("Season's Greetings, Friend.") == False, "not classify 'Greetings,' as spam")
+    except NameError as e:
+        return jel_NameError(target, e)
+    except TypeError as e:
+        return jel_TypeError(target, e)
     
 def test_is_spam_should_return_false_if_not_spam2():
-    return jel_assert(  "is_spam()", is_spam("Re: Fwd: Help on the spreadsheet") == False, "not classify 'Re: Fwd: Help' as spam")
+    target = "is_spam()"
+    try:
+        return jel_assert(  "is_spam()", is_spam("Re: Fwd: Help on the spreadsheet") == False, "not classify 'Re: Fwd: Help' as spam")
+    except NameError as e:
+        return jel_NameError(target, e)
+    except TypeError as e:
+        return jel_TypeError(target, e)
 
 def test_is_spam_should_return_false_if_not_spam2():
-    return jel_assert(  "is_spam()", is_spam("Special Offer! We can do this!") == False, "not classify 'Special Offer!' as spam")
-
+    target = "is_spam()"
+    try:
+        return jel_assert(  "is_spam()", is_spam("Special Offer! We can do this!") == False, "not classify 'Special Offer!' as spam")
+    except NameError as e:
+        return jel_NameError(target, e)
+    except TypeError as e:
+        return jel_TypeError(target, e)
 
 
 # END TEST SUITE INJECTION =====================================================
@@ -266,8 +345,9 @@ for some_function in dir_result:
 output = ""
 test_results
 for r in test_results:
+    output += "* "
     output += str(r) 
-    output += "\n"
+    output += "\n\n"
 print(output)
         
 
@@ -278,23 +358,12 @@ print(output)
 TEST RUNNER RESULTS
 ======================================
 Assignment: m04-functions
-Student: doesarah
-Compiled: 29-Jan-2020
+Student: sutherlandray
+Compiled: 25-Feb-2020
 
-Test #1 FAILED: string_compare() failed before test due to a TypeError: string_compare() missing 1 required positional argument: 'arg2'
-Test #2 passed: string_append() should append second argument to first argument
-Test #3 FAILED: is_spam() failed to classify 'Special Offer !' as spam!
-Test #4 FAILED: is_spam() failed to classify 'Re: Fwd: Coupons' as spam!
-Test #5 passed: is_spam() should classify 'Greeting ,' as spam
-Test #6 passed: is_spam() should not classify 'Special Offer!' as spam
-Test #7 passed: is_spam() should not classify 'Greetings,' as spam
-Test #8 FAILED: first_five_letters() failed to return the first five letters of the string!
-Test #9 passed: favorite_color() should return 'Seafoam' when input is 'Sami'
-Test #10 FAILED: favorite_color() failed to return 'Green' when input is 'Robert'!
-Test #11 passed: favorite_color() should return 'Purple' when input is 'Jesse'
-Test #12 passed: favorite_color() should return 'Blue' when input is 'Jack'
-Test #13 FAILED: calculate_shipping_costs() failed to return 5 * 19.75!
-Test #14 passed: calculate_shipping_costs() should return 5 * 12.50
-
+  File "m04-functions/results/sutherlandray_133989_5832436_funwithfunctions_test.py", line 56
+    if string1 == string2
+                        ^
+SyntaxError: invalid syntax
 
 """

@@ -1,6 +1,6 @@
 import pytest
 import sys
-"""
+""" by JUSTIN BANNON
 Module 04 Assignment: "Fun with Functions"
 
 OVERVIEW
@@ -9,12 +9,19 @@ OVERVIEW
 This file contains six programming problems that involve writing functions 
 from scratch. 
 
+Remember that you have to copy and paste this assignment into a file on your
+local machine, save that file as "funwithfunctions.py", then upload that file 
+to the Canvas assignment. 
+
 DIRECTIONS
 ================================================================================
 
 Each of the six Problems you are expected to finish have specifications ("specs")
 inside a code block, followed by a placeholder block of code where I want you 
-to write the function that satisfies the specs. 
+to write the function that satisfies the specs. This is exactly how the mid-term 
+and final examinations will take place--big files like this with a problem 
+written in comments and then a section immediately after where you are to 
+write your answer--in the form of code, of course.
 
 Follow the directions, paying close attention to what is being asked, the 
 logical conditions, and the expected outcomes. Each Problem requires you to 
@@ -45,9 +52,11 @@ It should return True if both strings are equal.
 It should return False if both strings are not equal.
 """
 
-def string_compare(arg1, arg2):
-    return arg1 == arg2
-
+def string_compare(string1, string2):
+    if string == string2:
+        return "True"
+    else:
+        return "False"
 
 """ 
 Problem 2
@@ -57,8 +66,10 @@ It should return a new string equal to the contents of the first argument
 and the contents of the second argument. 
 """
 
-def string_append(arg1, arg2):
-    return arg1 + arg2
+def string_append(append1, append2):
+    append3 = append1 + append2
+    return append3
+
 
 """
 Problem 3
@@ -67,8 +78,9 @@ It should take one string argument.
 It should return the first five letters of the string argument. 
 """
 
-def first_five_letters(some_string):
-    return some_string[:5]
+def first_five_letters(thisisreturningfirstfive):
+    return (thisisreturningfirstfive[:5])
+
 
 """
 Problem 4
@@ -83,11 +95,13 @@ It should return the product of "total_packages" and 19.75
 when "total_weight" is 50 or more. 
 """
 
-def calculate_shipping_costs(total_packages, total_weight):
-    if total_weight < 50: 
-        return total_packages * 12.50
-    else:
-        return total_packages * 19.75
+def calculate_shipping_costs(total_packages,total_weight):
+    sum1 = total_packages + 12.50
+    sum2 = total_packages + 19.75
+    if total_weight < 50:
+        return sum1
+    if total_weight > 50:
+        return sum2
 
 """
 Problem 5
@@ -101,7 +115,7 @@ It should return "Black" in any other case.
 """
 
 def favorite_color(name):
-    if name == ("Jack" or "Michelle"):
+    if name == "Jack" or "Michelle":
         return "Blue"
     elif name == "Robert":
         return "Green"
@@ -109,8 +123,8 @@ def favorite_color(name):
         return "Purple"
     elif name == "Sami":
         return "Seafoam"
-    else: 
-        return "Black"
+    else: return "Black"
+
 
 """
 Problem 6
@@ -125,15 +139,13 @@ It should return True if any of the following are true:
 """
 
 def is_spam(subject):
-    if ("Greeting , " or "Re: Fwd: Coupons" or "Special Offer !") in subject:
-        return True
-    else:
-        return False
+    if * "subject" == "Greeting , " or "Re: Fwd: Coupons" or "Special Offer !"
+        return "True"
 
+""" 
+by JUSTIN BANNON 
 
-
-
-
+"""
 
 
 
@@ -358,39 +370,12 @@ print(output)
 TEST RUNNER RESULTS
 ======================================
 Assignment: m04-functions
-Student: lawsonjesse
+Student: bannonjustin
 Compiled: 25-Feb-2020
 
-Here are the results of some automated unit tests:
-
-* Test #1 FAILED: string_compare() failed before test due to a TypeError: string_compare() missing 1 required positional argument: 'arg2'
-
-* Test #2 passed: string_append() should append second argument to first argument
-
-* Test #3 FAILED: is_spam() failed to classify 'Special Offer !' as spam!
-
-* Test #4 FAILED: is_spam() failed to classify 'Re: Fwd: Coupons' as spam!
-
-* Test #5 passed: is_spam() should classify 'Greeting ,' as spam
-
-* Test #6 passed: is_spam() should not classify 'Special Offer!' as spam
-
-* Test #7 passed: is_spam() should not classify 'Greetings,' as spam
-
-* Test #8 passed: first_five_letters() should return the first five letters of the string
-
-* Test #9 passed: favorite_color() should return 'Seafoam' when input is 'Sami'
-
-* Test #10 passed: favorite_color() should return 'Green' when input is 'Robert'
-
-* Test #11 passed: favorite_color() should return 'Purple' when input is 'Jesse'
-
-* Test #12 passed: favorite_color() should return 'Blue' when input is 'Jack'
-
-* Test #13 passed: calculate_shipping_costs() should return 5 * 19.75
-
-* Test #14 passed: calculate_shipping_costs() should return 5 * 12.50
-
-
+  File "m04-functions/results/bannonjustin_21838_5833354_funwithfunctions_test.py", line 142
+    if * "subject" == "Greeting , " or "Re: Fwd: Coupons" or "Special Offer !"
+       ^
+SyntaxError: invalid syntax
 
 """

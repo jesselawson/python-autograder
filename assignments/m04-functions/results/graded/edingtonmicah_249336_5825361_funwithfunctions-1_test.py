@@ -9,12 +9,19 @@ OVERVIEW
 This file contains six programming problems that involve writing functions 
 from scratch. 
 
+Remember that you have to copy and paste this assignment into a file on your
+local machine, save that file as "funwithfunctions.py", then upload that file 
+to the Canvas assignment. 
+
 DIRECTIONS
 ================================================================================
 
 Each of the six Problems you are expected to finish have specifications ("specs")
 inside a code block, followed by a placeholder block of code where I want you 
-to write the function that satisfies the specs. 
+to write the function that satisfies the specs. This is exactly how the mid-term 
+and final examinations will take place--big files like this with a problem 
+written in comments and then a section immediately after where you are to 
+write your answer--in the form of code, of course.
 
 Follow the directions, paying close attention to what is being asked, the 
 logical conditions, and the expected outcomes. Each Problem requires you to 
@@ -45,11 +52,17 @@ It should return True if both strings are equal.
 It should return False if both strings are not equal.
 """
 
-def string_compare(arg1, arg2):
-    return arg1 == arg2
+# def ... 
+
+#x="helloSir"
+#y="hiThere"
 
 
-""" 
+def string_compare(x,y): 
+    if x==y: 
+        return True
+
+"""
 Problem 2
 Write a function called "string_append".
 It should take two string arguments.
@@ -57,8 +70,14 @@ It should return a new string equal to the contents of the first argument
 and the contents of the second argument. 
 """
 
-def string_append(arg1, arg2):
-    return arg1 + arg2
+
+# def ... 
+
+def string_append(x,y): 
+    print(x+y)
+
+#string_compare(x,y)
+#string_append(x,y)
 
 """
 Problem 3
@@ -66,10 +85,18 @@ Write a function called "first_five_letters".
 It should take one string argument. 
 It should return the first five letters of the string argument. 
 """
+"""
 
-def first_five_letters(some_string):
-    return some_string[:5]
+# def ...
+i= len(x)
 
+"""
+
+def first_five_letters(x):
+    firstFive = x[0: 5]
+    return firstFive
+
+#first_five_letters(x)
 """
 Problem 4
 Write a function called "calculate_shipping_costs".
@@ -83,11 +110,19 @@ It should return the product of "total_packages" and 19.75
 when "total_weight" is 50 or more. 
 """
 
-def calculate_shipping_costs(total_packages, total_weight):
-    if total_weight < 50: 
-        return total_packages * 12.50
-    else:
-        return total_packages * 19.75
+# def ...
+
+#total_packages=2
+#total_weight=49
+def calculate_shipping_costs(total_packages,total_weight):
+    if(total_weight<50):
+        prod = total_packages*12.5
+        return prod
+    elif(total_weight>=50): 
+        prod = total_packages*19.5
+        return prod 
+
+#calculate_shipping_costs(total_packages,total_weight)
 
 """
 Problem 5
@@ -100,17 +135,22 @@ It should return "Seafoam" when "name" is "Sami".
 It should return "Black" in any other case.
 """
 
+# def ...
 def favorite_color(name):
-    if name == ("Jack" or "Michelle"):
+    if(name=="Jack" or name=="Michelle"):
         return "Blue"
-    elif name == "Robert":
-        return "Green"
-    elif name == "Jesse":
+    if(name=="Jesse"):
         return "Purple"
-    elif name == "Sami":
+    if(name=="Sami"):
         return "Seafoam"
-    else: 
+    else:
         return "Black"
+
+#favorite_color("Jesse")
+#print(favorite_color("Jesse"))
+
+
+
 
 """
 Problem 6
@@ -124,15 +164,21 @@ It should return True if any of the following are true:
 
 """
 
+# def ...
+
+
 def is_spam(subject):
-    if ("Greeting , " or "Re: Fwd: Coupons" or "Special Offer !") in subject:
+    if("Greeting , " in subject):
+        return True
+    if("Special Offer !" in subject):
+        return True
+    if("Re: Fwd: Coupons" in subject):
         return True
     else:
         return False
 
 
-
-
+#print(is_spam("≤å®ßmek.arsrs;lkgnal;ngn"))
 
 
 
@@ -358,18 +404,19 @@ print(output)
 TEST RUNNER RESULTS
 ======================================
 Assignment: m04-functions
-Student: lawsonjesse
+Student: edingtonmicah
 Compiled: 25-Feb-2020
 
 Here are the results of some automated unit tests:
 
-* Test #1 FAILED: string_compare() failed before test due to a TypeError: string_compare() missing 1 required positional argument: 'arg2'
+Coastline Community College
+* Test #1 FAILED: string_compare() failed before test due to a TypeError: string_compare() missing 1 required positional argument: 'y'
 
-* Test #2 passed: string_append() should append second argument to first argument
+* Test #2 FAILED: string_append() failed to append second argument to first argument!
 
-* Test #3 FAILED: is_spam() failed to classify 'Special Offer !' as spam!
+* Test #3 passed: is_spam() should classify 'Special Offer !' as spam
 
-* Test #4 FAILED: is_spam() failed to classify 'Re: Fwd: Coupons' as spam!
+* Test #4 passed: is_spam() should classify 'Re: Fwd: Coupons' as spam
 
 * Test #5 passed: is_spam() should classify 'Greeting ,' as spam
 
@@ -381,13 +428,13 @@ Here are the results of some automated unit tests:
 
 * Test #9 passed: favorite_color() should return 'Seafoam' when input is 'Sami'
 
-* Test #10 passed: favorite_color() should return 'Green' when input is 'Robert'
+* Test #10 FAILED: favorite_color() failed to return 'Green' when input is 'Robert'!
 
 * Test #11 passed: favorite_color() should return 'Purple' when input is 'Jesse'
 
 * Test #12 passed: favorite_color() should return 'Blue' when input is 'Jack'
 
-* Test #13 passed: calculate_shipping_costs() should return 5 * 19.75
+* Test #13 FAILED: calculate_shipping_costs() failed to return 5 * 19.75!
 
 * Test #14 passed: calculate_shipping_costs() should return 5 * 12.50
 

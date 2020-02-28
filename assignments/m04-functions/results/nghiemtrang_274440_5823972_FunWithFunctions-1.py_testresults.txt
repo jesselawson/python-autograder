@@ -1,8 +1,8 @@
 Here are the results of some automated unit tests:
 
-* Test #1 FAILED: string_compare() failed before test due to a TypeError: string_compare() missing 1 required positional argument: 'arg2'
+* Test #1 FAILED: string_compare() failed before test due to a TypeError: string_compare() missing 1 required positional argument: 's2'
 
-* Test #2 passed: string_append() should append second argument to first argument
+* Test #2 FAILED: string_append() failed before test due to a NameError: name 'string_append' is not defined
 
 * Test #3 FAILED: is_spam() failed to classify 'Special Offer !' as spam!
 
@@ -16,11 +16,11 @@ Here are the results of some automated unit tests:
 
 * Test #8 passed: first_five_letters() should return the first five letters of the string
 
-* Test #9 passed: favorite_color() should return 'Seafoam' when input is 'Sami'
+* Test #9 FAILED: favorte_color() failed before test due to a NameError: name 'Michelle' is not defined
 
-* Test #10 passed: favorite_color() should return 'Green' when input is 'Robert'
+* Test #10 FAILED: favorte_color() failed before test due to a NameError: name 'Michelle' is not defined
 
-* Test #11 passed: favorite_color() should return 'Purple' when input is 'Jesse'
+* Test #11 FAILED: favorte_color() failed before test due to a NameError: name 'Michelle' is not defined
 
 * Test #12 passed: favorite_color() should return 'Blue' when input is 'Jack'
 

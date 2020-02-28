@@ -1,7 +1,0 @@
-Test #1 passed: 'What is your name?' should yield 'My name is CHAT BOT.'. Got 'My name is CHAT BOT.'
-Test #2 passed: 'What is the answer to life?' should yield 'Proper hydration!'. Got 'Proper hydration!'
-Test #3 FAILED: 'What is 56*13?' failed to yield 'That's easy: 728!'. Got nothing in response.
-Test #4 FAILED: 'Are you sentient?' failed to yield 'What do you think?'. Got nothing in response.
-Test #5 FAILED: 'Who made you?' failed to yield 'The Mad Scientist Company made me!'. Got nothing in response.
-Test #6 FAILED: 'What did you cost?' failed to yield 'Total funding was $53500.'. Got nothing in response.
-Test #7 FAILED: 'literally anything else' failed to yield 'Maybe try asking a different way.'. Got nothing in response.

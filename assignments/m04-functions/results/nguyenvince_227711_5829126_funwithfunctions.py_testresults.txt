@@ -1,6 +1,11 @@
 Here are the results of some automated unit tests:
 
-* Test #1 FAILED: string_compare() failed before test due to a TypeError: string_compare() missing 1 required positional argument: 'arg2'
+enter input #1:enter input #2:True
+
+
+my fav color is Black
+False
+* Test #1 FAILED: string_compare() failed before test due to a TypeError: string_compare() missing 1 required positional argument: 'string2'
 
 * Test #2 passed: string_append() should append second argument to first argument
 
@@ -8,7 +13,7 @@ Here are the results of some automated unit tests:
 
 * Test #4 FAILED: is_spam() failed to classify 'Re: Fwd: Coupons' as spam!
 
-* Test #5 passed: is_spam() should classify 'Greeting ,' as spam
+* Test #5 FAILED: is_spam() failed to classify 'Greeting ,' as spam!
 
 * Test #6 passed: is_spam() should not classify 'Special Offer!' as spam
 

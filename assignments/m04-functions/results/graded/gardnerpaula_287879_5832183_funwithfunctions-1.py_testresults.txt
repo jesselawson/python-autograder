@@ -1,0 +1,38 @@
+Here are the results of some automated unit tests:
+
+Hello Paula, and hello world!
+False
+12
+This 
+62.5
+False
+False
+* Test #1 FAILED: string_compare() failed before test due to a TypeError: string_compare() takes 0 positional arguments but 1 was given
+
+* Test #2 FAILED: string_append() failed before test due to a TypeError: string_append() takes 0 positional arguments but 2 were given
+
+* Test #3 FAILED: is_spam() failed before test due to a TypeError: is_spam() takes 0 positional arguments but 1 was given
+
+* Test #4 FAILED: is_spam() failed before test due to a TypeError: is_spam() takes 0 positional arguments but 1 was given
+
+* Test #5 FAILED: is_spam() failed before test due to a TypeError: is_spam() takes 0 positional arguments but 1 was given
+
+* Test #6 FAILED: is_spam() failed before test due to a TypeError: is_spam() takes 0 positional arguments but 1 was given
+
+* Test #7 FAILED: is_spam() failed before test due to a TypeError: is_spam() takes 0 positional arguments but 1 was given
+
+* Test #8 FAILED: first_five_letters() failed before test due to a TypeError: first_five_letters() takes 0 positional arguments but 1 was given
+
+* Test #9 FAILED: favorte_color() failed before test due to a TypeError: favorite_color() takes 0 positional arguments but 1 was given
+
+* Test #10 FAILED: favorte_color() failed before test due to a TypeError: favorite_color() takes 0 positional arguments but 1 was given
+
+* Test #11 FAILED: favorte_color() failed before test due to a TypeError: favorite_color() takes 0 positional arguments but 1 was given
+
+* Test #12 FAILED: favorte_color() failed before test due to a TypeError: favorite_color() takes 0 positional arguments but 1 was given
+
+* Test #13 FAILED: calculate_shipping_costs() failed before test due to a TypeError: calculate_shipping_costs() takes 0 positional arguments but 2 were given
+
+* Test #14 FAILED: calculate_shipping_costs() failed before test due to a TypeError: calculate_shipping_costs() takes 0 positional arguments but 2 were given
+
+

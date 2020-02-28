@@ -1,0 +1,33 @@
+Pizza Parlor Tool
+===================================================================
+Enter Size (S, M, or L; Default: M)> Enter Sauce (R or W; Default: R)> Enter the letter of your choice: 
+[A] Specialty Pizza
+[B] Custom Two-Topping Pizza
+-------------------------------------------------------------------
+Selection (default A): Cost to make: $0
+Sale price: $0.0
+Total profit: $0.0
+Test #1 passed: process_choice_specialty_pizza() should be equal to get_specialty_cost('E')
+Test #2 passed: process_choice_specialty_pizza() should be equal to get_specialty_cost('D')
+Test #3 passed: process_choice_specialty_pizza() should be equal to get_specialty_cost('C')
+Test #4 passed: process_choice_specialty_pizza() should be equal to get_specialty_cost('B')
+Test #5 passed: process_choice_specialty_pizza() should be equal to get_specialty_cost('A')
+Test #6 passed: get_topping_cost() should return 2.1 when given 'Y'
+Test #7 passed: get_topping_cost() should return 0.55 when given 'P'
+Test #8 passed: get_topping_cost() should return 0.25 when given 'O'
+Test #9 passed: get_topping_cost() should return 0.95 when given 'N'
+Test #10 passed: get_topping_cost() should return 0.75 when given 'K'
+Test #11 passed: get_topping_cost() should return 0.85 when given 'I'
+Test #12 passed: get_topping_cost() should return 1.15 when given 'H'
+Test #13 passed: get_topping_cost() should return 0.45 when given 'C'
+Test #14 passed: get_specialty_cost() should return 1.20 when given 'E' (The Vegetarian)
+Test #15 passed: get_specialty_cost() should return 2.85 when given 'C' (The Unkissable)
+Test #16 passed: get_specialty_cost() should return 2.10 when given 'D' (Meaty McMeatface)
+Test #17 passed: get_specialty_cost() should return 2.60 when given 'B' (The Salty Manhattan)
+Test #18 passed: get_specialty_cost() should return 3.50 when given 'A' (The Super California)
+Test #19 passed: get_size_cost() should return 3.00 when given 'S'
+Test #20 passed: get_size_cost() should return 4.00 when given 'M'
+Test #21 passed: get_size_cost() should return 5.00 when given 'L'
+Test #22 passed: get_sauce_cost() should return 2.15 when given 'W'
+Test #23 passed: get_sauce_cost() should return 1.35 when given 'R'
+

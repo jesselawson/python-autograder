@@ -212,10 +212,12 @@ specialty_names = ['The Super California', 'The Salty Manhattan']
 specialty_a_cost = get_topping_cost('C') + get_topping_cost('Y') + get_topping_cost('N')
 
 # The Salty Manhattan
-# Note how I am using the backslash character \ to break up long lines of arithmetic
+# Note how I am using the backslash character \ to break up long lines of code
 specialty_b_cost = get_topping_cost('H') + get_topping_cost('O') + \
                     get_topping_cost('C') + get_topping_cost('K')
 
+# When you're done creating variables for each specialty pizza, stick them 
+# in the list below
 specialty_costs = [specialty_a_cost, specialty_b_cost]
 
 

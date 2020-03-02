@@ -1,11 +1,13 @@
 """
-Module 08: "Mid-Term"
+Module 09: "Mid-Term"
 
 OVERVIEW
 ================================================================================
 
-This file contains ten programming problems that involve writing functions 
-from scratch.
+This file contains four Python programming problems.
+
+Your mission is to complete each problem according to the specifications 
+provided.
 
 Remember that you have to copy and paste this assignment into a file on your
 local machine, save that file as "midterm.py", then upload that file 
@@ -14,17 +16,22 @@ to the Canvas assignment.
 DIRECTIONS
 ================================================================================
 
-Each of the ten problems you are expected to finish have specifications ("specs")
+Each of the four problems you are expected to finish have specifications ("specs")
 inside a code block, followed by a placeholder block of code where I want you 
 to write the function that satisfies the specs. 
 
 Follow the directions, paying close attention to what is being asked, the 
-logical conditions, and the expected outcomes. Each Problem requires you to 
-write a separate function specific to that problem. 
+logical conditions, and the expected outcomes.
 
 I have provided an example called "Problem 0".
 
 When you are finished, upload the complete file on the Canvas assignment page.
+
+TIPS FOR SUCCESS
+================================================================================
+* Please don't have any print() statements in your code file when you submit it.
+  You are free to use them to test your functions, of course, but comment them 
+  out or remove them before you submit. 
 
 """
 
@@ -33,8 +40,9 @@ Problem 0
 
 Write a function called `say_hello`.
 It should take one string argument: `name`.
-It should return a string containing:
-    "Hello " + `name` + " and hello world!"
+It should return a string in the following format:
+    f"Hello {name} and hello world!"
+    Where {name} is the argument `name`.
 """
 
 def say_hello(name):
@@ -44,28 +52,35 @@ def say_hello(name):
 Problem 1
 
 Modify the function `get_server_details`.
+
 It should take no arguments.
+
 It should use a for-loop with an iterator to iterate over `server_ips`.
 
 It should return a list where each element is a string equal to 
     the server IP followed by the server name in parentheses.
-    Example1: "192.168.0.1 (App Server)"
+
+    Example1: 
+        If I were to do this:
+            details = get_server_details()
+        Then details[0] should be == "192.168.0.1 (App Server)"
+                                            ^            ^
+                                            |            |
+                                            v            v
     Example2: If x is the iterator, f"{server_ips[x]} ({server_name[x]})"
 
-It should satisfy these tests:
-
-details = get_server_details()
-
+Hint: Remember to enumerate() the list to get an iterator with a for-loop.
 """
 
 server_ips = ["192.168.0.1", "192.168.11.6", "192.168.12.5", "192.168.45.0"]
 server_names = ["App Server", "Database 1", "Database 2", "Node Balancer"]
 
 def get_server_details():
-    output = []
-    for i, ip in enumerate(server_ips):
-        str = f"{ip} ({server_names[i]})"
-        output.append(str)
+    output = [] # Here is an example of an empty list variable that you 
+                # can append to and then return at the end of the function.
+                # Remember that you can append items to the end of a list 
+                # like this: your_list.append(some_item)
+    # ...
     return output
 
 
@@ -83,6 +98,11 @@ INSTRUCTIONS
 
 Modify the function `get_failed_logins`.
 
+It should take no arguments.
+
+It should return a list containing all elements from `log_activity`
+   that contain the string "login_failed".
+
 It should iterate over the `log_activity` list and check whether each 
    element contains the string "login_failed". 
 
@@ -91,6 +111,16 @@ It should iterate over the `log_activity` list and check whether each
 
 It should return a list (e.g., the `output` list) that contains only those 
    elements of `log_activity` that contain the string "login_failed".
+
+Example return value:
+
+[
+    '20200106|login_failed|fdf79s8d987d8fd87',
+    '20200106|login_failed|a0a0a9d8dd7d6d556',
+    '20200107|login_failed|fkjehn4i4n5o4i4j4',
+    '20200108|login_failed|cx89xc8xc98cx9c80',
+    ... (all the other "login_failed" entries)
+]
 
 """
 
@@ -113,11 +143,8 @@ log_activity = [
 
 def get_failed_logins():
     output = []
-    for line in log_activity:
-        if 'login_failed' in line:
-            output.append(line)
+    # ...
     return output
-
 
 """
 Problem 3
@@ -184,18 +211,6 @@ for service in service_port_list:
 
 And instead, check if port is equal to service[1:5]. 
 
-Don't forget that port will be an integer, so before you can compare its value 
-to a string slice, you need to do a type conversion:
-
-port = 3000
-test = ":3000:local dev server"
-
-if test[1:5] == port:
-    print("This will never work because test[1:5] is a string and port is an integer.")
-
-if test[1:5] == str(port):
-    print("This will work because str(port) forces port to behave like a string.")
-
 
 INSTRUCTIONS
 ================================================================================
@@ -221,7 +236,7 @@ Examples of expected return values:
     "No service is listening on port 9999."
 
 You will be marked down if you fail to include:
-* The period at the end of the strings
+* The period at the end
 * The parentheses in the appropriate places
 * All the words in the correct places
 
@@ -238,11 +253,8 @@ service_port_list = [
 ]
 
 def get_service_on_port(port):
-    for s in service_port_list:
-        if s[1:5] == str(port):
-            return f"Service ({s[6:]}) is listening on port {port}."
-    return f"No service is listening on port {port}."
-
+    # ...
+    return
 
 
 """
@@ -259,7 +271,7 @@ given a master list of all photos taken on any day.
 INSTRUCTIONS
 ================================================================================
 
-1. Modify function `convert_jpg_to_tif`.
+1. Modify function `concert_jpg_to_tif`.
     It should take one argument, "filename".
     It should return `filename` with the last four characters 
        replaced with `.tif`. 
@@ -269,9 +281,8 @@ INSTRUCTIONS
     It should take two arguments, "month" and "day".
     It should return a list containing all elements returned from 
        get_files_from_computer() where the first three characters 
-       are equal to the month argument, the next two characters 
-       are equal to the day argument, and the extension ".jpg"
-       is replaced with ".tif" using the `convert_jpg_to_tif` function.
+       are equal to the month argument, and the next two characters 
+       are equal to the day argument. 
     
     Example:
         I expect this:
@@ -281,8 +292,8 @@ INSTRUCTIONS
         to return the following list:
         
         [
-            'jan04_walkinthepark.tif',
-            'jan04_dogsitting.tif'
+            'jan04_walkinthepark.jpg',
+            'jan04_dogsitting.jpg'
         ]
 
 Assume the following:
@@ -332,7 +343,8 @@ def get_files_from_computer():
 ]
 
 def convert_jpg_to_tif(filename):
-    return filename[:-4] + '.tif'
+    # Replace .jpg with .tif in `filename`
+    return # ??
 
 def get_files_from_day(month, day):
     # Return a list of .tif files from month and day
@@ -342,14 +354,8 @@ def get_files_from_day(month, day):
     #    * `Day` is always TWO digits long (so we should treat it like a string)
     #    * `Name` is a string of any length
     #    * `Extension` always starts with a dot and is four total characters
-    output = []
-    for e in get_files_from_computer():
-        # print(f"checking {e[:3]}...")
-        if e[:3] == month:
-            # print(f"> checking {e[3:5]}...")
-            if e[3:5] == day:
-                output.append(convert_jpg_to_tif(e))
-    return output
+    return # ??
+
 
 
 

@@ -20,10 +20,11 @@ pizza calculator from last week as a personal challenge.
 
 OVERVIEW
 ================================================================================
-This week we are refactoring parts of our pizza calculator. Our main goals are to:
+This week we are refactoring parts of our pizza calculator. Our main goals are 
+to:
 
-1. Get all the customizations to the top of the code, to make it easier to 
-   update in the future. 
+1. Get all the prices to the top of the code file and in the same place to 
+   make it easier to update them in the future. 
 2. Remove any hard-coded values like costs from being scattered all over the 
    script. 
 
@@ -184,28 +185,28 @@ Make sure you add one new element to each list, and that each
 element lines up with the associated data (e.g., the value at 
 topping_ids[x] is associated with topping_costs[x], etc etc)
 """
-topping_ids = ['C', 'I', 'P']
+topping_ids =   [     'C',         'I',       'P']
 topping_names = ['Cheese', 'Pepperoni', 'Peppers']
-topping_costs = [0.45, 0.85, 0.55]
+topping_costs = [    0.45,        0.85,      0.55]
 
 """
 SIZES
 """
-size_ids = ['S']
+size_ids =   ['S']
 size_names = ['Small']
 size_costs = [3.00]
 
 """
 SAUCE TYPES
 """
-sauce_ids = ['R']
+sauce_ids =   ['R']
 sauce_names = ['Red']
 sauce_costs = [1.35]
 
 """
 SPECIALTY PIZZAS
 """
-specialty_ids = ['A', 'B']
+specialty_ids =   ['A', 'B']
 specialty_names = ['The Super California', 'The Salty Manhattan']
 
 # The Super California
@@ -223,22 +224,20 @@ specialty_costs = [specialty_a_cost, specialty_b_cost]
 
 # Get the cost of a topping
 def get_topping_cost(topping_id):
-    """
-    Returns the cost of a topping based on its topping_id
-    """
+    # Returns the cost of a topping based on its topping_id
     return topping_costs[get_index_from_selection(topping_ids, topping_id)]
 
 # Get the cost of a size
 def get_size_cost(size_id):
-    return 0.00 # CHANGE THIS
+    return 0.00 # CHANGE THIS (look at get_topping_cost() for clues...)
 
 # Get the cost of a sauce type
 def get_sauce_cost(sauce_id):
-    return 0.00 # CHANGE THIS
+    return 0.00 # CHANGE THIS (look at get_topping_cost() for clues...)
 
 # Get the cost of a sauce type
 def get_specialty_cost(sauce_id):
-    return 0.00 # CHANGE THIS
+    return 0.00 # CHANGE THIS (look at get_topping_cost() for clues...)
 
 
 def get_topping_selection(excluded_topping=''):

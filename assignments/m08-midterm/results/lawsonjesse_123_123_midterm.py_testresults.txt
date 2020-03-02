@@ -1,0 +1,33 @@
+Here are the results of some automated unit tests:
+
+* Test #1 passed: get_service_on_port(8081) should return a string == "Service (Nginx Reverse Proxy) is listening on port 8081."
+
+* Test #2 passed: get_service_on_port(9999) should return a string == "No service is listening on port 9999."
+
+* Test #3 passed: get_service_on_port(4005) should return a string == "Service (Crash Scanner 3000F13) is listening on port 4005."
+
+* Test #4 passed: get_service_on_port(3000) should return a string == "Service (local dev server) is listening on port 3000."
+
+* Test #5 passed: get_service_on_port(2500) should return a string == "Service (SMTP Server ID 030001) is listening on port 2500."
+
+* Test #6 passed: get_server_details() should return a list where element 3 == "192.168.45.0 (Node Balancer)"
+
+* Test #7 passed: get_server_details() should return a list where element 2 == "192.168.12.5 (Database 2)"
+
+* Test #8 passed: get_server_details() should return a list where element 1 == "192.168.11.6 (Database 1)"
+
+* Test #9 passed: get_server_details() should return a list where element 0 == "192.168.0.1 (App Server)"
+
+* Test #10 passed: get_files_from_day("feb", "25") should return a list containing ['feb25_weirdobjectinsky.tif', 'feb25_hugemeteorthing.tif', 'feb25_ufo1.tif', 'feb25_ufo2.tif', 'feb25_spaceshiplanding.tif', 'feb25_spaceship_exterior1.tif', 'feb25_spaceship_exterior2.tif', 'feb25_spaceshipdooropening.tif', 'feb25_weirdaliendude.tif', 'feb25_turnsoutthealientsarefemale.tif', 'feb25_carnage1.tif', 'feb25_carnage2.tif', 'feb25_alienpressconference_cancelingallstudentloans.tif', 'feb25_alienpressconference_cancelingearth.tif', 'feb25_alienspresentingmewithweirdobject.tif', 'feb25_mylastcorporealexistence.tif', 'feb25_goodbyecruelworld.tif']
+
+* Test #11 passed: get_files_from_day("jan", "06") should return a list containing ['jan06_funny1.tif', 'jan06_parkschematics.tif', 'jan06_angryparkperson.tif', 'jan06_parkpersoninmud.tif', 'jan06_parkpersoncrying.tif', 'jan06_mehelpingparkperson.tif', 'jan06_parkpersonthankingme.tif', 'jan06_parkperson2.tif', 'jan06_funny2.tif', 'jan06_funny3.tif']
+
+* Test #12 passed: get_files_from_day("jan", "05") should return a list containing ['jan05_firstkiss.tif', 'jan05_wedding1.tif', 'jan05_wedding2.tif', 'jan05_firstkiss2.tif', 'jan05_bridesmaids.tif', 'jan05_morebridesmaids.tif', 'jan05_groom.tif']
+
+* Test #13 passed: get_files_from_day("jan", "04") should return a list containing ['jan04_walkinthepark.tif', 'jan04_dogsitting.tif']
+
+* Test #14 passed: get_failed_logins() should return a list containing all failed logins
+
+* Test #15 passed: convert_jpg_to_tif("something.jpg") should return the string "something.tif"
+
+

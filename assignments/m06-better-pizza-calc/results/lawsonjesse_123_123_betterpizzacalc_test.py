@@ -1,3 +1,5 @@
+import pytest
+import sys
 """
 
 M06 "Better Pizza Calculator"
@@ -314,7 +316,7 @@ def main():
     print("[A] Specialty Pizza")
     print("[B] Custom Two-Topping Pizza")
     print("-------------------------------------------------------------------")
-    choice = input("Selection (default B): ")
+    choice = input("Selection (default A): ")
 
     # Calculate total cost of pizza given size, sauce, and topping selections 
     # based on whether they selected A or B at the menu
@@ -327,7 +329,7 @@ def main():
         # If the user selected "[A] Specialty Pizza", increase total_cost
         # by the return value of get_choice_specialty_pizza()
         total_cost += get_choice_specialty_pizza()
-    else:
+    elif choice == 'B':
         # If the user selected "[B] Custom Two-Topping Pizza", increase 
         # total_cost by the return value of get_choice_custom_2topping_pizza()
         total_cost += get_choice_custom_2topping_pizza()
@@ -351,3 +353,350 @@ def main():
 # https://realpython.com/python-main-function/
 if __name__ == '__main__':
     main()
+
+
+
+
+
+
+"""
+(02-Mar-2020 Professor Lawson) Below you will find all the test 
+functions I have used to evaluate your submission. You are free to 
+download this file and tinker around with it. In fact, 
+I encourage it!
+
+"""
+
+
+# Obfuscated name to prevent possible conflict with student file
+test_qwertyuioplkjhgfdsa_number = 0
+
+def jel_NameError(target, e):
+    global test_qwertyuioplkjhgfdsa_number
+    test_qwertyuioplkjhgfdsa_number += 1
+    m = f"Test #{test_qwertyuioplkjhgfdsa_number} "
+    return m + f"FAILED: {target} failed before test due to a NameError: {e}"
+
+def jel_TypeError(target, e):
+    global test_qwertyuioplkjhgfdsa_number
+    test_qwertyuioplkjhgfdsa_number += 1
+    m = f"Test #{test_qwertyuioplkjhgfdsa_number} "
+    return m + f"FAILED: {target} failed before test due to a TypeError: {e}"
+
+def jel_assert(target, expr, should_msg):
+    global test_qwertyuioplkjhgfdsa_number
+    test_qwertyuioplkjhgfdsa_number += 1
+    m = f"Test #{test_qwertyuioplkjhgfdsa_number} "
+    try:
+        assert expr
+    except AssertionError as e:
+        return m + f"FAILED: {target} failed to {should_msg}!"
+    except NameError as e:
+        return m + f"FAILED: {target} failed to {should_msg}! NameError: {e}"
+    except TypeError as e:
+        return m + f"FAILED: {target} failed to {should_msg}! TypeError: {e}"
+    else:
+        return m + f"passed: {target} should {should_msg}"
+    
+# BEGIN TEST SUITE INJECTION ===================================================
+
+"""
+Assignment test suite for M06 "Better Pizza Tool"
+
+A lot of these tests are the same ones that are used for the Module 5 
+project. 
+
+"""
+
+# Problem 1
+problem1_target = "topping_ids"
+
+def build_test_for_topping(id, price):
+    try:
+        return jel_assert(
+                problem3_target, 
+                get_topping_cost(id) == price,
+                f"return {price} when given '{id}'"
+        )
+    except NameError as e:
+        return jel_NameError(problem3_target, e)
+    except TypeError as e:
+        return jel_TypeError(problem3_target, e)
+
+def test_get_size_cost_L():
+    try:
+        return jel_assert(
+                problem1_target, 
+                get_size_cost('L') == 5.00, 
+                "return 5.00 when given 'L'"
+            )
+    except NameError as e:
+        return jel_NameError(problem1_target, e)
+    except TypeError as e:
+        return jel_TypeError(problem1_target, e)
+
+def test_get_size_cost_M():
+    try:
+        return jel_assert(
+                problem1_target, 
+                get_size_cost('M') == 4.00, 
+                "return 4.00 when given 'M'"
+            )
+    except NameError as e:
+        return jel_NameError(problem1_target, e)
+    except TypeError as e:
+        return jel_TypeError(problem1_target, e)
+
+def test_get_size_cost_S():
+    try:
+        return jel_assert(
+                problem1_target, 
+                get_size_cost('S') == 3.00, 
+                "return 3.00 when given 'S'"
+            )
+    except NameError as e:
+        return jel_NameError(problem1_target, e)
+    except TypeError as e:
+        return jel_TypeError(problem1_target, e)      
+
+# Problem 2
+problem2_target = "get_sauce_cost()"
+
+def test_get_sauce_cost_R():
+    try:
+        return jel_assert(
+                problem2_target, 
+                get_sauce_cost('R') == 1.35, 
+                "return 1.35 when given 'R'"
+            )
+    except NameError as e:
+        return jel_NameError(problem2_target, e)
+    except TypeError as e:
+        return jel_TypeError(problem2_target, e)
+
+def test_get_sauce_cost_W():
+    try:
+        return jel_assert(
+                problem2_target, 
+                get_sauce_cost('W') == 2.15, 
+                "return 2.15 when given 'W'"
+        )
+    except NameError as e:
+        return jel_NameError(problem2_target, e)
+    except TypeError as e:
+        return jel_TypeError(problem2_target, e)
+
+# Problem 3
+problem3_target = "get_topping_cost()"
+
+def build_test_for_topping(id, price):
+    try:
+        return jel_assert(
+                problem3_target, 
+                get_topping_cost(id) == price,
+                f"return {price} when given '{id}'"
+        )
+    except NameError as e:
+        return jel_NameError(problem3_target, e)
+    except TypeError as e:
+        return jel_TypeError(problem3_target, e)
+
+def test_get_topping_cost_C():
+    return build_test_for_topping('C', 0.45)
+
+def test_get_topping_cost_I():
+    return build_test_for_topping('I', 0.85)
+
+def test_get_topping_cost_P():
+    return build_test_for_topping('P', 0.55)
+
+def test_get_topping_cost_O():
+    return build_test_for_topping('O', 0.25)
+
+def test_get_topping_cost_H():
+    return build_test_for_topping('H', 1.15)
+
+def test_get_topping_cost_K():
+    return build_test_for_topping('K', 0.75)
+
+def test_get_topping_cost_Y():
+    return build_test_for_topping('Y', 2.10)
+
+def test_get_topping_cost_N():
+    return build_test_for_topping('N', 0.95)
+
+# Problem 4
+problem4_target = "get_specialty_cost()"
+
+def test_get_specialty_cost_california():
+    try:
+        return jel_assert(
+                problem4_target, 
+                get_specialty_cost("A") == (
+                    get_topping_cost("C") + 
+                    get_topping_cost("Y") + 
+                    get_topping_cost("N")
+                ), 
+                "return 3.50 when given 'A' (The Super California)"
+            )
+    except NameError as e:
+        return jel_NameError(problem4_target, e)
+    except TypeError as e:
+        return jel_TypeError(problem4_target, e)
+
+def test_get_specialty_cost_manhattan():
+    try:
+        return jel_assert(
+                problem4_target, 
+                get_specialty_cost("B") == (
+                    get_topping_cost("H") + 
+                    get_topping_cost("O") + 
+                    get_topping_cost("C") +
+                    get_topping_cost("K")
+                ), 
+                "return 2.60 when given 'B' (The Salty Manhattan)"
+            )
+    except NameError as e:
+        return jel_NameError(problem4_target, e)
+    except TypeError as e:
+        return jel_TypeError(problem4_target, e)
+
+def test_get_specialty_cost_unkissable():
+    try:
+        return jel_assert(
+                problem4_target, 
+                get_specialty_cost("C") == (
+                    get_topping_cost("K") + 
+                    get_topping_cost("Y")
+                ), 
+                "return 2.85 when given 'C' (The Unkissable)"
+            )
+    except NameError as e:
+        return jel_NameError(problem4_target, e)
+    except TypeError as e:
+        return jel_TypeError(problem4_target, e)
+
+def test_get_specialty_cost_mcmeatface():
+    try:
+        return jel_assert(
+                problem4_target, 
+                get_specialty_cost("D") == (
+                    get_topping_cost("C") + 
+                    get_topping_cost("I") +
+                    get_topping_cost("P") +
+                    get_topping_cost("O")
+                ), 
+                "return 2.10 when given 'D' (Meaty McMeatface)"
+            )
+    except NameError as e:
+        return jel_NameError(problem4_target, e)
+    except TypeError as e:
+        return jel_TypeError(problem4_target, e)
+
+def test_get_specialty_cost_vegetarian():
+    try:
+        return jel_assert(
+                problem4_target, 
+                get_specialty_cost("E") == (
+                    get_topping_cost("O") + 
+                    get_topping_cost("N")
+                ), 
+                "return 1.20 when given 'E' (The Vegetarian)"
+            )
+    except NameError as e:
+        return jel_NameError(problem4_target, e)
+    except TypeError as e:
+        return jel_TypeError(problem4_target, e)
+
+
+
+# END TEST SUITE INJECTION =====================================================
+
+# Custom test runner
+test_results = []
+dir_result = dir(sys.modules[__name__])
+dir_result.reverse()
+for some_function in dir_result:
+    item = getattr(sys.modules[__name__], some_function)
+    if some_function.startswith("test_") and callable(item):
+        r = item()
+        test_results.append(r) # All tests call jel_assert, which returns a string message
+output = ""
+test_results
+for r in test_results:
+    output += "* "
+    output += str(r) 
+    output += "\n\n"
+print(output)
+        
+
+
+
+
+"""
+TEST RUNNER RESULTS
+======================================
+Assignment: m06-better-pizza-calc
+Student: lawsonjesse
+Compiled: 02-Mar-2020
+
+Here are the results of some automated unit tests:
+
+Pizza Parlor Tool
+===================================================================
+
+Select a size:
+[S] Small ($3.0)
+[M] Medium ($4.0)
+[L] Large ($5.0)
+Your selection? (Default: S) 
+Select a sauce:
+[R] Red ($1.35)
+[W] White ($2.15)
+Your selection? (Default: R) Enter the letter of your choice: 
+[A] Specialty Pizza
+[B] Custom Two-Topping Pizza
+-------------------------------------------------------------------
+Selection (default A): -------------------------------------------------------------------
+Cost to make: $7.15
+Sale price: $9.29
+Total profit: $2.14
+* Test #1 passed: get_topping_cost() should return 2.1 when given 'Y'
+
+* Test #2 passed: get_topping_cost() should return 0.55 when given 'P'
+
+* Test #3 passed: get_topping_cost() should return 0.25 when given 'O'
+
+* Test #4 passed: get_topping_cost() should return 0.95 when given 'N'
+
+* Test #5 passed: get_topping_cost() should return 0.75 when given 'K'
+
+* Test #6 passed: get_topping_cost() should return 0.85 when given 'I'
+
+* Test #7 passed: get_topping_cost() should return 1.15 when given 'H'
+
+* Test #8 passed: get_topping_cost() should return 0.45 when given 'C'
+
+* Test #9 passed: get_specialty_cost() should return 1.20 when given 'E' (The Vegetarian)
+
+* Test #10 passed: get_specialty_cost() should return 2.85 when given 'C' (The Unkissable)
+
+* Test #11 passed: get_specialty_cost() should return 2.10 when given 'D' (Meaty McMeatface)
+
+* Test #12 passed: get_specialty_cost() should return 2.60 when given 'B' (The Salty Manhattan)
+
+* Test #13 passed: get_specialty_cost() should return 3.50 when given 'A' (The Super California)
+
+* Test #14 passed: topping_ids should return 3.00 when given 'S'
+
+* Test #15 passed: topping_ids should return 4.00 when given 'M'
+
+* Test #16 passed: topping_ids should return 5.00 when given 'L'
+
+* Test #17 passed: get_sauce_cost() should return 2.15 when given 'W'
+
+* Test #18 passed: get_sauce_cost() should return 1.35 when given 'R'
+
+
+
+"""

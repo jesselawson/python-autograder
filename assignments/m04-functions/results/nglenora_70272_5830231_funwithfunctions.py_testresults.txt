@@ -1,4 +1,0 @@
-  File "m04-functions/results/nglenora_70272_5830231_funwithfunctions_test.py", line 136
-    (25-Feb-2020 Professor Lawson) Below you will find all the test 
-                 ^
-SyntaxError: invalid syntax

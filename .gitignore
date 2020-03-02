@@ -1,14 +1,8 @@
 #Ignore any student submissions
-assignments/m03-chatbot/already_posted/*
-assignments/m03-chatbot/submissions/*
-assignments/m03-chatbot/results/*
-assignments/m04-functions/already_posted/*
-assignments/m04-functions/submissions/*
-assignments/m04-functions/results/*
-assignments/m05-pizza-project/already_posted/*
-assignments/m05-pizza-project/submissions/*
-assignments/m05-pizza-project/results/*
-
+results/
+submitted/
+already_submitted/
+graded/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

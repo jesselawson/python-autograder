@@ -1,4 +1,0 @@
-  File "m04-functions/results/bannonjustin_21838_5833354_funwithfunctions_test.py", line 142
-    if * "subject" == "Greeting , " or "Re: Fwd: Coupons" or "Special Offer !"
-       ^
-SyntaxError: invalid syntax

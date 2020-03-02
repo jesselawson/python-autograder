@@ -178,23 +178,6 @@ def get_index_from_selection(the_list, the_selection):
 
 
 
-# Get the cost of a topping
-def get_topping_cost(topping_id):
-    # Returns the cost of a topping based on its topping_id
-    return topping_costs[get_index_from_selection(topping_ids, topping_id)]
-
-# Get the cost of a size
-def get_size_cost(size_id):
-    return 0.00 # CHANGE THIS (look at get_topping_cost() for clues...)
-
-# Get the cost of a sauce type
-def get_sauce_cost(sauce_id):
-    return 0.00 # CHANGE THIS (look at get_topping_cost() for clues...)
-
-# Get the cost of a sauce type
-def get_specialty_cost(sauce_id):
-    return 0.00 # CHANGE THIS (look at get_topping_cost() for clues...)
-
 
 """
 TOPPINGS 
@@ -202,29 +185,42 @@ Make sure you add one new element to each list, and that each
 element lines up with the associated data (e.g., the value at 
 topping_ids[x] is associated with topping_costs[x], etc etc)
 """
-topping_ids =   [     'C',         'I',       'P']
-topping_names = ['Cheese', 'Pepperoni', 'Peppers']
-topping_costs = [    0.45,        0.85,      0.55]
+topping_ids =   [     'C',         'I',       'P','O','H','K','Y','N']
+topping_names = ['Cheese', 'Pepperoni', 'Peppers','Mushrooms','Ham','Pickles','Yogurt','Spinach']
+topping_costs = [    0.45,        0.85,      0.55,0.25,1.15,0.75,2.10,0.95]
+
+# Get the cost of a topping
+def get_topping_cost(topping_id):
+    # Returns the cost of a topping based on its topping_id
+    return topping_costs[get_index_from_selection(topping_ids, topping_id)]
 
 """
 SIZES
 """
-size_ids =   ['S']
-size_names = ['Small']
-size_costs = [3.00]
+size_ids =   ['S','M','L']
+size_names = ['Small', 'Medium', 'Large']
+size_costs = [3.00, 4.00, 5.00]
+
+# Get the cost of a size
+def get_size_cost(size_id):
+    return size_costs[get_index_from_selection(size_ids, size_id)]
 
 """
 SAUCE TYPES
 """
-sauce_ids =   ['R']
-sauce_names = ['Red']
-sauce_costs = [1.35]
+sauce_ids =   ['R', 'W']
+sauce_names = ['Red', 'White']
+sauce_costs = [1.35, 2.15]
+
+# Get the cost of a sauce type
+def get_sauce_cost(sauce_id):
+    return sauce_costs[get_index_from_selection(sauce_ids, sauce_id)]
 
 """
 SPECIALTY PIZZAS
 """
-specialty_ids =   ['A', 'B']
-specialty_names = ['The Super California', 'The Salty Manhattan']
+specialty_ids =   ['A', 'B', 'C', 'D', 'E']
+specialty_names = ['The Super California', 'The Salty Manhattan', 'The Unkissable', 'Meaty McMeatface', 'The Vegetarian']
 
 # The Super California
 specialty_a_cost = get_topping_cost('C') + get_topping_cost('Y') + get_topping_cost('N')
@@ -234,10 +230,17 @@ specialty_a_cost = get_topping_cost('C') + get_topping_cost('Y') + get_topping_c
 specialty_b_cost = get_topping_cost('H') + get_topping_cost('O') + \
                     get_topping_cost('C') + get_topping_cost('K')
 
+specialty_c_cost = get_topping_cost('K') + get_topping_cost('Y')
+specialty_d_cost = get_topping_cost('C') + get_topping_cost('I') + get_topping_cost('P') + get_topping_cost('O')
+specialty_e_cost = get_topping_cost('O') + get_topping_cost('N')
+
 # When you're done creating variables for each specialty pizza, stick them 
 # in the list below
-specialty_costs = [specialty_a_cost, specialty_b_cost]
+specialty_costs = [specialty_a_cost, specialty_b_cost,specialty_c_cost,specialty_d_cost,specialty_e_cost]
 
+# Get the cost of a specialty pizza
+def get_specialty_cost(specialty_id):
+    return specialty_costs[get_index_from_selection(specialty_ids, specialty_id)]
 
 
 
@@ -256,21 +259,15 @@ def get_size_selection():
   
 def get_sauce_selection():
     print("\nSelect a sauce:")
-    # ...
+    for i,sauce in enumerate(sauce_names):
+        print(f"[{sauce_ids[i]}] {sauce} (${round(sauce_costs[i], 2)})")
     return input(f"Your selection? (Default: {sauce_ids[0]}) ")
 
 def get_specialty_selection():
     print("\Select a specialty pizza:")
-    # ...
+    for i,specialty in enumerate(specialty_names):
+        print(f"[{specialty_ids[i]}] {specialty} (${round(specialty_costs[i], 2)})")
     return input(f"Your selection? (Default: {specialty_ids[0]}) ")
-
-
-
-
-
-
-
-
 
 """
 Everything below is provided to you so that the script will execute correctly.
@@ -317,7 +314,7 @@ def main():
     print("[A] Specialty Pizza")
     print("[B] Custom Two-Topping Pizza")
     print("-------------------------------------------------------------------")
-    choice = input("Selection (default A): ")
+    choice = input("Selection (default B): ")
 
     # Calculate total cost of pizza given size, sauce, and topping selections 
     # based on whether they selected A or B at the menu
@@ -330,7 +327,7 @@ def main():
         # If the user selected "[A] Specialty Pizza", increase total_cost
         # by the return value of get_choice_specialty_pizza()
         total_cost += get_choice_specialty_pizza()
-    elif choice == 'B':
+    else:
         # If the user selected "[B] Custom Two-Topping Pizza", increase 
         # total_cost by the return value of get_choice_custom_2topping_pizza()
         total_cost += get_choice_custom_2topping_pizza()
@@ -340,7 +337,7 @@ def main():
     total_cost += get_sauce_cost(sauce)
 
     # Finally, add 30% markup
-    final_cost = total_cost * 0.30
+    final_cost = total_cost * 1.30
 
     # Output the totals. I'm using round() to ensure that no number is displayed
     # with more than two decimal places. Do you think it's necessary for me 

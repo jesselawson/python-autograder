@@ -1,0 +1,58 @@
+Here are the results of some automated unit tests:
+
+Pizza Parlor Tool
+===================================================================
+
+Select a size:
+[S] Small ($3.0)
+[M] Medium ($4.0)
+[L] Large ($5.0)
+Your selection? (Default: S) 
+Select a sauce:
+[R] Red ($1.35)
+[W] White ($2.15)
+Your selection? (Default: R) Enter the letter of your choice: 
+[A] Specialty Pizza
+[B] Custom Two-Topping Pizza
+-------------------------------------------------------------------
+Selection (default A): -------------------------------------------------------------------
+Cost to make: $7.15
+Sale price: $9.29
+Total profit: $2.14
+* Test #1 passed: get_topping_cost() should return 2.1 when given 'Y'
+
+* Test #2 passed: get_topping_cost() should return 0.55 when given 'P'
+
+* Test #3 passed: get_topping_cost() should return 0.25 when given 'O'
+
+* Test #4 passed: get_topping_cost() should return 0.95 when given 'N'
+
+* Test #5 passed: get_topping_cost() should return 0.75 when given 'K'
+
+* Test #6 passed: get_topping_cost() should return 0.85 when given 'I'
+
+* Test #7 passed: get_topping_cost() should return 1.15 when given 'H'
+
+* Test #8 passed: get_topping_cost() should return 0.45 when given 'C'
+
+* Test #9 passed: get_specialty_cost() should return 1.20 when given 'E' (The Vegetarian)
+
+* Test #10 passed: get_specialty_cost() should return 2.85 when given 'C' (The Unkissable)
+
+* Test #11 passed: get_specialty_cost() should return 2.10 when given 'D' (Meaty McMeatface)
+
+* Test #12 passed: get_specialty_cost() should return 2.60 when given 'B' (The Salty Manhattan)
+
+* Test #13 passed: get_specialty_cost() should return 3.50 when given 'A' (The Super California)
+
+* Test #14 passed: topping_ids should return 3.00 when given 'S'
+
+* Test #15 passed: topping_ids should return 4.00 when given 'M'
+
+* Test #16 passed: topping_ids should return 5.00 when given 'L'
+
+* Test #17 passed: get_sauce_cost() should return 2.15 when given 'W'
+
+* Test #18 passed: get_sauce_cost() should return 1.35 when given 'R'
+
+

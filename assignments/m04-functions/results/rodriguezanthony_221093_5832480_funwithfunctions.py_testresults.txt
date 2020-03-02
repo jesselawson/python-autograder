@@ -1,4 +1,0 @@
-  File "m04-functions/results/rodriguezanthony_221093_5832480_funwithfunctions_test.py", line 3
-    Python 2.7.17 (v2.7.17:c2f86d86e6, Oct 19 2019, 20:49:36) [MSC v.1500 32 bit (Intel)] on win32
-           ^
-SyntaxError: invalid syntax

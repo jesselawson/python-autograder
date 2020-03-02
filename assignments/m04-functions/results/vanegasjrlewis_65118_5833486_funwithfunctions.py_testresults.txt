@@ -1,6 +1,0 @@
-Traceback (most recent call last):
-  File "m04-functions/results/vanegasjrlewis_65118_5833486_funwithfunctions_test.py", line 61, in <module>
-    string_compare()
-  File "m04-functions/results/vanegasjrlewis_65118_5833486_funwithfunctions_test.py", line 57, in string_compare
-    if string1 == string2:
-NameError: name 'string1' is not defined

@@ -1,4 +1,0 @@
-Traceback (most recent call last):
-  File "m04-functions/results/cachuaeric_16531_5831335_funwithfunctions_test.py", line 388, in <module>
-    output += str(r) 
-TypeError: 'str' object is not callable

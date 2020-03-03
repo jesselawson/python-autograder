@@ -75,35 +75,23 @@ Implement the `pay` command.
   * <id> is a 6-digit numeric student ID
   * <amount> is a number in the form of xx.xx (e.g., 3.50 or 19.95)
 
-2. If <id> is blank or empty (and thus <amount> is blank or empty, too):
-    2.1. Print this: "USAGE: pay <id> <amount>"
-
-3. If <id> is not in the list of student IDs:
-    3.1. Print this error: "<id> is not a valid student ID!"
-         where <id> is the student ID entered by the user.
-
-
+2. If <id> does not exist or <id> is not in the list of student IDs:
+   2.1. Print this error: "<id> is not a valid student ID!"
+        where <id> is the student ID entered by the user.
    
-4. If <amount> is not a float:
-   4.1. Print this error: "\"<amount>\" is not a valid pay amount! Format: #.## (ex: 1.00)"
+3. If <amount> is empty or <amount> is not a number:
+   3.1. Print this error: "<amount> is not a valid pay amount!"
         where <amount> is the amount entered by the user.
 
-5. If <amount> is blank or empty:
-    5.1. Print this: "USAGE: pay <id> <amount>"
-
-6. If <amount> is greater than the student's current balance:
-   6.1. Print this error: "Payment too high for balance of student #<id>!"
+4. If <amount> is greater than the student's current balance:
+   4.1. Print this error: "Payment too high for balance of student #<id>!"
         where <id> is the student's ID.
 
 5. If <amount> is less than or equal to student's balance:
    5.1. Subtract <amount> from student's balance.
-   5.2. Print this: "Payment posted. New balance for student #<id>: $<balance>."
+   5.2. Print this: "Payment posted. Balance for student #<id>: $<balance>."
         where <id> is the student's ID
         and <balance> is the student's final balance.
-
-Assume that you cannot overpay a student's balance. For example, if a student 
-has a balance of $5.00, you cannot pay $6.00--the max you could pay is $5.00, 
-bringing the student's balance down to zero. 
 
 
 TIPS FOR A GOOD GRADE
@@ -175,13 +163,37 @@ def process_input(msg):
             print(f"+------------+--------")
     elif words[0] == "help":
         show_help()
+    elif words[0] == "pay":
+
+        # First check if we even have the appropriate amount of arguments. 
+        # We should have 3: pay <id> <amount>, so len(words) must be == 3
+        if len(words) == 3:
+            id = int(words[1])
+            amount = float(words[2]) # This will fail is anything other than 
+                                         # an int or float is entered
+
+            # Check if words[1] is a valid student ID
+            if id in student_ids:
+                # Student found!
+                
+                index = get_index(student_ids, id)
+                if amount <= student_balances[index]:
+                    # Okay to proceed
+                    student_balances[index] -= amount
+                    print(f"Payment posted. New balance for student #{id}: ${student_balances[index]}.")
+                else:
+                    print(f"Payment too high for balance of student #{id}!")
+            else:
+                print(f"{id} is not a valid student ID!")
+
+        
+        else:
+            print(f"USAGE: pay <id> <amount>")
     else:
         say("I did not understand that request :<")
         say("Try \"help\" for a list of commands.")
         say("Type \"quit\" (without quotes) to exit.")
     
-
-    return 0
 
 def do_chatbot():
     

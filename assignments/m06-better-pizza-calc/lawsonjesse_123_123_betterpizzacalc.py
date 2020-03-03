@@ -281,11 +281,6 @@ def get_choice_custom_2topping_pizza():
     topping1 = get_topping_selection()
     topping2 = get_topping_selection(topping1)
 
-    # Get the index location from the topping_ids list so we can 
-    # get the associated data from topping_costs and topping_names
-    index1 = get_index_from_selection(topping_ids, topping1)
-    index2 = get_index_from_selection(topping_ids, topping2)
-
     # Calculate the total cost with both toppings
     total_toppings_cost = round(get_topping_cost(topping1) + get_topping_cost(topping2), 2)
 

@@ -335,7 +335,7 @@ def main():
     total_cost += get_sauce_cost(sauce)
 
     # Finally, add 30% markup
-    final_cost = total_cost * 0.30
+    final_cost = total_cost + (total_cost * 0.30)
 
     # Output the totals. I'm using round() to ensure that no number is displayed
     # with more than two decimal places. Do you think it's necessary for me 

@@ -4,6 +4,15 @@ submitted/
 already_submitted/
 graded/
 
+assignments/*
+!assignment.py
+!assignmnt_test_suite.py
+!autograder.py
+!chatbot-autograder.py
+!betterchatbot-autograder.py
+
+
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

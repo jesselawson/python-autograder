@@ -32,6 +32,14 @@ Find the results in the `assignments/shippingcosts/results` folder.
 		
 DEVLOG
 
+- **4-Mar-2020 Jesse Lawson** 
+
+The chatbot assignments have their own custom grader, since each assignment 
+has custom stdout activity that needs to be tracked. Since a subprocess is used
+to spin up each assignment's tests, there are special ways of testing the 
+output of the script based on inputs. This can, of course, be customized 
+further than what is already available. 
+
 - **29-Jan-2020 Jesse Lawson** 
 
 Decoupled the test suite file for assignments. Now the assignment test suite file 

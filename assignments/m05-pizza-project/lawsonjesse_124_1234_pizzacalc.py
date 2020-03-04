@@ -403,8 +403,8 @@ def main():
 
 # If you don't remember why we do this, read here: 
 # https://realpython.com/python-main-function/
-if __name__ == '__main__':
-    main()
+#if __name__ == '__main__':
+#    main()
 
 
 """

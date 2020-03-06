@@ -11,6 +11,21 @@ a question!
 So for this assignment, we are creating a new version of the chat bot script--
 complete with a whole different set of business requirements. 
 
+TIPS FOR SUCCESS
+==================================================================================
+
+* If you get errors while working, copy your errors into a search engine and see 
+  what StackOverflow discussions and/or blog posts you can find that help you find 
+  your way out of a rabbit hole. Remember: A LARGE part of this course is developing 
+  your ability to dig yourself out of programming holes; you MUST be comfortable 
+  being confused and frustrated, and you MUST know how to get to where you want to 
+  be (which, usually, is at the point where your script does what you want it to 
+  do). The only way to do that is to practice searching Google or whatever your 
+  favorite search engine is. 
+
+* Drink water! Seriously. Get up, go get a drink of water, and breathe in some 
+  fresh air for a couple minutes. 
+
 OVERVIEW
 ==================================================================================
 
@@ -75,12 +90,13 @@ Implement the `pay` command.
   * <id> is a 6-digit numeric student ID
   * <amount> is a number in the form of xx.xx (e.g., 3.50 or 19.95)
 
-2. If there are less than three command-line arguments:
-    2.1. Print this: "USAGE: pay <id> <amount>"
-
-3. If <id> is not in the list of student IDs:
-    3.1. Print this error: "<id> is not a valid student ID!"
-         where <id> is the student ID entered by the user.
+2. If <id> does not exist or <id> is not in the list of student IDs:
+   2.1. Print this error: "<id> is not a valid student ID!"
+        where <id> is the student ID entered by the user.
+   
+3. If <amount> is empty or <amount> is not a number:
+   3.1. Print this error: "<amount> is not a valid pay amount!"
+        where <amount> is the amount entered by the user.
 
 4. If <amount> is greater than the student's current balance:
    4.1. Print this error: "Payment too high for balance of student #<id>!"
@@ -88,16 +104,9 @@ Implement the `pay` command.
 
 5. If <amount> is less than or equal to student's balance:
    5.1. Subtract <amount> from student's balance.
-   5.2. Print this: "Payment posted. New balance for student #<id>: $<balance>."
+   5.2. Print this: "Payment posted. Balance for student #<id>: $<balance>."
         where <id> is the student's ID
         and <balance> is the student's final balance.
-
-Assume that you cannot overpay a student's balance. For example, if a student 
-has a balance of $5.00, you cannot pay $6.00--the max you could pay is $5.00, 
-bringing the student's balance down to zero. 
-
-Also assume that the user will always only enter int types for <id> and <float> 
-types for <amount>. You do not have to validate the input for these.
 
 
 TIPS FOR A GOOD GRADE
@@ -136,13 +145,15 @@ def get_balance(student_id):
 
 def show_help():
     print(f"==================================")
-    print(f"FinAid BOT")
-    print(f"Written by <your name>") # You should change this to your name!
+    print(f"Financial Aid Chat Bot")
+    print(f"Written by <your name>")
     print(f"==================================")
     print(f"Available commands:")
     print(f"\tshow               Show balances for all students")
     print(f"\tshow <id>          Show balance for student")
     print(f"\tpay <id> <amt>     Subtract <amt> from student's balance")
+    print(f"\thelp               Show this help section")
+    print(f"\tquit               Quit the program")
 
 def process_input(msg):
 
@@ -169,31 +180,31 @@ def process_input(msg):
             print(f"+------------+--------")
     elif words[0] == "help":
         show_help()
+    elif words[0] == ("quit" or "exit"):
+        return False
     else:
         say("I did not understand that request :<")
         say("Try \"help\" for a list of commands.")
-        say("Type \"quit\" (without quotes) to exit.")
     
 
-    return 0
+    return True # Notice how we return True here, keeping is_running == True in main()
 
 def do_chatbot():
     
-    print(f"{chatbot_name}: How can I help today?")
+    say("How can I help today?")
 
     print(f"> ", end='') 
     c = input()
 
-    if c == "quit":
-        return False
-    else:
-        process_input(c)
-        return True
+    # We need the return value from process_input so that we can return it
+    # from inside the main() function.
+    return process_input(c)
 
 
 def main():
-    # TODO: Replace this with a comment section that the student has to fill
-    # in based on the tutorial I will write on my site.
+
+    show_help()
+
     is_running = True
 
     while(is_running):

@@ -75,24 +75,15 @@ Implement the `pay` command.
   * <id> is a 6-digit numeric student ID
   * <amount> is a number in the form of xx.xx (e.g., 3.50 or 19.95)
 
-2. If <id> is blank or empty (and thus <amount> is blank or empty, too):
+2. If there are less than three command-line arguments:
     2.1. Print this: "USAGE: pay <id> <amount>"
 
 3. If <id> is not in the list of student IDs:
     3.1. Print this error: "<id> is not a valid student ID!"
          where <id> is the student ID entered by the user.
 
-
-   
-4. If <amount> is not a float:
-   4.1. Print this error: "\"<amount>\" is not a valid pay amount! Format: #.## (ex: 1.00)"
-        where <amount> is the amount entered by the user.
-
-5. If <amount> is blank or empty:
-    5.1. Print this: "USAGE: pay <id> <amount>"
-
-6. If <amount> is greater than the student's current balance:
-   6.1. Print this error: "Payment too high for balance of student #<id>!"
+4. If <amount> is greater than the student's current balance:
+   4.1. Print this error: "Payment too high for balance of student #<id>!"
         where <id> is the student's ID.
 
 5. If <amount> is less than or equal to student's balance:
@@ -104,6 +95,9 @@ Implement the `pay` command.
 Assume that you cannot overpay a student's balance. For example, if a student 
 has a balance of $5.00, you cannot pay $6.00--the max you could pay is $5.00, 
 bringing the student's balance down to zero. 
+
+Also assume that the user will always only enter int types for <id> and <float> 
+types for <amount>. You do not have to validate the input for these.
 
 
 TIPS FOR A GOOD GRADE

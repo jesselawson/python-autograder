@@ -4,7 +4,7 @@ submitted/
 already_submitted/
 graded/
 
-assignments/*
+#assignments/*
 !assignment.py
 !assignmnt_test_suite.py
 !autograder.py

@@ -47,7 +47,7 @@ INSTRUCTIONS
         * `old_username` is a string
         * `new_username` is a string
 
-    It should set the value of the `username` key in the first dictionary 
+    It should set the value associated with the `username` key in the first dictionary 
     element of `the_records` to the value of `new_username` 
         where that element's username value is equal to `old_username`.
     It should return True if the `old_username` was found and successfully updated 
@@ -59,7 +59,26 @@ INSTRUCTIONS
         * `the_records` should be a list of dictionaries, each dictionary containing 
           two keys: `username` and `password`
         * `the_user` is a string.
-
+    It should set the value associated with the `password` key in the first dictionary
+        element of `the_records` to be a string in the folowing format:
+            "{a}{b}{c}"
+            where
+                a == a random choice from the list word_salad_one
+                b == a random choice from the list word_salad_two
+                c == a random integer between 12345 and 98765
+        where that element's `username` value is equal to `the_user`.
+    It should return True if the `the_user` was found and the associated 
+        `password` key value successfully updated in accordance with the above criteria.
+    Otherwise, it should return False.     
+    
+    Example code for building a pseudo-random password from two lists and an integer:
+    ```
+        my_new_password = random.choice(some_list)
+        my_new_password += random.choice(some_other_list)
+        range_start = 1
+        range_end = 10
+        my_new_password += str(random.randint(range_start,range_end))
+    ```
 
 TIPS
 ================================================================================
@@ -70,47 +89,41 @@ TIPS
 * Feel free to have your functions printing things to help verify steps if you want, 
   but please comment out all print() calls before submitting your assignment.
 
-"""
+* Remember that we are using the `random` module, so your script will need to 
+  `import` it somehow... (how do we import modules again?)
 
-
 """
-Update the function `generate_password_for_user`.
-    It should take two arguments: `the_records` and `the_user`.
-        * `the_records`
-"""
-
-def generate_password_for_user(the_records, the_user):
-    for record in the_records:
-        if record['username'] == the_user:
-            password = random.choice(word_salad_one)
-            password += random.choice(word_salad_two)
-            # If you don't str() the randint, you'll get this:
-            # TypeError: can only concatenate str (not "int") to str
-            password += str(random.randint(12345,98765))
-            record.update({'password': password})
-            return True
-    return False
-    
 
 
 # Normally you would get usernames and whatnots from a database, but for the 
 # purposes of this assignment, we'll just use a static data structure here:
 the_records = [
-        {
-            username: "rossbo",
-            password: None
-        },
-        {
-            username: "picardjl",
-            password: None
-        },
-        {
-            username: ""
-        }
-    ]
+    {
+        "username": "rossbo",
+        "password": None
+    },
+    {
+        "username": "picardjl",
+        "password": None
+    },
+    {
+        "username": "lawsonje",
+        "password": "hunter2"
+    }
+]
 
 # I am compelled by moral duty to remind you that you should NEVER store 
 # passwords this way. It is incredibly insecure--but really good for learning!
+
+# We'll use these "word salad" lists to generate pseudo-random passwords
+word_salad_one = [
+    'Happy', 'Excited', 'Depressed', 'Anxious', 'Nervous', 'Smelly'
+]
+
+word_salad_two = [
+    'Fish', 'Goat', 'Butterfly', 'Elephant', 'Zebra', 'Cat', 'Mouse'
+]
+
 
 
 
@@ -122,10 +135,17 @@ the_records = [
 #
 # B. update_username(the_records, "smithdo", "rogersfr") == False, since 
 #       the function should not find "smithdo" in the available usernames
-
 def update_username():
     return None # CHANGE THIS, obviously
 
+# You can do this one on your own. I believe in you!
 def generate_password_for_user():
     return None # CHANGE THIS, obviously 
     
+
+
+
+# BEFORE YOU SUBMIT YOUR ASSIGNMENT:
+# Did you remember to get rid of all errors?
+# Did you remember to import the `random` module?
+# Did you remember to drink water today?

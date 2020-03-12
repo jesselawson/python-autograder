@@ -5,7 +5,7 @@ Repl.it Link: https://repl.it/@professorlawson/m10-userauth
 
 In this assignment, you'll be using the "random" module to generate a random 
 password for a user. You'll also use dictionaries as a data structure to store 
-usernames and passwords, and write functions that will retrive passwords, 
+usernames and passwords, and write functions that will retrieve passwords, 
 generate new passwords, and verify passwords. 
 
 OVERVIEW
@@ -23,6 +23,12 @@ their existing automation framework, they sure would appreciate it!
 Your task this module is to write a Python script for the tech support folks 
 that contains several password-related functions involving dictionary element 
 retrieval and storage. 
+
+There is an example dictionary provided to you that represents the kind of 
+data structure that your functions are expected to be able to understand. Please 
+use it for testing your own functions--but remember to remove any code you 
+wrote for testing (including any print statements) before you submit your 
+assignment.
 
 
 REFERENCES

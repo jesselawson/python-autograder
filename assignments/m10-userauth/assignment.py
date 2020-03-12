@@ -1,7 +1,7 @@
 """
 M10 Assignment: "User Authentication"
 
-Repl.it Link: 
+Repl.it Link: https://repl.it/@professorlawson/m10-userauth
 
 In this assignment, you'll be using the "random" module to generate a random 
 password for a user. You'll also use dictionaries as a data structure to store 

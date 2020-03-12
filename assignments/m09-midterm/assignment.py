@@ -197,7 +197,7 @@ The following are true:
 * test[1:5] is equal to "3000"
 * test[6:] is equal to "local dev server"
 
-Interactive example: https://repl.it/@professorlawson/m08-midterm-example1
+Interactive example: https://repl.it/@professorlawson/m09-midterm-example1
 
 You WILL want to use string slices, and not just "<x> in <y>" because there are 
 some services that have four-digit numbers in their names that may or may not 

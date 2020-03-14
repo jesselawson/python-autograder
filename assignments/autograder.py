@@ -90,7 +90,7 @@ def main():
     
     # skip the assignment test suite 
     print(f"Checking filename {filename}... ", end='')
-    if filename == "assignment_test_suite.py" or filename == "assignment.py" or filename == "__pycache__":
+    if filename == "assignment_test_suite.py" or filename == "assignment.py" or filename == "__pycache__" or filename[-3:] != ".py":
       print('[ SKIPPING ]: Reserved file ')
       continue
     

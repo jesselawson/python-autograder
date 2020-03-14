@@ -1,10 +1,22 @@
-# autograder.py MERCURY edition
+# m11grader.py
+
+# This is a custom grader for the m11 assignment. A custom grader was needed 
+# because that assignment uses folder operations, and when we try to execute 
+# files from different folders, it's hard to grade a student's work in opening, 
+# traversing, and moving files around directories. 
+#
+# USAGE OPTIONS:
+# cd into the m11-sortingfiles directory, then:
+# python m11grader.py .                     This will run it
+# python m11grader.py . just_reset_files    This will only reset the files
+
 
 
 import sys
 import os
 import os.path
 import shutil
+import time
 from pathlib import Path
 import subprocess
 from datetime import datetime
@@ -16,6 +28,40 @@ class Submission:
     # Controls for two student with similar names/filenames
     student_random_id = uuid.uuid4().hex 
 """
+
+
+
+
+# This is a necessary helper function designed to "reset" the inbox folder before 
+# we run the student's functions. Also resets the negative, positive folders.
+def reset_inbox_and_folders():
+    print("Clearing /inbox...")
+    # Clear out the inbox, then copy over all files in "__inbox_backup"
+    for result in os.scandir(os.curdir+"/inbox"):
+        #print(f"\tRemoving {result.name}... ")
+        print(".", end='')
+        os.remove(result.path)
+    
+    print("Re-staging /inbox...")
+
+    for result in os.scandir(os.curdir+"/__inbox_backup"):
+        #print(f"\tCopying {result.name}... ")
+        print(".", end='')
+        shutil.copy("__inbox_backup/"+result.name, "inbox/"+result.name)
+    
+    print("Emptying all other folders...")
+
+    for result in os.scandir(os.curdir+"/negative"):
+        os.remove(result.path)
+
+    for result in os.scandir(os.curdir+"/positive/buccal"):
+        os.remove(result.path)
+
+    for result in os.scandir(os.curdir+"/positive/blood"):
+        os.remove(result.path)
+    
+    print("Finished resetting all folders for next student.")
+ 
 
 
 def banner():
@@ -39,6 +85,17 @@ def die():
   sys.exit()
   
 def main():
+
+  not_there = False
+
+  try:
+    sys.argv[2]
+  except IndexError:
+      not_there = True
+  finally:
+    if not not_there and sys.argv[2] == "just_reset_files":
+      reset_inbox_and_folders()
+      die()
   
   # Ensure we get an assignment 
   try:
@@ -90,7 +147,7 @@ def main():
     
     # skip the assignment test suite 
     print(f"Checking filename {filename}... ", end='')
-    if filename == "assignment_test_suite.py" or filename == "assignment.py" or filename == "__pycache__" or filename[-3:] != ".py":
+    if filename in ["assignment_test_suite.py", "m11grader.py", "assignment.py", "__pycache__", "test_template.py"] or filename[-3:] != ".py":
       print('[ SKIPPING ]: Reserved file ')
       continue
     
@@ -169,6 +226,23 @@ def main():
     with open(student_results_filename, "w") as f:
         f.write("Here are the results of some automated unit tests:\n\n")
 
+    # Before running the tests, reset the filesystem:
+    reset_inbox_and_folders()
+
+    # The m11 assignment has a lot of filesystem activity and needs to wait to 
+    # continue from here.
+    not_there = False
+
+    try:
+        sys.argv[2]
+    except IndexError:
+        not_there = True
+    finally:
+        if not not_there and sys.argv[2] == "with_hold_for_fs":
+            print("MAGIC TIMER SAYS: You specified `with_hold_for_fs`, so I'm waiting an extra two seconds.")
+            time.sleep(5)
+
+
     # Run the python file in a subprocess to capture the output just in case 
     # the student didn't follow directions and we can't even run the test runner
     res = subprocess.Popen(
@@ -185,16 +259,16 @@ def main():
     # There should be a way to 
     # programmatically count the number of calls to input() there are, and then 
     # call the write/flush pair for each instance.
-    res.stdin.write(b'\n')
-    res.stdin.flush()
-    res.stdin.write(b'\n')
-    res.stdin.flush()
-    res.stdin.write(b'\n')
-    res.stdin.flush()
-    res.stdin.write(b'\n')
-    res.stdin.flush()
-    res.stdin.write(b'\n')
-    res.stdin.flush()
+    #res.stdin.write(b'\n')
+    #res.stdin.flush()
+    #res.stdin.write(b'\n')
+    #res.stdin.flush()
+    #res.stdin.write(b'\n')
+    #res.stdin.flush()
+    #res.stdin.write(b'\n')
+    #res.stdin.flush()
+    #res.stdin.write(b'\n')
+    #res.stdin.flush()
 
     # Wait for the process end and print error in case of failure 
     if res.wait() != 0:

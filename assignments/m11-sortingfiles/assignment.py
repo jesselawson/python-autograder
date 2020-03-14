@@ -1,5 +1,5 @@
 """
-M11 Assignment: "Sorting Files"
+M11 Assignment: "Sorting Photos"
 
 Repl.it Link: https://repl.it/@professorlawson/m11-sortphotos
 

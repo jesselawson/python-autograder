@@ -1,7 +1,7 @@
 """
 M11 Assignment: "Sorting Files"
 
-Repl.it Link: 
+Repl.it Link: https://repl.it/@professorlawson/m11-sortphotos
 
 
 
@@ -69,11 +69,8 @@ Each file adheres to a strict file format:
 * `type` is a string that is either "positive" or "negative"
 * `identifier` is a 10-character string consisting of ten digits.
 
-
-
 INSTRUCTIONS
 ================================================================================
-
 
 1. Update function `get_inbox_samples`.
 
@@ -152,7 +149,11 @@ sample_data_template = {
     "method": None,
 }
 
+def get_inbox_samples():
+    return
 
+def process_samples():
+    return
 
 
 

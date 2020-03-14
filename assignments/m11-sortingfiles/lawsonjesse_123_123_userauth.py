@@ -46,14 +46,13 @@ def get_inbox_samples():
 
             this_sample = dict(sample_data_template)
 
-            this_sample['filename'] = result.path
+            this_sample['filename'] = result.name
             this_sample['type'] = the_type
             this_sample['method'] = method
 
             samples_list.append(this_sample)
     
     return samples_list
-
 
 #def get_next_file(directory):
 

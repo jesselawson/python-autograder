@@ -1,5 +1,14 @@
 
 
+# First and foremost, we need to actually move the files. 
+    # Only call process_samples() once, in the first test function for process_samples()
+try:
+    process_samples(get_inbox_samples())
+except NameError as e:
+    print(jel_NameError("process_samples(get_inbox_samples())", e))
+
+
+
 # What the dictionary should be
 
 samples_4hrit76k45h8 = [
@@ -198,11 +207,8 @@ samples_4hrit76k45h8 = [
 ]
 
 
-
 # Problem 1
 problem1_target = "get_inbox_samples()"
-
-
 
 def test_get_inbox_samples():
 
@@ -221,3 +227,111 @@ def test_get_inbox_samples():
         return jel_NameError(problem1_target, e)
     except TypeError as e:
         return jel_TypeError(problem1_target, e)
+
+problem2_target = "process_samples()"
+
+def test_process_samples_0():
+    
+    result = True
+
+    # Get list of all files in /negative
+    for r in os.scandir(os.curdir+"/negative"):
+        if r.name[6:7] == 'p':
+            result = False # So even one incorrectly moved file breaks the test
+
+    try:
+        return jel_assert(
+                problem2_target, 
+                result,
+                f"move only 'negative' samples from /inbox to the /negative folder"
+            )
+    except NameError as e:
+        return jel_NameError(problem2_target, e)
+    except TypeError as e:
+        return jel_TypeError(problem2_target, e)
+
+def test_process_samples_1():
+    # Make sure there are 100 negative samples
+
+    num_files = 0
+    
+    for r in os.scandir(os.curdir+"/negative"):
+        if r.is_file():
+            num_files+=1
+
+    try:
+        return jel_assert(
+                problem2_target, 
+                num_files == 100,
+                f"move a total of 100 samples from /inbox to the /negative folder"
+            )
+    except NameError as e:
+        return jel_NameError(problem2_target, e)
+    except TypeError as e:
+        return jel_TypeError(problem2_target, e)
+
+
+def test_process_samples_2():
+    
+    result = True
+
+    # Get list of all files in /positive/blood
+    for r in os.scandir(os.curdir+"/positive/blood"):
+        if r.name[15:16] in ['2', '4', '6', '8', '0']:
+            result = False # So even one incorrectly moved file breaks the test
+
+    # Get list of all files in /positive/buccal
+
+    # Get list of all files in /inbox (should be zero)
+
+    try:
+        return jel_assert(
+                problem2_target, 
+                result,
+                f"move only 'positive' blood samples from /inbox to the /positive/blood folder"
+            )
+    except NameError as e:
+        return jel_NameError(problem2_target, e)
+    except TypeError as e:
+        return jel_TypeError(problem2_target, e)
+
+def test_process_samples_3():
+    
+
+    num_files = 0
+    
+    for r in os.scandir(os.curdir+"/positive/buccal"):
+        if r.is_file():
+            num_files+=1
+
+    try:
+        return jel_assert(
+                problem2_target, 
+                num_files == 39,
+                f"move a total of 39 buccal samples from /inbox to the /positive/buccal folder"
+            )
+    except NameError as e:
+        return jel_NameError(problem2_target, e)
+    except TypeError as e:
+        return jel_TypeError(problem2_target, e)
+
+def test_process_samples_4():
+    
+
+    num_files = 0
+    
+    for r in os.scandir(os.curdir+"/positive/blood"):
+        if r.is_file():
+            num_files+=1
+
+    try:
+        return jel_assert(
+                problem2_target, 
+                num_files == 53,
+                f"move a total of 53 samples from /inbox to the /positive/blood folder"
+            )
+    except NameError as e:
+        return jel_NameError(problem2_target, e)
+    except TypeError as e:
+        return jel_TypeError(problem2_target, e)
+

@@ -176,8 +176,7 @@ Remember: our objective is to locate the hidden spy!
 
 BEGIN MESSAGE
 --------------------------------------------------------------------------------
-4lpabc!aepc8!ip5l!ollc!pn06h9lm?!dll7!dl!p7!7il!cl4!m9ba!ebnp7hbc?!kbeeb4!hc8796n7hbc8!il9l+!!
-i77a8+==jh87?jh7i6o68l9nbc7lc7?nbd=gl88lep48bc=wuxqyksqxvyowzyymoxotsvvuzkxuzyw=9p4=lnvumttolnmlpzopqxyzrppqmtxqlkoqvplozrpw=hc7l9nla7lmdl88pjl?ebj
+4lpabc!aepc8!ip5l!ollc!pn06h9lm?!dll7!dl!p7!7il!cl4!m9ba!ebnp7hbc?!kbeeb4!hc8796n7hbc8!il9l+!i77a8+==jh87?jh7i6o68l9nbc7lc7?nbd=gl88lep48bc=wuxqyksqxvyowzyymoxotsvvuzkxuzyw=9p4=lnvkwsypsvoxupovzzowrvqxyrsrtouzmwwxzrxo=hc7l9nla7lmdl88pjl?ebj
 --------------------------------------------------------------------------------
 END MESSAGE
 

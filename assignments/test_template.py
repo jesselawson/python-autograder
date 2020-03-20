@@ -2,32 +2,19 @@
 # Obfuscated name to prevent possible conflict with student file
 test_qwertyuioplkjhgfdsa_number = 0
 
-def jel_NameError(target, e):
-    global test_qwertyuioplkjhgfdsa_number
-    test_qwertyuioplkjhgfdsa_number += 1
-    m = f"Test #{test_qwertyuioplkjhgfdsa_number} "
-    return m + f"FAILED: {target} failed before test due to a NameError: {e}"
-
-def jel_TypeError(target, e):
-    global test_qwertyuioplkjhgfdsa_number
-    test_qwertyuioplkjhgfdsa_number += 1
-    m = f"Test #{test_qwertyuioplkjhgfdsa_number} "
-    return m + f"FAILED: {target} failed before test due to a TypeError: {e}"
-
 def jel_assert(target, expr, should_msg):
     global test_qwertyuioplkjhgfdsa_number
     test_qwertyuioplkjhgfdsa_number += 1
     m = f"Test #{test_qwertyuioplkjhgfdsa_number} "
     try:
-        assert expr
-    except AssertionError as e:
-        return m + f"FAILED: {target} failed to {should_msg}!"
-    except NameError as e:
-        return m + f"FAILED: {target} failed to {should_msg}! NameError: {e}"
-    except TypeError as e:
-        return m + f"FAILED: {target} failed to {should_msg}! TypeError: {e}"
+        expr
+    except Exception as e:
+        return m + f"FAILED: {target} failed to {should_msg}!\r\t+{e.__class__.__name__}: {e}"
     else:
         return m + f"passed: {target} should {should_msg}"
+
+def jel_Exception(target, e):
+    return jel_assert(target, False,f"work:\r\t{e.__class__.__name__}: {e}")
     
 # BEGIN TEST SUITE INJECTION ===================================================
 

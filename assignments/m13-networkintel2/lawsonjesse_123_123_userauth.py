@@ -1,7 +1,7 @@
 
 import os
 
-
+"""
 
 # For the M13 
 class IPAddress:
@@ -47,3 +47,9 @@ class IPAddress:
 
     def get_flar(self):
         return round( (self.get_failed_logins() / self.get_total_activity()), 2)
+
+"""
+
+class IPAddress:
+    def __init__(self, ip):
+        self.nothing = 0

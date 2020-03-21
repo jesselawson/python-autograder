@@ -53,4 +53,11 @@ class IPAddress:
 class IPAddress:
     def __init__(self, ip):
         self.nothing = 0
+        self.ip = ip
+        self.activity = []
+        self.activity_url = []
+        self.total_activity = 0
+        self.failed_logins = 0
+        self.suspicious = False
+
         

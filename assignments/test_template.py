@@ -26,7 +26,7 @@ def jel_passing(target, msg):
 
 def jel_exception(target, e, msg):
     #return jel_assert(target, False,f"work:\r\t{e.__class__.__name__}: {e}")
-    return jel_test(f"failed: {target} failed to {msg};\r\t{e.__class__.__name__}: {e}")
+    return jel_test(f"FAILED: {target} failed to {msg};\r\t{e.__class__.__name__}: {e}")
     
 # BEGIN TEST SUITE INJECTION ===================================================
 

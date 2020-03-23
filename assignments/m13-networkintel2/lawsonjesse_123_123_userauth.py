@@ -59,3 +59,30 @@ class IPAddress:
         self.total_activity = 0
         self.failed_logins = 0
         self.suspicious = False
+
+    def is_suspicious(self):
+        return self.suspicious
+
+    def set_as_suspicious(self):
+        self.suspicious = True
+
+    def get_ip(self):
+        return self.ip
+
+    def add_activity(self, some_activity, some_url):
+        self.activity.append(some_activity)
+        self.activity_url.append(some_url)
+         # Recalculate total_activity and failed_logins
+        self.total_activity += 1
+        if some_activity == "login_failed":
+            self.failed_logins += 1
+
+    def get_total_activity(self):
+        return self.total_activity
+        #return len(self.activity)
+
+    def get_failed_logins(self):
+        return self.failed_logins
+        
+    def get_flar(self):
+        return round( (self.get_failed_logins() / self.get_total_activity()), 2)

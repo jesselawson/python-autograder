@@ -142,7 +142,7 @@ INSTRUCTIONS
     It should return the `failed_logins` class instance variable. 
 
 11. Create a member function of the IPAddress class called `get_flar`.
-    It should return `get_failed_logins()` divided by `get_total_logins()` 
+    It should return `get_failed_logins()` divided by `get_total_activity()` 
         rounded to the nearest two decimals.
     Hint: Use the round() function:
         return round(first_func() / second_func(), 2)
